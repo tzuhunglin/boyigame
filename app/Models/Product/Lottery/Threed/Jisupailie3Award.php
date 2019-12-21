@@ -68,11 +68,20 @@ class Jisupailie3Award
 
     private function vGetAwardYimabudingdanBetOrder($sType)
     {
+        $aCode = json_decode($this->oIssueInfo->code);
+        for ($i=0; $i < count($aCode); $i++) 
+        { 
+            $aCode[$i] = json_encode(array($aCode[$i]));
+        }
         return LotteryOrder::where("lottery",self::$sLottery)
                             ->where("type",$sType)
                             ->where("issue",$this->oIssueInfo->issue)
                             ->where("award",0)
-                            ->where("code",json_decode($this->oIssueInfo->code)[0])
+                            ->where(function($query) use ($aCode) {
+                              $query->where('code', $aCode[0])
+                                ->orWhere('code', $aCode[1])
+                                ->orWhere('code', $aCode[2]);
+                            })
                             ->get();
     }
 

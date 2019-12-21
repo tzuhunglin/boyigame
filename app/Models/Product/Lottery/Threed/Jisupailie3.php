@@ -206,10 +206,10 @@ class Jisupailie3 extends Product
     private function vSanmatzushiuanCodeSetBuild()
     {
         sort($this->aCode[0]);
-        if(count($this->aCode[0])==3)
-        {
-            array_push($this->aCodeSetList,$this->aCode[0]); 
-        }
+        // if(count($this->aCode[0])==3)
+        // {
+        //     array_push($this->aCodeSetList,$this->aCode[0]); 
+        // }
         $iCodeCount = count($this->aCode[0]);
         $i = 0;
         while($i<$iCodeCount-2)
