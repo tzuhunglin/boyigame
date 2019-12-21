@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Console;
+
+use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Commands\CronJisupailie3;
+
+class Kernel extends ConsoleKernel
+{
+    /**
+     * The Artisan commands provided by your application.
+     *
+     * @var array
+     */
+    protected $commands = [ 
+        // Commands\Inspire::class,
+        Commands\CronJisupailie3::class
+    ];
+
+    /**
+     * Define the application's command schedule.
+     *
+     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @return void
+     */
+    protected function schedule(Schedule $schedule)
+    {
+        // $schedule->command('inspire')
+        //          ->hourly();
+
+        // $schedule->command('cronjisupailie3')->everyThirtyMinutes();
+        $schedule->command('cronjisupailie3')->everyMinute();
+        // $schedule->command('cronjisupailie3')->cron("30 10-22 * * *");
+    }
+}
