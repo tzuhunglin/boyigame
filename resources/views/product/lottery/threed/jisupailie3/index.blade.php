@@ -111,7 +111,7 @@
 		<div class="box">
 			<div class="content">
 				<h2 class="align-center">{{ trans('messages.product.lottery.3d.jisupailie3.name') }}</h2>
-				<h3 class="align-center"><span id="issue">{{$oJisupailie3->sIssue}}</span><span> 期</span><span>&emsp; &emsp;</span><span>12 : 34</span></h3>
+				<h3 class="align-center"><span id="issue">{{$oJisupailie3->sIssue}}</span><span> 期</span><span>&emsp; &emsp;</span><span id="minute">12</span><span> : </span><span id="second">34</span></h3>
 				<hr />
 				<form action="" method="post">
 					{{ csrf_field()}}
@@ -389,6 +389,8 @@
 @endsection
 @section('scripts')
 <script type="text/javascript">
+
+
 var aBetCodes = [];
 var sGameTypeName;
 var iBasicRate = parseInt("{{$iBasicOdds}}");
@@ -398,11 +400,12 @@ var sPostUrl = "{{App\Libraries\Product\Lottery\Threed\Jisupailie3Lib::sGetbetLi
 
 
 $(document).ready(function(){
+	vSetCountDownClockerIni();
+	setInterval("vSetCountDownClocker()",1000);
 	vSetBetCodesInit();
 	vSetBetOdds();
 	vSetBonus();
 	sGameTypeName = $("input[type='radio']:checked").attr('id');
-
 	vSetGameTypeCodeShow(sGameTypeName);
 	$('input[type=radio][name=gametype]').change(function() {
 		vGameTypeOnChange($(this));
@@ -422,6 +425,113 @@ $(document).ready(function(){
 		vPostBet();
 	});
 });
+
+function vSetCountDownClockerIni()
+{
+	$("#second").text(iGetCountDownSecond()-1);
+	$("#minute").text(iGetRestMinute());
+}
+
+function vSetCountDownClocker()
+{
+	if(parseInt($("#second").text())==30)
+	{
+		vSetCountDownClockerIni();
+		return ;
+	}
+	var iCountDownSecond = parseInt($("#second").text()) - 1;
+	var iCountDownMinute = parseInt($("#minute").text());
+
+	if(iCountDownSecond<0)
+	{
+		iCountDownSecond = 59;
+		iCountDownMinute = parseInt($("#minute").text()) - 1;
+		if(iCountDownMinute<0)
+		{
+			iCountDownMinute = 29;
+		}
+
+	}
+	$("#second").text(sFillZero(iCountDownSecond));
+	$("#minute").text(sFillZero(iCountDownMinute));
+}
+
+function iGetRestMinute()
+{
+	var sCurrentDateTime = new Date(); 
+	var iRestMinute = 0;
+	var sToadyStartTime = sCurrentDateTime.getFullYear()+"-"+(sCurrentDateTime.getMonth()+1)+"-"+sCurrentDateTime.getDate()+" 10:30:00";
+	var sToadyEndTime = sCurrentDateTime.getFullYear()+"-"+(sCurrentDateTime.getMonth()+1)+"-"+sCurrentDateTime.getDate()+" 21:30:00";
+	var iCurrentDateTime = (new Date()).valueOf();
+	var iStartDateTime = new Date(sToadyStartTime).getTime();
+	var iEndDateTime = new Date(sToadyEndTime).getTime();
+	if(iCurrentDateTime<iStartDateTime)
+	{
+		iRestMinute  = iSecondToMinute(iStartDateTime - iCurrentDateTime) - 1;
+	}
+	else if(iCurrentDateTime>iEndDateTime)
+	{
+		iRestMinute  = iSecondToMinute(iCurrentDateTime - iEndDateTime) - 1;
+	}
+	else
+	{
+		iRestMinute = 30 - (sCurrentDateTime.getMinutes()%30) - 1;
+	}
+
+	iRestMinute = (sCurrentDateTime.getSeconds()=="00")?iRestMinute+1:iRestMinute;
+
+	return sFillZero(iRestMinute);
+}
+
+function iSecondToMinute(iTimeStamp)
+{
+	return Math.floor(iTimeStamp / 60 / 1000);
+}
+
+
+function iGetCountDownSecond()
+{
+	var sCurrentDateTime = new Date(); 
+	return sFillZero(60 - sCurrentDateTime.getSeconds());
+}
+
+function sGetCommingIssueDate()
+{
+	var sHourMinute = sCurrentDateTime.getHours() + ":"+ sCurrentDateTime.getMinutes();
+	if(sHourMinute>"21:30")
+	{
+		return  sCurrentDateTime.getFullYear() + "-" +(sCurrentDateTime.getMonth()+1)  + "-" + sCurrentDateTime.getDate()
+	}
+	else
+	{
+		return  sCurrentDateTime.getFullYear() + "-" +(sCurrentDateTime.getMonth()+2)  + "-" + sCurrentDateTime.getDate()
+	}
+}
+
+function sGetCommingIssueTime()
+{
+	var sHourMinute = sCurrentDateTime.getHours() + ":"+ sCurrentDateTime.getMinutes();
+	if(sHourMinute<"10:30" || sHourMinute>"21:30")
+	{
+		return "10:30";
+	}
+	else
+	{
+		if(sCurrentDateTime.getMinutes()>=30)
+		{
+			return sFillZero(sCurrentDateTime.getHours()+1) + ":00";
+		}
+		else
+		{
+			return sFillZero(sCurrentDateTime.getHours()) + ":30";
+		}
+	}
+}
+
+function sFillZero(iNum)
+{
+	return (parseInt(iNum)<10)?"0"+iNum:iNum;
+}
 
 function vPostBet()
 {

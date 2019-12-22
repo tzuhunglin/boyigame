@@ -59,7 +59,7 @@ class IssueInfoPushData
 
 	public static function oGetDrawingIssueInfoPushData($sLottery)
 	{
-		$oDrawingIssueInfoPushData = self::oGetLatestIssueInfoPushData($sLottery, $bCache = true);
+		$oDrawingIssueInfoPushData = self::oGetLatestIssueInfoPushData($sLottery, $bCache = true);		
 		$oDrawingIssueInfoPushData->aCode = array("開","獎","中");
 		$oDrawingIssueInfoPushData->sCode = json_encode($oDrawingIssueInfoPushData->aCode);
 		$oDrawingIssueInfoPushData->sIssue = Jisupailie3::sGetLastDrawnIssue();

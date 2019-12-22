@@ -21,7 +21,7 @@ class PushIssueInfoJisupailie3 extends Event implements ShouldBroadcast
      * @param User $oUser
      * @param      $oIssueInfo
      */
-    public function __construct(IssueInfoPushData $oIssueInfoPushData)
+    public function __construct($oIssueInfoPushData)
     {
         $this->oIssueInfoPushData = $oIssueInfoPushData;
     }

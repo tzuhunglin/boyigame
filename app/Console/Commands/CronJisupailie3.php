@@ -44,31 +44,29 @@ class CronJisupailie3 extends Command
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
         $sCurrentTime = date("H:i:s");
-        // if($sCurrentTime < $this->sStartTime || $sCurrentTime > $this->sEndTime)
-        // {
-        //     return ;
-        // }
-        // $oDrawingIssueInfoPushData = IssueInfoPushData::oGetDrawingIssueInfoPushData(self::$sLottery);
+        if($sCurrentTime < $this->sStartTime || $sCurrentTime > $this->sEndTime)
+        {
+            return ;
+        }
+        $oDrawingIssueInfoPushData = IssueInfoPushData::oGetDrawingIssueInfoPushData(self::$sLottery);
+        Cache::put('jisupailie3',json_encode($oDrawingIssueInfoPushData),1000);
+        // echo "<pre>"; print_r($oDrawingIssueInfoPushData);exit;
+        event(new PushIssueInfoJisupailie3($oDrawingIssueInfoPushData));
 
-        // event(new PushIssueInfoJisupailie3($oDrawingIssueInfoPushData));
+        sleep(240);
+        exec('python /Users/tzlin/Desktop/boyigame/py/se.py');
+        sleep(20);
 
-        // sleep(180);
+        $oIssueInfoPushData = IssueInfoPushData::oGetLatestIssueInfoPushData(self::$sLottery,false);
 
-
-        // exec('python /Users/tzlin/Desktop/boyigame/py/se.py');
-        // sleep(20);
-        // $oIssueInfoPushData = IssueInfoPushData::oGetLatestIssueInfoPushData(self::$sLottery,false);
-
-        // Cache::put('issueInfoJisupailie3',json_encode($oIssueInfoPushData),1000);
-        // event(new PushIssueInfoJisupailie3($oIssueInfoPushData));
+        Cache::put('jisupailie3',json_encode($oIssueInfoPushData),1000);
+        event(new PushIssueInfoJisupailie3($oIssueInfoPushData));
 
         $oIssueInfo = IssueInfo::oGetCurrentIssueForAward(self::$sLottery);
-        // echo "<pre>"; print_r($oIssueInfo);exit;
         $oJisupailie3Award = new Jisupailie3Award($oIssueInfo);
 
         $oAwardProcessor = new AwardProcessor($oJisupailie3Award);
         $oAwardProcessor->handle();
-        // echo "<pre>"; print_r($oAwardProcessor);exit;
         
     }
 }

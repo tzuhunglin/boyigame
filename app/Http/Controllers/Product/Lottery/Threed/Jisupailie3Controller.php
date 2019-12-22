@@ -66,7 +66,7 @@ class Jisupailie3Controller extends Controller
         }
 
         $oJisupailie3->vBetOrderBuild();
-        
+
         $oJisupailie3->vBet();
 
         return array("status"=>true,"message"=>"投注成功");

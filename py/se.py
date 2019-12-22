@@ -21,7 +21,7 @@ sFetchCodeUrl = "https://www.1395p.com/shssl/?utp=topbar"
 oDriver = webdriver.Firefox()
 
 oDriver.get(sFetchCodeUrl)
-time.sleep(10)
+# time.sleep(10)
 oSoup = BeautifulSoup(oDriver.page_source, "html.parser")
 oCodes = oSoup.find("div", {"class": "awarding_tips number_redAndBlue"})
 aCodeList = []
