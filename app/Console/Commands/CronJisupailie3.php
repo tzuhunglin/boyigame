@@ -53,8 +53,8 @@ class CronJisupailie3 extends Command
         // echo "<pre>"; print_r($oDrawingIssueInfoPushData);exit;
         event(new PushIssueInfoJisupailie3($oDrawingIssueInfoPushData));
 
-        sleep(240);
-        exec('python /Users/tzlin/Desktop/boyigame/py/se.py');
+        // sleep(240);
+        exec('python /var/www/html/boyigame/py/se.py');
         sleep(20);
 
         $oIssueInfoPushData = IssueInfoPushData::oGetLatestIssueInfoPushData(self::$sLottery,false);

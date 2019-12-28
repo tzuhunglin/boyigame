@@ -18,7 +18,7 @@ sFetchCodeUrl = "https://www.1395p.com/shssl/?utp=topbar"
 # oDriver = webdriver.Firefox(executable_path=sExcutablePath)
 
 
-oDriver = webdriver.Firefox()
+oDriver = webdriver.Chrome()
 
 oDriver.get(sFetchCodeUrl)
 # time.sleep(10)
@@ -54,8 +54,8 @@ sSql = "INSERT INTO issueinfo (`datetime`,`issue`,`code`,`lottery`,`updatetime`)
 hostname = '127.0.0.1'
 username = 'root'
 password = 'root'
-database = "notification"
-port = "8889"
+database = "boyigame"
+port = "3306"
 
 
 
