@@ -458,7 +458,7 @@ function vSetCountDownClocker()
 
 function iGetRestMinute()
 {
-	var sCurrentDateTime = new Date(); 
+	var sCurrentDateTime = new Date();
 	var iRestMinute = 0;
 	var sToadyStartTime = sCurrentDateTime.getFullYear()+"-"+(sCurrentDateTime.getMonth()+1)+"-"+sCurrentDateTime.getDate()+" 10:30:00";
 	var sToadyEndTime = sCurrentDateTime.getFullYear()+"-"+(sCurrentDateTime.getMonth()+1)+"-"+sCurrentDateTime.getDate()+" 21:30:00";
@@ -485,13 +485,13 @@ function iGetRestMinute()
 
 function iSecondToMinute(iTimeStamp)
 {
-	return Math.floor(iTimeStamp / 60 / 1000);
+	return Math.round(iTimeStamp / 60 / 1000);
 }
 
 
 function iGetCountDownSecond()
 {
-	var sCurrentDateTime = new Date(); 
+	var sCurrentDateTime = new Date();
 	return sFillZero(60 - sCurrentDateTime.getSeconds());
 }
 
@@ -639,8 +639,6 @@ function vBetAmountCaculate()
 	console.log('iBetAmount:'+iBetAmount);
 	$('#betamount').html(iBetAmount);
 	$('#sumamount').html(iBetAmount * 2 * $('#multiple').val());
-
-
 }
 
 function iYiMaBuDingDanBetAmountCaculate()
@@ -765,7 +763,6 @@ function vGameTypeOnChange(oElement)
 	vSetBetAreaRefresh();
 	sGameTypeName = $(oElement).attr('id');
 	vSetGameTypeCodeShow(sGameTypeName);
-
 }
 
 function vSetBetAreaRefresh()

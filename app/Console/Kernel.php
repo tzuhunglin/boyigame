@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      *
      * @var array
      */
-    protected $commands = [ 
+    protected $commands = [
         // Commands\Inspire::class,
         Commands\CronJisupailie3::class
     ];
@@ -30,7 +30,11 @@ class Kernel extends ConsoleKernel
         //          ->hourly();
 
         // $schedule->command('cronjisupailie3')->everyThirtyMinutes();
-        $schedule->command('cronjisupailie3')->everyMinute();
-        // $schedule->command('cronjisupailie3')->cron("30 10-22 * * *");
+        // $schedule->command('cronjisupailie3')->everyMinute();
+        // $schedule->command('cronjisupailie3')->cron("* * * * *");
+
+        $schedule->command('cronjisupailie3')->cron("30 10-22 * * *");
+        $schedule->command('cronjisupailie3')->cron("0 10-22 * * *");
+
     }
 }

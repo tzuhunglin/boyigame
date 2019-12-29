@@ -3,6 +3,7 @@ namespace App\Models\Product\Lottery;
 
 use App\Models\Product\Lottery\IssueInfo;
 use Cache;
+use Redis;
 use App\Models\Product\Lottery\Threed\Jisupailie3;
 
 
@@ -12,7 +13,7 @@ class IssueInfoPushData
 	public $sDateTime;
 	public $sIssue;
 	public $sCode;
-	public $aCode;	
+	public $aCode;
 	public $sGameType;
 	public $sUpdateTime;
 
@@ -44,22 +45,24 @@ class IssueInfoPushData
 	private static function oGetLatestIssueInfoPushDataFromDB($sLottery)
 	{
 		$oIssueInfo = IssueInfo::where('lottery',$sLottery)->orderBy('datetime', 'desc')->first();
+        Redis::set('jisupailie3', json_encode($oIssueInfo));
 		return new self($oIssueInfo);
-	} 
+	}
 
 	private static function oGetLatestIssueInfoPushDataFromCache($sLottery)
 	{
-		$sIssueInfo = Cache::get($sLottery);
+		// $sIssueInfo = Cache::get($sLottery);
+		$sIssueInfo = Redis::get($sLottery);
 		if(empty($sIssueInfo))
 		{
 			return null;
 		}
 		return json_decode($sIssueInfo);
-	} 
+	}
 
 	public static function oGetDrawingIssueInfoPushData($sLottery)
 	{
-		$oDrawingIssueInfoPushData = self::oGetLatestIssueInfoPushData($sLottery, $bCache = true);		
+		$oDrawingIssueInfoPushData = self::oGetLatestIssueInfoPushData($sLottery, $bCache = true);
 		$oDrawingIssueInfoPushData->aCode = array("開","獎","中");
 		$oDrawingIssueInfoPushData->sCode = json_encode($oDrawingIssueInfoPushData->aCode);
 		$oDrawingIssueInfoPushData->sIssue = Jisupailie3::sGetLastDrawnIssue();

@@ -8,6 +8,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product\Lottery\Threed\Jisupailie3;
 use Cache;
+use Redis;
 use App\Models\Product\Lottery\IssueInfoPushData;
 use App\Models\Product\Lottery\LotteryBet;
 
@@ -30,6 +31,9 @@ class Jisupailie3Controller extends Controller
      */
     public function index()
     {
+        // Redis::set('name', 'Taylor');
+        // $user = Redis::get('name');
+        // echo "<pre>"; print_r($user );exit;
         $oJisupailie3 = IssueInfoPushData::oGetLatestIssueInfoPushData('jisupailie3');
         $oUser = Auth::user();
         return view('product.lottery.threed.jisupailie3.index',[

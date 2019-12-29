@@ -9,11 +9,11 @@ do
 	{
 		// echo "<pre>"; print_r(date("H:i"));exit;
 
-		if(date("i")=="30"||date("i")=="00")
+		if(date("i")=="34"||date("i")=="04")
 		{
 			echo "<pre>"; print_r(date("H:i"));
-	        exec('php /Users/tzlin/Desktop/boyigame/artisan schedule:run');
-	        // exec('python /Users/tzlin/Desktop/boyigame/py/se.py');
+	        // exec('php /Users/tzlin/Desktop/boyigame/artisan schedule:run');
+	        exec('python /var/www/html/boyigame/py/se.py');
 
 			sleep(60);
 		}

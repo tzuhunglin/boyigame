@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use App\Models\Product\Lottery\IssueInfoPushData;
 use Cache;
+use Redis;
 use App\Events\PushIssueInfoJisupailie3;
 use App\Events\Event;
 
@@ -49,17 +50,21 @@ class CronJisupailie3 extends Command
             return ;
         }
         $oDrawingIssueInfoPushData = IssueInfoPushData::oGetDrawingIssueInfoPushData(self::$sLottery);
-        Cache::put('jisupailie3',json_encode($oDrawingIssueInfoPushData),1000);
+        Redis::set('jisupailie3', json_encode($oDrawingIssueInfoPushData));
+
+        // Cache::put('jisupailie3',json_encode($oDrawingIssueInfoPushData),1000);
         // echo "<pre>"; print_r($oDrawingIssueInfoPushData);exit;
         event(new PushIssueInfoJisupailie3($oDrawingIssueInfoPushData));
 
-        // sleep(240);
-        exec('python /var/www/html/boyigame/py/se.py');
-        sleep(20);
+        sleep(300);
+        // exec('python /var/www/html/boyigame/py/se.py');
+        // sleep(20);
 
         $oIssueInfoPushData = IssueInfoPushData::oGetLatestIssueInfoPushData(self::$sLottery,false);
 
-        Cache::put('jisupailie3',json_encode($oIssueInfoPushData),1000);
+        // Cache::put('jisupailie3',json_encode($oIssueInfoPushData),1000);
+        Redis::set('jisupailie3', json_encode($oIssueInfoPushData));
+        
         event(new PushIssueInfoJisupailie3($oIssueInfoPushData));
 
         $oIssueInfo = IssueInfo::oGetCurrentIssueForAward(self::$sLottery);
