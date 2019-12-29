@@ -35,6 +35,7 @@ class Jisupailie3Controller extends Controller
         // $user = Redis::get('name');
         // echo "<pre>"; print_r($user );exit;
         $oJisupailie3 = IssueInfoPushData::oGetLatestIssueInfoPushData('jisupailie3');
+        // echo "<pre>"; print_r($oJisupailie3);exit;
         $oUser = Auth::user();
         return view('product.lottery.threed.jisupailie3.index',[
                     'oUser' => $oUser,

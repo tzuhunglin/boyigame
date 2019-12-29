@@ -45,13 +45,13 @@ class IssueInfoPushData
 	private static function oGetLatestIssueInfoPushDataFromDB($sLottery)
 	{
 		$oIssueInfo = IssueInfo::where('lottery',$sLottery)->orderBy('datetime', 'desc')->first();
-        Redis::set('jisupailie3', json_encode($oIssueInfo));
-		return new self($oIssueInfo);
+        $oIssueInfoPushData = new self($oIssueInfo);
+        Redis::set('jisupailie3', json_encode($oIssueInfoPushData));
+		return $oIssueInfoPushData;
 	}
 
 	private static function oGetLatestIssueInfoPushDataFromCache($sLottery)
 	{
-		// $sIssueInfo = Cache::get($sLottery);
 		$sIssueInfo = Redis::get($sLottery);
 		if(empty($sIssueInfo))
 		{
