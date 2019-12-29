@@ -8,7 +8,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product\Lottery\Threed\Jisupailie3;
 use Cache;
-use Redis;
+use Illuminate\Support\Facades\Redis;
 use App\Models\Product\Lottery\IssueInfoPushData;
 use App\Models\Product\Lottery\LotteryBet;
 

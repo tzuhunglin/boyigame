@@ -3,7 +3,7 @@ namespace App\Models\Product\Lottery;
 
 use App\Models\Product\Lottery\IssueInfo;
 use Cache;
-use Redis;
+use Illuminate\Support\Facades\Redis;
 use App\Models\Product\Lottery\Threed\Jisupailie3;
 
 

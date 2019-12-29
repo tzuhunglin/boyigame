@@ -22,7 +22,7 @@
 			</div>
 
 			<div>
-				<a href="">
+				<a href="{{App\Libraries\Product\Card\Poke\BlackjackLib::sGetIndexLink()}}">
 					<div class="box">
 						<div class="image fit">
 							<img src="{{ asset('images/blackjack.jpg') }}" alt="" />

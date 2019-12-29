@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use App\Models\Product\Lottery\IssueInfoPushData;
 use Cache;
-use Redis;
+use Illuminate\Support\Facades\Redis;
 use App\Events\PushIssueInfoJisupailie3;
 use App\Events\Event;
 

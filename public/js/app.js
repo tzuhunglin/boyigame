@@ -8909,7 +8909,9 @@ var io = require('socket.io-client');
 //   console.log(message);
 // });
 
-var issueInfoJisupailie3 = io.connect('http://localhost:3000');
+// var issueInfoJisupailie3 = io.connect('http://localhost:3000');
+var issueInfoJisupailie3 = io.connect('dwww.boyigame.local:3000');
+
 
 issueInfoJisupailie3.on('issueInfoJisupailie3', function (oIssueInfo) {
   console.log(oIssueInfo);
@@ -8918,7 +8920,7 @@ issueInfoJisupailie3.on('issueInfoJisupailie3', function (oIssueInfo) {
 
 function setIssueInfo(oIssueInfo)
 {
-  for (var i = 0; i < oIssueInfo.aCode.length; i++) 
+  for (var i = 0; i < oIssueInfo.aCode.length; i++)
   {
     $("#code"+i).text(oIssueInfo.aCode[i]);
   }
