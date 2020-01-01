@@ -20,7 +20,7 @@ class Jisupailie3 extends Product
     public $iTotalBetMoney = 0;
 
 
-    
+
     function __construct($aData, User $oUser)
     {
         $this->sType = $aData['gametype'];

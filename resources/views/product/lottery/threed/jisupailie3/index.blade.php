@@ -388,6 +388,7 @@
 </section>
 @endsection
 @section('scripts')
+<script src="{{ asset('js/jisupailie3.js') }}" defer></script>
 <script type="text/javascript">
 
 
