@@ -168,9 +168,6 @@ function bCheckIfUserGameOver(oGameData)
 {
   var bGameOver = true;
   var iUserPos = oGameData.aUserIds.indexOf(oGameData.iTurn);
-  console.log(oGameData.iTurn);
-  console.log(iUserPos);
-
   var aPoints = oGameData.aUserList[iUserPos].aPoints[0];
 
   if(aPoints.length==5)
