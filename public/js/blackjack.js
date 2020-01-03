@@ -8901,13 +8901,12 @@ module.exports = yeast;
 var oSocketIoClient = require('socket.io-client');
 var oIoConnection = oSocketIoClient.connect('dwww.boyigame.local:3000');
 var sChannel = "gameDataBlackjack";
-// 當連接到 socket.io server 時觸發 set-token 設定使用者的 room
+
 oIoConnection.on('connect', function() {
   oIoConnection.emit('set-token', Notification.TOKEN);
 });
 
 oIoConnection.on(sChannel, function(oGameData) {
-  // alert('iUserPos');
   console.log(oGameData);
   vSetTable(oGameData);
   vStatusController(oGameData);
@@ -8935,7 +8934,16 @@ function vStatusController(oGameData)
     case 3:
       vStatusPlaying(oGameData);
       break;
+    case 4:
+      vStatusFinished(oGameData);
+      break;
   }
+}
+
+function vStatusFinished(oGameData)
+{
+  vSetGameCards(oGameData);
+  $(".controlarea").empty();
 }
 
 function vStatusDealing(oGameData)
@@ -8960,32 +8968,12 @@ function vStatusPlaying(oGameData)
       vSetChoice(this);
     });
   }
-
-  // var iUserPos = oGameData.aUserIds.indexOf(iUserId);
-  // var bUserPlayingCheck = bUserPlayingCheck(oUserData);
-  // if(bUserPlayingCheck==false)
-  // {
-  //   return;
-  // }
 }
 
 function vSetChoice(oElement)
 {
-  // console.log(oElement);
-  // alert();
     vEmitDataToServer({"sHashKey":sHashKey, "iStatus":3,"iUserId":iUserId,"iValue":$(oElement).attr("value")});
 }
-
-// function bUserPlayingCheck(oUserData)
-// {
-//   if(oUserData.aCards.length > 4)
-//   {
-//     return false
-//   }
-
-
-
-// }
 
 function vSetGameCards(oGameData)
 {
@@ -9010,21 +8998,10 @@ function vSetBankerCards(oGameData)
 {
   var sTagId = "#banker";
   for (var j = 0; j < oGameData.aBankerCards.length; j++) {
-      console.log();
       var oElement = $(sTagId).find(".cardarea").children()[j];
       $(oElement).text(sGetCard(oGameData.aBankerCards[j]));
     }
-
-    if(oGameData.aBankerPoints.lenght>1)
-    {
-      var sPoints = oGameData.aBankerPoints.join("/");
-    }
-    else
-    {
-      var sPoints = oGameData.aBankerPoints[0];
-
-    }
-    $(sTagId).find(".pointarea").text(sPoints+"點");
+    $(sTagId).find(".pointarea").text(sGetShowPoints(oGameData.aBankerPoints)+"點");
 }
 
 function vSetUserCards(oUserData)
@@ -9041,26 +9018,47 @@ function vSetPlayerCards(oUserData,iPosition)
 
 function vSetCards(sTagId,oUserData)
 {
-  // console.log($(sTagId).find(".cardarea").children()[0]);
   var aCards = oUserData.aCards;
   for (var i = 0; i < aCards.length; i++) {
     for (var j = 0; j < aCards[i].length; j++) {
       var oElement = $(sTagId).find(".cardarea").children()[j];
       $(oElement).text(sGetCard(aCards[i][j]));
     }
+    $(sTagId).find(".pointarea").text(sGetShowPoints(oUserData.aPoints[0])+"點");
+  }
+}
 
-    if(oUserData.aPoints.lenght>1)
+function sGetShowPoints(aPoints)
+{
+    if(aPoints.length>1)
     {
-      var sPoints = oUserData.aPoints.join("/");
+      if(aPoints[0]<21 && aPoints[1]<21)
+      {
+        var sPoints = aPoints.join("/");
+      }
+      else if(aPoints[0]==21)
+      {
+        var sPoints = aPoints[0];
+      }
+      else if(aPoints[1]==21)
+      {
+        var sPoints = aPoints[1];
+      }
+      else if(aPoints[0]<22 && aPoints[1]>21)
+      {
+        var sPoints = aPoints[0];
+      }
+      else
+      {
+        var sPoints = aPoints[0];
+      }
     }
     else
     {
-      var sPoints = oUserData.aPoints[0];
-
+      var sPoints = aPoints[0];
     }
-    $(sTagId).find(".pointarea").text(sPoints+"點");
-  }
 
+    return sPoints
 }
 
 function vSetPosition(sTagId,oUserData)
@@ -9112,10 +9110,8 @@ function vStatusBetting(oGameData)
 function vBet()
 {
   var iBetAmount = $("#betamount").val();
-  // alert(iBetAmount);
   vEmitDataToServer({"sHashKey":sHashKey, "iBetAmount":iBetAmount,"iUserId":iUserId,"iStatus":2});
   $(".controlarea").empty();
-
 }
 
 function vSetMessage(sMessage)

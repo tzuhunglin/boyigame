@@ -134,13 +134,18 @@ function vSetStatusPlaying(oData)
         oGameData = oGetNewCardGameData(oGameData);
       }
 
-      if(bCheckIfUserGameOver(oGameData)==true && oGameData.bFinish==undefined)
+      if(bCheckIfUserGameOver(oGameData)==true)
       {
         oGameData = oGetNextTurnGameData(oGameData);
       }
+      if(oGameData.iStatus==4)
+      {
+        oGameData.iTurn = 0;
+          }
 
-      var sGameData = JSON.stringify(oGameData);
-      client.set(oData.sHashKey, sGameData, redis.print);
+        console.log(oGameData);
+        var sGameData = JSON.stringify(oGameData);
+            client.set(oData.sHashKey, sGameData, redis.print);
 
       if(oGameData!=null)
       {
@@ -166,16 +171,28 @@ function oGetNewCardGameData(oGameData)
 
 function bCheckIfUserGameOver(oGameData)
 {
-  var bGameOver = true;
   var iUserPos = oGameData.aUserIds.indexOf(oGameData.iTurn);
-  var aPoints = oGameData.aUserList[iUserPos].aPoints[0];
-
-  if(aPoints.length==5)
+  if(oGameData.iTurn == -1 || oGameData.aUserList[iUserPos] == undefined)
   {
-    return false;
+    return true;
+  }
+  var bGameOver = true;
+  var aPoints = oGameData.aUserList[iUserPos].aPoints[0];
+  var aCards = oGameData.aUserList[iUserPos].aCards[0];
+
+
+  if(aCards.length==5)
+  {
+    return true;
   }
 
+
+
   for (var i = 0; i < aPoints.length; i++) {
+    if(parseInt(aPoints[i])==21)
+    {
+      return true;
+    }
     if(parseInt(aPoints[i])<21)
     {
       bGameOver = false;
@@ -193,7 +210,7 @@ function oGetNextTurnGameData(oGameData)
         {
       pointloop:
           for (var j = 0; j < oGameData.aUserList[i].aPoints[0].length; j++) {
-            if(oGameData.aUserList[i].aPoints[0][j]<22)
+            if(oGameData.aUserList[i].aPoints[0][j]<21)
             {
               break userloop;
             }
@@ -212,10 +229,111 @@ function oGetNextTurnGameData(oGameData)
   return oGameData;
 }
 
+
 function oGetFinishedGameData(oGameData)
 {
-  console.log("game over");
+
+  var iWinnerPoint = iGetWinnerPoint(oGameData)
+  console.log("iWinnerPoint:"+iWinnerPoint);
+
+  var bCompleteCheck = false;
+  while(true)
+  {
+    bCompleteCheck = bBankerCardsCompleteCheck(oGameData,iWinnerPoint);
+    if(bCompleteCheck==true)
+    {
+      break;
+    }
+
+    oGameData = oGetBankerCardsGameData(oGameData);
+  }
+  oGameData.iStatus = 4;
+  oGameData.iTurn = null;
+
+  return oGameData;
 }
+
+function bBankerCardsCompleteCheck(oGameData, iWinnerPoint)
+{
+  if(oGameData.aBankerCards.length==5)
+  {
+    return true
+  }
+
+  if(oGameData.aBankerPoints[1] == undefined)
+  {
+
+    if(oGameData.aBankerPoints[0]>iWinnerPoint && oGameData.aBankerPoints[0]>17)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+
+  }
+  else
+  {
+    for (var i = 0; i < oGameData.aBankerPoints.length; i++) 
+    {
+      if(oGameData.aBankerPoints[i]>17 && oGameData.aBankerPoints[i] > iWinnerPoint && oGameData.aBankerPoints[i]<22)
+      {
+        return true;
+      }
+    }
+
+    if(oGameData.aBankerPoints[0]>21 && oGameData.aBankerPoints[1] >21)
+    {
+      return true;
+    }
+
+    return false;
+  }
+}
+
+function oGetBankerCardsGameData(oGameData)
+{
+  if(oGameData.aBankerCards.length==5)
+  {
+    return oGameData;
+  }
+
+        var iNumber = iGetUniqueNumber(oGameData.aAllCards);
+        oGameData.aBankerCards.push(iNumber);
+        oGameData.aBankerPoints = aGetCardPoints(oGameData.aBankerCards);
+        oGameData.aAllCards.push(iNumber);
+        return oGameData
+}
+
+function iGetWinnerPoint(oGameData)
+{
+  var aUserPoints = [];
+  for (var i = 0; i < oGameData.aUserIds.length; i++)
+  {
+    for (var j = 0; j < 2; j++) {
+      if(oGameData.aUserList[i].aPoints[0][j]!=undefined)
+      {
+        aUserPoints.push(oGameData.aUserList[i].aPoints[0][j]);
+      }
+    }
+  }
+  console.log(aUserPoints);
+
+  aUserPoints.sort();
+  var iWinnerPoint = 0;
+  for (var i = aUserPoints.length - 1; i >= 0; i--)
+  {
+    if(aUserPoints[i]<22)
+    {
+      iWinnerPoint = aUserPoints[i];
+      break;
+    }
+  }
+  return iWinnerPoint;
+}
+
+
 
 function vSetStatusDealing(oData)
 {
@@ -249,6 +367,10 @@ function vSetStatusDealing(oData)
           if(oGameData.aUserList[i].aPoints!=null)
           {
             for (var j = 0; j < oGameData.aUserList[i].aPoints[0].length; j++) {
+              if(oGameData.aUserList[i].aPoints[0][j]!=21)
+              {
+                continue userloop;
+              }
               if(oGameData.aUserList[i].aPoints[0][j]!=21)
               {
                 break userloop;
