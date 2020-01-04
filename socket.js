@@ -112,6 +112,15 @@ function vStatusController(oData)
   }
 }
 
+function oGetDoubleBetGameData(oGameData)
+{
+  oGameData = oGetNewCardGameData(oGameData);
+  var iUserPos = oGameData.aUserIds.indexOf(oGameData.iTurn);
+  oGameData.aUserList[iUserPos].iDouble = 3;
+  oGameData = oGetNextTurnGameData(oGameData);
+  return oGameData;
+}
+
 function vSetStatusPlaying(oData)
 {
     client.get(oData.sHashKey, (error, result) => {
@@ -132,6 +141,10 @@ function vSetStatusPlaying(oData)
       else if(oData.iValue==1)
       {
         oGameData = oGetNewCardGameData(oGameData);
+      }
+      else if(oData.iValue==2)
+      {
+        oGameData = oGetDoubleBetGameData(oGameData);
       }
 
       if(bCheckIfUserGameOver(oGameData)==true)
@@ -165,7 +178,7 @@ function oGetNewCardGameData(oGameData)
     oGameData.aUserList[iUserPos].aCards[0].push(iNumber);
     oGameData.aAllCards.push(iNumber);
     oGameData = oGetPointCaculatedGameData(oGameData);
-    // console.log(oGameData);
+    oGameData.aUserList[iUserPos].iDouble = 2;
     return oGameData;
 }
 
@@ -185,8 +198,6 @@ function bCheckIfUserGameOver(oGameData)
   {
     return true;
   }
-
-
 
   for (var i = 0; i < aPoints.length; i++) {
     if(parseInt(aPoints[i])==21)
@@ -247,10 +258,87 @@ function oGetFinishedGameData(oGameData)
 
     oGameData = oGetBankerCardsGameData(oGameData);
   }
-  oGameData.iStatus = 4;
-  oGameData.iTurn = null;
+
+  oGameData = oGetWinLoseSettleGameData(oGameData);
+
 
   return oGameData;
+}
+
+function oGetWinLoseSettleGameData(oGameData)
+{
+  var iBankerPriorPoint = iGetPriorPoint(oGameData.aBankerPoints);
+  for (var i = 0; i < oGameData.aUserList.length; i++)
+  {
+    var iUserPriorPoint = iGetPriorPoint(oGameData.aUserList[i].aPoints[0]);
+    oGameData.aUserList[i].iWinLose = iBankerUserCompare(iBankerPriorPoint,iUserPriorPoint);
+  }
+
+  oGameData.iStatus = 4;
+  oGameData.iTurn = null;
+  return oGameData;
+}
+
+function iBankerUserCompare(iBankerPoint,iUserPoint)
+{
+  console.log(iBankerPoint);
+  console.log(iUserPoint);
+
+  var iWinLose;
+  if(iBankerPoint>21)
+  {
+    if(iUserPoint>21)
+    {
+      iWinLose = 1;
+    }
+    else
+    {
+      iWinLose = 2;
+    }
+  }
+  else
+  {
+    if(iUserPoint>22)
+    {
+      iWinLose = 0;
+    }
+    else
+    {
+      if(iBankerPoint > iUserPoint)
+      {
+        iWinLose = 0;
+      }
+      else if(iBankerPoint < iUserPoint)
+      {
+        iWinLose = 2;
+      }
+      else
+      {
+        iWinLose = 1;
+      }
+    }
+  }
+
+  return iWinLose;
+}
+
+function iGetPriorPoint(aPoints)
+{
+  if(aPoints[1]==undefined)
+  {
+    return aPoints[0];
+  }
+  else
+  {
+    if(aPoints[1]<22)
+    {
+      return aPoints[1];
+    }
+    else
+    {
+      return aPoints[0];
+    }
+  }
 }
 
 function bBankerCardsCompleteCheck(oGameData, iWinnerPoint)
@@ -344,7 +432,6 @@ function vSetStatusDealing(oData)
       throw error;
     }
       var oGameData = JSON.parse(result);
-      // oGameData.iStatus = oData.iStatus;
       var iUserPos = oGameData.aUserIds.indexOf(oData.iUserId);
       oGameData.aUserList[iUserPos].iBetAmount = oData.iBetAmount;
 
@@ -353,7 +440,6 @@ function vSetStatusDealing(oData)
 
       if(bBetComplete==true && bDealComplete==false)
       {
-        // console.log("VVVVVV");
         oGameData = oGetCardDeltGameData(oGameData);
         oGameData.iStatus = oData.iStatus;
       }
@@ -460,12 +546,15 @@ function aGetCardPoints(aCards)
   var aCardPoints = [];
   for (var i = 0; i < aCards.length; i++) {
     var iCardNumber = aCards[i]%13;
-    bAceExist = (iCardNumber==1)?true:false
+    if(iCardNumber==1)
+    {
+      bAceExist = true;
+    }
     var iPoint = (iCardNumber>10||iCardNumber==0)?10:iCardNumber;
     iTotalPoints+= iPoint;
   }
 
-  if(bAceExist==true)
+  if(bAceExist!=false)
   {
     aCardPoints = [iTotalPoints,iTotalPoints+10];
   }
@@ -476,6 +565,8 @@ function aGetCardPoints(aCards)
 
   return aCardPoints;
 }
+
+
 
 function oGetCardDeltGameData(oGameData)
 {
@@ -492,9 +583,9 @@ function oGetCardDeltGameData(oGameData)
         oGameData.aUserList[i].aCards[0].push(iNumber);
         oGameData.aAllCards.push(iNumber);
       }
+      var bDoubleBetChanceCheck = bGetDoubleBetChanceCheck(oGameData.aUserList[i].aCards[0]);
+        oGameData.aUserList[i].iDouble = (bDoubleBetChanceCheck)?1:0;
     }
-    // console.log("VVVVVVV");
-
   }
   if(oGameData.aBankerCards == undefined )
   {
@@ -508,9 +599,19 @@ function oGetCardDeltGameData(oGameData)
   }
 
   oGameData = oGetPointCaculatedGameData(oGameData);
+  // var aAceCodes = [1,14,27,40];
+  // if(aAceCodes.indexOf(oGameData.aBankerPoints[0][0])!=-1)
+  // {
+  //   oGameData.iStatus = 99;
+  // }
   return oGameData;
 }
 
+function bGetDoubleBetChanceCheck(aCards)
+{
+    aCardPoints = aGetCardPoints(aCards);
+    return (aCardPoints.indexOf(11)!=-1);
+}
 
 function iGetUniqueNumber(aAllCards)
 {
@@ -565,75 +666,6 @@ function vSetStatusBetting(oData)
   });
 
 }
-
-
-
-
-
-// function oGetGameData(sHashKey)
-// {
-//     var oGameData = null;
-//     var aKeyList = [
-//                     "blackjack_waitinggamelist",
-//                     // "blackjack_goinggamelist"
-//                     ];
-//     for (var i = 0; i < aKeyList.length; i++) {    
-//       oGameData =client.get(aKeyList[i], (error, result) => {
-//         if (error) {
-//           console.log(error);
-//           throw error;
-//         }
-//         // console.log('GET result ->' + typeof result);
-//         if(result==null)
-//         {
-//           return;
-//         }
-
-//         var oGameList = JSON.parse(result);
-
-//         if(oGameList[sHashKey]!=undefined)
-//         {
-
-//           oGameData = oGameList[sHashKey];
-//           return oGameData;
-
-
-//         }
-//       });
-//       //     console.log(oGameData);
-
-//       // if(oGameData!=null)
-//       // {
-//       //   console.log(oGameData);
-//       //   break;
-//       // }
-//     }
-
-//     return oGameData;
-
-// }
-
-
-
-
-// redis.on('gameDataBlackjack', function(notification) {
-  // if(channel=='gameDataBlackjack')
-  // {
-    // console.log(channel);
-    // console.log(notification);
-
-
-    // notification = JSON.parse(notification);
-    // console.log(notification.data);
-
-    // // 使用 to() 指定傳送的 room，也就是傳遞給指定的使用者
-    // io.to('token:' + notification.data.token).emit(
-    //   'gameDataBlackjack',
-    //   notification.data.oGameData
-    // );
-  // }
-
-// });
 
 
 // 監聽 3000 port

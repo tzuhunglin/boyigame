@@ -15,6 +15,10 @@
 	float:left;
 	text-align: center;
 }
+.namearea
+{
+	font-size: 30px;
+}
 </style>
 <section id="one" class="wrapper style2">
 	<div class="inner">
@@ -47,6 +51,7 @@
 										<div class="namearea">palyer1</div>
 										<div class="moneyarea">餘額:<span class="money"></span></div>
 										<div class="betarea">下注金額:<span class="bet"></span></div>
+										<div class="winlosearea" style="font-size: 50px;"></div>
 									</div>
 									<div style="width:68%;height:200px;float:left">
 										<div class="cardarea" style="height:60%;width:100%;" >
@@ -75,6 +80,7 @@
 										<div class="namearea" style="float: right;clear:both">palyer2</div>
 										<div class="moneyarea" style="float: right;clear:both">餘額:<span class="money"></span></div>
 										<div class="betarea" style="float: right;clear:both">下注金額:<span class="bet"></span></div>
+										<div class="winlosearea" style="font-size: 50px;float: right;clear:both"></div>
 									</div>
 								</td>
 							</tr>
@@ -84,6 +90,8 @@
 										<div class="namearea">user</div>
 										<div class="moneyarea">餘額:<span class="money"></span></div>
 										<div class="betarea">下注金額:<span class="bet"></span></div>
+										<div class="winlosearea" style="font-size: 50px;"></div>
+
 
 									</div>
 									<div style="width:33%;height:200px;float:left">

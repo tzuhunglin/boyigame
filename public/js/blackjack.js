@@ -8937,9 +8937,44 @@ function vStatusController(oGameData)
     case 4:
       vStatusFinished(oGameData);
       break;
+    // case 99:
+    //   vStatusInsurance(oGameData);
+    //   break;
   }
 }
 
+// function vStatusInsurance(oGameData)
+// {
+//   var sMessage = "保險";
+//   vSetMessage(sMessage);
+//   var iUserPos = oGameData.aUserIds.indexOf(iUserId);
+
+//   if(oGameData.aUserList[iUserPos].iInsurance==0 && $("#buyinsurance").length==0)
+//   {
+//     var sHtml = '<table>'+
+//                   '<tr>'+
+//                     '<td>'+
+//                       '<button class="buyinsurance" value="3">買</button>'+
+//                     '</td>'+
+//                   '</tr>'+
+//                   '<tr>'+
+//                     '<td>'+
+//                       '<button class="buyinsurance" value="2">不買</button>'+
+//                     '</td>'+
+//                   '</tr>'+
+//                 '</table>';
+//     $(".controlarea").append(sHtml);
+//     $('body').on("click", '.buyinsurance', function () {
+//       vBuyInsurance(this);
+//     });
+//   }
+// }
+function vBuyInsurance(oElement)
+{
+  var iInsurance = $(oElement).val();
+  vEmitDataToServer({"sHashKey":sHashKey, "iInsurance":iInsurance,"iUserId":iUserId,"iStatus":2});
+  $(".controlarea").empty();
+}
 function vStatusFinished(oGameData)
 {
   vSetGameCards(oGameData);
@@ -8954,20 +8989,51 @@ function vStatusDealing(oGameData)
 
 function vStatusPlaying(oGameData)
 {
+  $(".controlarea").empty();
+
   if(oGameData.iTurn!=iUserId)
   {
     $(".controlarea").empty();
     return ;
   }
+  var iUserPos = oGameData.aUserIds.indexOf(oGameData.iTurn);
+  var sDoubleBetButton = "";
+  // alert(oGameData.aUserList[iUserPos].iDouble);
+  if(oGameData.aUserList[iUserPos].iDouble === 1)
+  {
+    sDoubleBetButton = '<tr>'+
+                          '<td>'+
+                            '<button class="choice" value="2">雙倍</button>'+
+                          '</td>'+
+                        '</tr>';
+  }
 
-  if($(".choice").length==0){
-    var sHtml = '<table><tr><td><button class="choice" value="1">要牌</button></td></tr><tr><td><button class="choice" value="0">停牌</button></td></tr></table>';
+  // if($(".choice").length==0){
+    var sHtml = '<table>'+
+                  '<tr>'+
+                    '<td>'+
+                      '<button class="choice" value="1">要牌</button>'+
+                    '</td>'+
+                  '</tr>'+
+                  '<tr>'+
+                    '<td>'+
+                      '<button class="choice" value="0">停牌</button>'+
+                    '</td>'+
+                  '</tr>'+
+                  sDoubleBetButton+
+                '</table>';
     $(".controlarea").append(sHtml);
 
     $('body').on("click", '.choice', function () {
       vSetChoice(this);
     });
-  }
+  // }
+}
+
+function vSetPlayingUserColor(sTagId,bPlaying)
+{
+  var sColor = (bPlaying==false)?"#a6a6a6":"red";
+  $(sTagId).find(".namearea").css("color",sColor);
 }
 
 function vSetChoice(oElement)
@@ -8981,13 +9047,16 @@ function vSetGameCards(oGameData)
   var iPlayerPosition = 1;
   for (var i = 0; i < aUserList.length; i++)
   {
+    var bPlaying = (oGameData.iTurn == aUserList[i].iUserId)?true:false;
     if(aUserList[i].iUserId == iUserId)
     {
       vSetUserCards(aUserList[i]);
+      vSetPlayingUserColor("#user",bPlaying);
     }
     else
     {
       vSetPlayerCards(aUserList[i],iPlayerPosition);
+      vSetPlayingUserColor("#player"+iPlayerPosition,bPlaying);
       iPlayerPosition++;
     }
   }
@@ -9026,6 +9095,28 @@ function vSetCards(sTagId,oUserData)
     }
     $(sTagId).find(".pointarea").text(sGetShowPoints(oUserData.aPoints[0])+"點");
   }
+  if(oUserData.iWinLose != undefined)
+  {
+    $(sTagId).find(".winlosearea").text(sGetUserWinLose(oUserData.iWinLose));
+  }
+}
+
+function sGetUserWinLose(iWinLose)
+{
+  var sWinLose;
+  switch(iWinLose)
+  {
+    case 0:
+      sWinLose = "輸";
+      break;
+    case 1:
+      sWinLose = "平";
+      break;
+    case 2:
+      sWinLose = "贏";
+      break;
+  }
+  return sWinLose;
 }
 
 function sGetShowPoints(aPoints)
@@ -9171,7 +9262,6 @@ function sGetCard(iCode)
 {
   var sSuit = sGetSuit(iCode);
   var sItem = sGetCardItem(iCode);
-  console.log(sSuit+sItem)
   return sSuit+sItem;
 }
 
