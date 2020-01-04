@@ -89,7 +89,7 @@ io.on('connection', function(socket) {
   });
 
   socket.on('gameDataBlackjack', function(oData) {
-    console.log(oData);
+    // console.log(oData);
 
     // var oGameData = oGetGameData(token)
     vStatusController(oData);
@@ -109,7 +109,54 @@ function vStatusController(oData)
     case 3:
       vSetStatusPlaying(oData);
       break;
+    case 99:
+      vSetStatusInsurance(oData);
+      break;
   }
+}
+
+function bInsuranceCompleteCheck(aUserList)
+{
+  var bInsuranceComplete = true;
+  for (var i = 0; i < aUserList.length; i++) {
+    if(aUserList[i].iInsurance==1 || aUserList[i].iInsurance==0)
+    {
+      bInsuranceComplete = false;
+      break;
+    }
+  }
+  return bInsuranceComplete;
+}
+
+function vSetStatusInsurance(oData)
+{
+  client.get(oData.sHashKey, (error, result) => {
+    if (error) {
+      console.log(error);
+      throw error;
+    }
+      var oGameData = JSON.parse(result);
+      var iUserPos = oGameData.aUserIds.indexOf(oData.iUserId);
+
+      oGameData.aUserList[iUserPos].iInsurance = oData.iInsurance;
+      var bInsuranceComplete = bInsuranceCompleteCheck(oGameData.aUserList);
+
+      if(bInsuranceComplete==true)
+      {
+        oGameData.iStatus = 3;
+      }
+
+      var sGameData = JSON.stringify(oGameData);
+      client.set(oData.sHashKey, sGameData, redis.print);
+
+      if(oGameData!=null)
+      {
+        io.to('token:' + oData.sHashKey).emit(
+          'gameDataBlackjack',
+          oGameData
+        );
+      }
+  });
 }
 
 function oGetDoubleBetGameData(oGameData)
@@ -149,14 +196,16 @@ function vSetStatusPlaying(oData)
 
       if(bCheckIfUserGameOver(oGameData)==true)
       {
+
         oGameData = oGetNextTurnGameData(oGameData);
       }
+
       if(oGameData.iStatus==4)
       {
         oGameData.iTurn = 0;
-          }
+      }
 
-        console.log(oGameData);
+        // console.log(oGameData);
         var sGameData = JSON.stringify(oGameData);
             client.set(oData.sHashKey, sGameData, redis.print);
 
@@ -245,7 +294,7 @@ function oGetFinishedGameData(oGameData)
 {
 
   var iWinnerPoint = iGetWinnerPoint(oGameData)
-  console.log("iWinnerPoint:"+iWinnerPoint);
+  // console.log("iWinnerPoint:"+iWinnerPoint);
 
   var bCompleteCheck = false;
   while(true)
@@ -281,8 +330,8 @@ function oGetWinLoseSettleGameData(oGameData)
 
 function iBankerUserCompare(iBankerPoint,iUserPoint)
 {
-  console.log(iBankerPoint);
-  console.log(iUserPoint);
+  // console.log(iBankerPoint);
+  // console.log(iUserPoint);
 
   var iWinLose;
   if(iBankerPoint>21)
@@ -350,6 +399,10 @@ function bBankerCardsCompleteCheck(oGameData, iWinnerPoint)
 
   if(oGameData.aBankerPoints[1] == undefined)
   {
+    if(oGameData.aBankerPoints[0]==21)
+    {
+      return true;
+    }
 
     if(oGameData.aBankerPoints[0]>iWinnerPoint && oGameData.aBankerPoints[0]>17)
     {
@@ -365,6 +418,11 @@ function bBankerCardsCompleteCheck(oGameData, iWinnerPoint)
   {
     for (var i = 0; i < oGameData.aBankerPoints.length; i++) 
     {
+      if(oGameData.aBankerPoints[i]==21)
+      {
+        return true;
+      }
+
       if(oGameData.aBankerPoints[i]>17 && oGameData.aBankerPoints[i] > iWinnerPoint && oGameData.aBankerPoints[i]<22)
       {
         return true;
@@ -406,7 +464,7 @@ function iGetWinnerPoint(oGameData)
       }
     }
   }
-  console.log(aUserPoints);
+  // console.log(aUserPoints);
 
   aUserPoints.sort();
   var iWinnerPoint = 0;
@@ -425,7 +483,7 @@ function iGetWinnerPoint(oGameData)
 
 function vSetStatusDealing(oData)
 {
-  console.log(oData);
+  // console.log(oData);
   client.get(oData.sHashKey, (error, result) => {
     if (error) {
       console.log(error);
@@ -441,7 +499,7 @@ function vSetStatusDealing(oData)
       if(bBetComplete==true && bDealComplete==false)
       {
         oGameData = oGetCardDeltGameData(oGameData);
-        oGameData.iStatus = oData.iStatus;
+        // oGameData.iStatus = oData.iStatus;
       }
 
       if(oGameData.iTurn==undefined)
@@ -497,13 +555,13 @@ function bBetCompleteCheck(oGameData)
 {
   var bBetComplete = true;
   for (var i = 0; i < oGameData.aUserList.length; i++) {
-    console.log(oGameData.aUserList[i].iBetAmount);
+    // console.log(oGameData.aUserList[i].iBetAmount);
     if(oGameData.aUserList[i].iBetAmount==0)
     {
       bBetComplete = false;
     }
   }
-    console.log(bBetComplete);
+    // console.log(bBetComplete);
 
   return bBetComplete;
 }
@@ -522,7 +580,6 @@ function bDealCompleteCheck(aUserList)
 
 function oGetPointCaculatedGameData(oGameData)
 {
-  // console.log("fdsfd");
   for (var i = 0; i < oGameData.aUserList.length; i++) {
     if(oGameData.aUserList[i].aPoints==undefined)
     {
@@ -540,7 +597,6 @@ function oGetPointCaculatedGameData(oGameData)
 
 function aGetCardPoints(aCards)
 {
-  // console.log(aCards);
   var bAceExist = false;
   var iTotalPoints = 0;
   var aCardPoints = [];
@@ -593,17 +649,32 @@ function oGetCardDeltGameData(oGameData)
     {
       oGameData.aBankerCards = [];
       var iNumber = iGetUniqueNumber(oGameData.aAllCards);
+      // var iNumber = 1;
       oGameData.aBankerCards.push(iNumber);
       oGameData.aAllCards.push(iNumber);
     }
   }
 
   oGameData = oGetPointCaculatedGameData(oGameData);
-  // var aAceCodes = [1,14,27,40];
+  var aAceCodes = [1,14,27,40];
   // if(aAceCodes.indexOf(oGameData.aBankerPoints[0][0])!=-1)
+  var bBankerAce = (aAceCodes.indexOf(parseInt(oGameData.aBankerCards[0]))!=-1);
+  // var bBankerAce = true;
+
+  // if(true)
   // {
-  //   oGameData.iStatus = 99;
+    oGameData.iStatus = 2;
   // }
+  // else
+  // {
+  //   oGameData.iStatus = 2;
+  // }
+
+  for (var i = 0; i < oGameData.aUserList.length; i++)
+  {
+    oGameData.aUserList[i].iInsurance = (bBankerAce == true)?1:0;
+  }
+
   return oGameData;
 }
 
@@ -611,6 +682,7 @@ function bGetDoubleBetChanceCheck(aCards)
 {
     aCardPoints = aGetCardPoints(aCards);
     return (aCardPoints.indexOf(11)!=-1);
+
 }
 
 function iGetUniqueNumber(aAllCards)
@@ -640,7 +712,6 @@ function vSetStatusBetting(oData)
       var aGameList = JSON.parse(result);
 
       var iIndex = aGameList.indexOf(oData.sHashKey);
-      console.log("iIndex:"+iIndex);
       delete aGameList[iIndex];
       var sGameList = JSON.stringify(aGameList);
       client.set("blackjack_waitinggamelist", sGameList, redis.print);

@@ -8943,36 +8943,36 @@ function vStatusController(oGameData)
   }
 }
 
-// function vStatusInsurance(oGameData)
-// {
-//   var sMessage = "保險";
-//   vSetMessage(sMessage);
-//   var iUserPos = oGameData.aUserIds.indexOf(iUserId);
+function vStatusInsurance(oGameData)
+{
+  var sMessage = "保險";
+  vSetMessage(sMessage);
+  var iUserPos = oGameData.aUserIds.indexOf(iUserId);
 
-//   if(oGameData.aUserList[iUserPos].iInsurance==0 && $("#buyinsurance").length==0)
-//   {
-//     var sHtml = '<table>'+
-//                   '<tr>'+
-//                     '<td>'+
-//                       '<button class="buyinsurance" value="3">買</button>'+
-//                     '</td>'+
-//                   '</tr>'+
-//                   '<tr>'+
-//                     '<td>'+
-//                       '<button class="buyinsurance" value="2">不買</button>'+
-//                     '</td>'+
-//                   '</tr>'+
-//                 '</table>';
-//     $(".controlarea").append(sHtml);
-//     $('body').on("click", '.buyinsurance', function () {
-//       vBuyInsurance(this);
-//     });
-//   }
-// }
+  if(oGameData.aUserList[iUserPos].iInsurance==1 && $(".buyinsurance").length==0)
+  {
+    var sHtml = '<table>'+
+                  '<tr>'+
+                    '<td>'+
+                      '<button class="buyinsurance" value="3">買</button>'+
+                    '</td>'+
+                  '</tr>'+
+                  '<tr>'+
+                    '<td>'+
+                      '<button class="buyinsurance" value="2">不買</button>'+
+                    '</td>'+
+                  '</tr>'+
+                '</table>';
+    $(".controlarea").append(sHtml);
+    $('body').on("click", '.buyinsurance', function () {
+      vBuyInsurance(this);
+    });
+  }
+}
 function vBuyInsurance(oElement)
 {
   var iInsurance = $(oElement).val();
-  vEmitDataToServer({"sHashKey":sHashKey, "iInsurance":iInsurance,"iUserId":iUserId,"iStatus":2});
+  vEmitDataToServer({"sHashKey":sHashKey, "iInsurance":iInsurance,"iUserId":iUserId,"iStatus":99});
   $(".controlarea").empty();
 }
 function vStatusFinished(oGameData)
@@ -8984,31 +8984,46 @@ function vStatusFinished(oGameData)
 function vStatusDealing(oGameData)
 {
   vSetGameCards(oGameData);
-  vStatusPlaying(oGameData);
+  // alert(oGameData.aUserList[0].iInsurance);
+  if(oGameData.aUserList[0].iInsurance==0)
+  {
+    vStatusPlaying(oGameData);
+  }
+  else
+  {
+    vStatusInsurance(oGameData);
+  }
 }
 
 function vStatusPlaying(oGameData)
 {
-  $(".controlarea").empty();
+  vSetGameCards(oGameData);
+
 
   if(oGameData.iTurn!=iUserId)
   {
     $(".controlarea").empty();
     return ;
   }
+
+
   var iUserPos = oGameData.aUserIds.indexOf(oGameData.iTurn);
   var sDoubleBetButton = "";
   // alert(oGameData.aUserList[iUserPos].iDouble);
   if(oGameData.aUserList[iUserPos].iDouble === 1)
   {
-    sDoubleBetButton = '<tr>'+
+    sDoubleBetButton = '<tr id="fordouble">'+
                           '<td>'+
                             '<button class="choice" value="2">雙倍</button>'+
                           '</td>'+
                         '</tr>';
   }
+  else
+  {
+    $("#fordouble").remove();
+  }
 
-  // if($(".choice").length==0){
+  if($(".choice").length==0){
     var sHtml = '<table>'+
                   '<tr>'+
                     '<td>'+
@@ -9027,7 +9042,7 @@ function vStatusPlaying(oGameData)
     $('body').on("click", '.choice', function () {
       vSetChoice(this);
     });
-  // }
+  }
 }
 
 function vSetPlayingUserColor(sTagId,bPlaying)
@@ -9038,7 +9053,9 @@ function vSetPlayingUserColor(sTagId,bPlaying)
 
 function vSetChoice(oElement)
 {
-    vEmitDataToServer({"sHashKey":sHashKey, "iStatus":3,"iUserId":iUserId,"iValue":$(oElement).attr("value")});
+  // $(".controlarea").empty();
+  // alert("set choice");
+  vEmitDataToServer({"sHashKey":sHashKey, "iStatus":3,"iUserId":iUserId,"iValue":parseInt($(oElement).attr("value"))});
 }
 
 function vSetGameCards(oGameData)
