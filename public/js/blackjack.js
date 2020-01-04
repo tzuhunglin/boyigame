@@ -9116,6 +9116,15 @@ function vSetCards(sTagId,oUserData)
   {
     $(sTagId).find(".winlosearea").text(sGetUserWinLose(oUserData.iWinLose));
   }
+  if(oUserData.iInsurance==3)
+  {
+    $(sTagId).find(".insurancearea").text("保險");
+  }
+
+  if(oUserData.iDouble==3)
+  {
+    $(sTagId).find(".doublearea").text("雙倍");
+  }
 }
 
 function sGetUserWinLose(iWinLose)
@@ -9174,21 +9183,47 @@ function vSetPosition(sTagId,oUserData)
   $(sTagId).find(".namearea").text(oUserData.sUserName);
   $(sTagId).find(".money").text(oUserData.iAvailableMoney);
   $(sTagId).find(".bet").text(oUserData.iBetAmount);
-
 }
 
 function vStatusWaiting(oGameData)
 {
   if(oGameData.iStatus==0 && oGameData.aUserIds.length==3)
   {
+  $(".controlarea").empty();
     vEmitDataToServer({"sHashKey":oGameData.sHashKey, "iStatus":1});
   }
+
+  if($("#startgame").length==0)
+  {
+    var sHtml = '<table>'+
+                  '<tr>'+
+                    '<td>'+
+                      '<button id="startgame" >開始遊戲</button>'+
+                    '</td>'+
+                  '</tr>'+
+                '</table>';
+    $(".controlarea").append(sHtml);
+    $('body').on("click", '#startgame', function () {
+      vStartGame(oGameData);
+    });
+  }
+
+
+
+
   var sMessage = "等待其他玩家";
   vSetMessage(sMessage);
 }
 
+function vStartGame(oGameData)
+{
+  $(".controlarea").empty();
+    vEmitDataToServer({"sHashKey":oGameData.sHashKey, "iStatus":1});
+}
+
 function vStatusBetting(oGameData)
 {
+  $(".controlarea").empty();
   var sMessage = "下注";
   vSetMessage(sMessage);
   var iUserPos = oGameData.aUserIds.indexOf(iUserId);
