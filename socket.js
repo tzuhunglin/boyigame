@@ -4,8 +4,22 @@ var io = require('socket.io')(http);
 io.origins('*:*');
 var Redis = require('ioredis');
 var redis = new Redis();
+var aAllGameList = [];
+var iTimeLimit = 10000;
+var mysql = require('mysql');
+var conn = mysql.createConnection({
+host : '127.0.0.1',
+user : 'root',
+password : 'root',
+database : 'boyigame'
+});
+conn.connect(function(err){
+if(err) throw err;
+console.log('connect success!');
+});
 
-
+// const oUserData;
+// console.log(oGetUserData(1));
 
 
 
@@ -19,25 +33,11 @@ redis.on('message', function(channel, notification) {
     console.log(notification);
     notification = JSON.parse(notification);
 
-    // 將訊息推播給使用者
     io.emit('issueInfoJisupailie3', notification.data.oIssueInfoPushData);
   }
 
 });
 
-
-
-// redis.subscribe('notification', function(err, count) {
-//   console.log('connect!');
-// });
-
-// redis.on('message', function(channel, notification) {
-//   console.log(notification);
-//   notification = JSON.parse(notification);
-
-//   // 將訊息推播給使用者
-//   io.emit('notification', notification.data.message);
-// });
 
 const redisCache = require('redis');
 const client = redisCache.createClient(); // this creates a new client
@@ -45,16 +45,6 @@ const client = redisCache.createClient(); // this creates a new client
 client.on('connect', () => {
   console.log('Redis client connected');
 });
-// client.set('foo', 'bar', redis.print);
-// client.get('foo', (error, result) => {
-//   if (error) {
-//     console.log(error);
-//     throw error;
-//   }
-//   console.log('GET result ->' + result);
-// });
-
-
 
 
 redis.subscribe('gameDataBlackjack', function(err, count) {
@@ -62,7 +52,6 @@ redis.subscribe('gameDataBlackjack', function(err, count) {
 });
 
 io.on('connection', function(socket) {
-  // 當使用者觸發 set-token 時將他加入屬於他的 room
   socket.on('set-token', function(token) {
     console.log(token);
     socket.join('token:' + token);
@@ -83,18 +72,122 @@ io.on('connection', function(socket) {
             );
           }
       });
-
-    // var oGameData = oGetGameData(token)
-
   });
 
-  socket.on('gameDataBlackjack', function(oData) {
-    // console.log(oData);
-
-    // var oGameData = oGetGameData(token)
+    socket.on('gameDataBlackjack', function(oData) {
     vStatusController(oData);
   });
 });
+
+
+setInterval(
+
+function ()
+{
+  console.log(aAllGameList);
+  for (var i = 0; i < aAllGameList.length; i++) {
+    var sHashKey = aAllGameList[i];
+    console.log("sHashKey start ");
+
+    console.log(sHashKey);
+    console.log("sHashKey end ");
+
+    client.get(sHashKey, (error, result) => {
+      if (error) {
+        console.log(error);
+        throw error;
+      }
+      var oGameData = JSON.parse(result);
+      console.log(oGameData)
+
+      oGameData = oMonitorController(oGameData);
+      if(oGameData==null)
+      {
+        return;
+      }
+
+      var sGameData = JSON.stringify(oGameData);
+      client.set(sHashKey, sGameData, redis.print);
+
+      if(oGameData!=null)
+      {
+        io.to('token:' + sHashKey).emit(
+          'gameDataBlackjack',
+          oGameData
+        );
+      }
+    });
+  }
+}
+,1000);
+function oMonitorController(oGameData)
+{
+  switch(oGameData.iStatus)
+  {
+    case 1:
+      oGameData = oBettingMonitor(oGameData);
+      break;
+  }
+
+  return oGameData;
+}
+
+function oBettingMonitor(oGameData)
+{
+  var oDate = new Date();
+  console.log(oGameData.iBetStartTime);
+  console.log(oDate.getTime());
+
+  if(oGameData.iBetStartTime+iTimeLimit > oDate.getTime())
+  {
+    return ;
+  }
+  for (var i = 0; i < oGameData.aUserList.length; i++) {
+    if(oGameData.aUserList[i].iBetAmount == 0)
+    {
+      oGameData.aUserList[i].iBetAmount = 2;
+    }
+  }
+  oGameData.iStatus = 2;
+  oGameData = oGetCardDeltGameData(oGameData);
+  if(oGameData.iTurn==undefined)
+  {
+    userloop:
+    for (var i = 0; i < oGameData.aUserList.length; i++)
+    {
+      pointloop:
+      if(oGameData.aUserList[i].aPoints!=null)
+      {
+        for (var j = 0; j < oGameData.aUserList[i].aPoints[0].length; j++) {
+          if(oGameData.aUserList[i].aPoints[0][j]==21)
+          {
+            continue userloop;
+          }
+          if(oGameData.aUserList[i].aPoints[0][j]!=21)
+          {
+            break userloop;
+          }
+        }
+      }
+      else
+      {
+        break;
+      }
+    }
+    console.log(i);
+    if(i==oGameData.aUserList.length)
+    {
+      console.log("oGameData.aUserList.length:"+oGameData.aUserList.length);
+      oGameData = oGetFinishedGameData(oGameData);
+    }
+    else
+    {
+      oGameData.iTurn = oGameData.aUserIds[i];
+    }
+  }
+  return oGameData;
+}
+
 
 function vStatusController(oData)
 {
@@ -706,6 +799,7 @@ function vSetStatusBetting(oData)
       });
       var sGameList = JSON.stringify(aGameList);
       client.set("blackjack_waitinggamelist", sGameList, redis.print);
+      aAllGameList.push(oData.sHashKey);
   });
 
   client.get(oData.sHashKey, (error, result) => {
@@ -715,7 +809,10 @@ function vSetStatusBetting(oData)
     }
       var oGameData = JSON.parse(result);
       oGameData.iStatus = oData.iStatus;
+      var oDate = new Date();
+      oGameData.iBetStartTime = oDate.getTime();
       var sGameData = JSON.stringify(oGameData);
+
       client.set(oData.sHashKey, sGameData, redis.print);
 
       if(oGameData!=null)
@@ -729,8 +826,88 @@ function vSetStatusBetting(oData)
 
 }
 
+// conn.end(function(err){
+// if(err) throw err;
+// console.log('connect end');
+// });
 
 // 監聽 3000 port
 http.listen(3000, function() {
   console.log('Listening on Port 3000');
 });
+
+
+// function oGetUserData(iUserId)
+// {
+//   var qq = conn.query('SELECT * FROM `users` WHERE id = '+ iUserId, function(err, result, fields){
+//     if(err) throw err;
+//     // console.log(result);
+//     // const use-oUserData = result[0];
+//     // console.log(oUserData);
+//     return result;
+
+//   });
+//   console.log(qq);
+
+// }
+
+
+
+
+
+
+//usage
+
+var stuff_i_want ;
+var qq;
+ qq = get_info(1, function(result){
+    stuff_i_want = result;
+            console.log(stuff_i_want); // good
+            return stuff_i_want
+    //rest of your code goes in here
+ });
+ console.log(stuff_i_want);
+
+ function get_info(data, callback){
+
+      var sql = "SELECT * FROM `users` where id = "+data;
+ console.log(sql);
+
+      conn.query(sql, function(err, results){
+            if (err){ 
+              throw err;
+            }
+            // console.log(results[0]); // good
+            stuff_i_want = results[0];  // Scope is larger than function
+      return callback(stuff_i_want);
+
+      });
+
+}
+
+console.log("qq");
+console.log(qq);
+
+// console.log(oGetUserData(1));
+// oGetUserData(1);
+// function oGetUserData(iUserId)
+// {
+//   var sSql = "SELECT * FROM `users` WHERE id = "+iUserId;
+//   var aResult = aGetMySqlResult(sSql, function(result){return result;});
+//   console.log(aResult);
+//   // return aResult;
+// }
+
+
+// function aGetMySqlResult(sSql,callback)
+// {
+//   console.log(sSql);
+
+//   conn.query(sSql, function(err, results){
+//     if (err)
+//     {
+//       throw err;
+//     }
+//     return callback(results);
+//   });
+// }

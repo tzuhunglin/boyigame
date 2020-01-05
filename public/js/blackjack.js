@@ -8945,6 +8945,7 @@ function vStatusController(oGameData)
 
 function vStatusInsurance(oGameData)
 {
+  $(".controlarea").empty();
   var sMessage = "保險";
   vSetMessage(sMessage);
   var iUserPos = oGameData.aUserIds.indexOf(iUserId);
@@ -8999,10 +9000,10 @@ function vStatusPlaying(oGameData)
 {
   vSetGameCards(oGameData);
 
+  $(".controlarea").empty();
 
   if(oGameData.iTurn!=iUserId)
   {
-    $(".controlarea").empty();
     return ;
   }
 
