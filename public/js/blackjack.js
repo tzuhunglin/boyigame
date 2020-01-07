@@ -8950,7 +8950,7 @@ function vStatusInsurance(oGameData)
   vSetMessage(sMessage);
   var iUserPos = oGameData.aUserIds.indexOf(iUserId);
 
-  if(oGameData.aUserList[iUserPos].iInsurance==1 && $(".buyinsurance").length==0)
+  if(oGameData.aUserInfoList[iUserPos].iInsurance==1 && $(".buyinsurance").length==0)
   {
     var sHtml = '<table>'+
                   '<tr>'+
@@ -8985,8 +8985,8 @@ function vStatusFinished(oGameData)
 function vStatusDealing(oGameData)
 {
   vSetGameCards(oGameData);
-  // alert(oGameData.aUserList[0].iInsurance);
-  if(oGameData.aUserList[0].iInsurance==0)
+  // alert(oGameData.aUserInfoList[0].iInsurance);
+  if(oGameData.aUserInfoList[0].iInsurance==0)
   {
     vStatusPlaying(oGameData);
   }
@@ -9010,8 +9010,8 @@ function vStatusPlaying(oGameData)
 
   var iUserPos = oGameData.aUserIds.indexOf(oGameData.iTurn);
   var sDoubleBetButton = "";
-  // alert(oGameData.aUserList[iUserPos].iDouble);
-  if(oGameData.aUserList[iUserPos].iDouble === 1)
+  // alert(oGameData.aUserInfoList[iUserPos].iDouble);
+  if(oGameData.aUserInfoList[iUserPos].iDouble === 1)
   {
     sDoubleBetButton = '<tr id="fordouble">'+
                           '<td>'+
@@ -9040,8 +9040,14 @@ function vStatusPlaying(oGameData)
                 '</table>';
     $(".controlarea").append(sHtml);
 
-    $('body').on("click", '.choice', function () {
+    // $('body').on("click", '.choice', function () {
+    //   vSetChoice(this);
+    // });
+    $(".choice").on('click',function() {
+    //Your function
       vSetChoice(this);
+    
+        $(this).off('click');   //or $(this).unbind()
     });
   }
 }
@@ -9061,19 +9067,19 @@ function vSetChoice(oElement)
 
 function vSetGameCards(oGameData)
 {
-  var aUserList = oGameData.aUserList;
+  var aUserInfoList = oGameData.aUserInfoList;
   var iPlayerPosition = 1;
-  for (var i = 0; i < aUserList.length; i++)
+  for (var i = 0; i < aUserInfoList.length; i++)
   {
-    var bPlaying = (oGameData.iTurn == aUserList[i].iUserId)?true:false;
-    if(aUserList[i].iUserId == iUserId)
+    var bPlaying = (oGameData.iTurn == aUserInfoList[i].iUserId)?true:false;
+    if(aUserInfoList[i].iUserId == iUserId)
     {
-      vSetUserCards(aUserList[i]);
+      vSetUserCards(aUserInfoList[i]);
       vSetPlayingUserColor("#user",bPlaying);
     }
     else
     {
-      vSetPlayerCards(aUserList[i],iPlayerPosition);
+      vSetPlayerCards(aUserInfoList[i],iPlayerPosition);
       vSetPlayingUserColor("#player"+iPlayerPosition,bPlaying);
       iPlayerPosition++;
     }
@@ -9084,11 +9090,11 @@ function vSetGameCards(oGameData)
 function vSetBankerCards(oGameData)
 {
   var sTagId = "#banker";
-  for (var j = 0; j < oGameData.aBankerCards.length; j++) {
+  for (var j = 0; j < oGameData.aBankerInfo.aCards.length; j++) {
       var oElement = $(sTagId).find(".cardarea").children()[j];
-      $(oElement).text(sGetCard(oGameData.aBankerCards[j]));
+      $(oElement).text(sGetCard(oGameData.aBankerInfo.aCards[j]));
     }
-    $(sTagId).find(".pointarea").text(sGetShowPoints(oGameData.aBankerPoints)+"點");
+    $(sTagId).find(".pointarea").text(sGetShowPoints(oGameData.aBankerInfo.aPoints)+"點");
 }
 
 function vSetUserCards(oUserData)
@@ -9229,7 +9235,7 @@ function vStatusBetting(oGameData)
   vSetMessage(sMessage);
   var iUserPos = oGameData.aUserIds.indexOf(iUserId);
 
-  if(oGameData.aUserList[iUserPos].iBetAmount==0 && $("#dobet").length==0)
+  if(oGameData.aUserInfoList[iUserPos].iBetAmount==0 && $("#dobet").length==0)
   {
     var sHtml = '<table>'+
                   '<tr>'+
@@ -9265,17 +9271,17 @@ function vSetMessage(sMessage)
 
 function vSetTable(oGameData)
 {
-  var aUserList = oGameData.aUserList;
+  var aUserInfoList = oGameData.aUserInfoList;
   var iPlayerPosition = 1;
-  for (var i = 0; i < aUserList.length; i++)
+  for (var i = 0; i < aUserInfoList.length; i++)
   {
-    if(aUserList[i].iUserId == iUserId)
+    if(aUserInfoList[i].iUserId == iUserId)
     {
-      vSetUserPosition(aUserList[i]);
+      vSetUserPosition(aUserInfoList[i]);
     }
     else
     {
-      vSetPlayerPosition(aUserList[i],iPlayerPosition);
+      vSetPlayerPosition(aUserInfoList[i],iPlayerPosition);
       iPlayerPosition++;
     }
   }

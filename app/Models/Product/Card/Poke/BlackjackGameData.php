@@ -13,7 +13,7 @@ class BlackjackGameData
 	public $iStatus;
 	public $iStage;
 	public $aUserIds;
-	public $aUserList;
+	public $aUserInfoList;
 	public $aCodes;
 	public $sCreatedAt;
 	public $sUpdatedAt;
@@ -27,14 +27,14 @@ class BlackjackGameData
 
 	private function vSetUserList()
 	{
-		$this->aUserList = array();
+		$this->aUserInfoList = array();
 		foreach ($this->aUserIds as $iUserId)
 		{
-			$this->aUserList = self::aGetListWithNewUser($this->aUserList,$iUserId);
+			$this->aUserInfoList = self::aGetListWithNewUser($this->aUserInfoList,$iUserId);
 		}
 	}
 
-	public static function aGetListWithNewUser($aUserList,$iUserId)
+	public static function aGetListWithNewUser($aUserInfoList,$iUserId)
 	{
 		$oUserData = User::find($iUserId);
 		$aUserData = array(
@@ -43,8 +43,8 @@ class BlackjackGameData
 						"iAvailableMoney" => $oUserData->availablemoney,
 						"iBetAmount" => 0
 		);
-		array_push($aUserList,$aUserData);
-		return $aUserList;
+		array_push($aUserInfoList,$aUserData);
+		return $aUserInfoList;
 	}
 
 	private function vSetAttributeByArray($aData)

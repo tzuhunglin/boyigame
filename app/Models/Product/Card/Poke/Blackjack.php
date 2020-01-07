@@ -127,7 +127,7 @@ class Blackjack extends Poke
 			return null;
 		}
 		array_push($oWaitingGameData->aUserIds,$this->iUserId);
-		$oWaitingGameData->aUserList = BlackjackGameData::aGetListWithNewUser($oWaitingGameData->aUserList,$this->iUserId);
+		$oWaitingGameData->aUserInfoList = BlackjackGameData::aGetListWithNewUser($oWaitingGameData->aUserInfoList,$this->iUserId);
 		self::vSetUserGameHashKey($this->iUserId,$oWaitingGameData->sHashKey);
 		self::vSetGameData($oWaitingGameData);
 		return $oWaitingGameData;
