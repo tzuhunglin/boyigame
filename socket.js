@@ -122,14 +122,80 @@ function ()
 ,1000);
 function oMonitorController(oGameData)
 {
+  console.log(oGameData);
   switch(oGameData.iStatus)
   {
     case 1:
       oGameData = oBettingMonitor(oGameData);
+      return oGameData;
+      break;
+    case 2:
+    case 3:
+      oGameData = oPlayingMonitor(oGameData);
       break;
   }
 
-  return oGameData;
+}
+
+function oPlayingMonitor(oGameData)
+{
+  var oDate = new Date();
+
+
+  if(oGameData.iPlayUpdateTime+iTimeLimit > oDate.getTime())
+  {
+    return ;
+  }
+
+  if(oGameData.iStatus == 2 && oGameData.iInsuranceStartTime!=undefined && oGameData.iInsuranceStartTime+iTimeLimit < oDate.getTime())
+  {
+    console.log("insurance");
+    for (var i = 0; i < oGameData.aUserList.length; i++) {
+      if(oGameData.aUserList[i].iInsurance==1)
+      {
+        var oData = {"sHashKey":oGameData.sHashKey, "iInsurance":2,"iUserId":oGameData.aUserIds[i],"iStatus":99};
+        vStatusController(oData);
+      }
+    }
+  }
+  else
+  {
+    console.log("paly");
+
+    var iUserPos = oGameData.aUserIds.indexOf(oGameData.iTurn);
+    var bGetCard = bGetUserCardCheck(oGameData.aUserList[iUserPos].aPoints);
+
+    var oData = {"sHashKey":oGameData.sHashKey, "iStatus":3,"iUserId":oGameData.iTurn,"iValue":bGetCard}
+    vSetStatusPlaying(oData);
+  }
+}
+
+function bGetUserCardCheck(aPoints)
+{
+  if(aPoints[0][1]==undefined)
+  {
+    if(aPoints[0][0]>17)
+    {
+      return 0;
+    }
+    else
+    {
+      return 1;
+    }
+  }
+  else
+  {
+    if(aPoints[0][0]>17 || aPoints[0][1]>17)
+    {
+      return 0;
+    }
+    else
+    {
+      return 1;
+    }
+  }
+
+
 }
 
 function oBettingMonitor(oGameData)
@@ -237,6 +303,8 @@ function vSetStatusInsurance(oData)
       if(bInsuranceComplete==true)
       {
         oGameData.iStatus = 3;
+        var oDate = new Date();
+        oGameData.iPlayUpdateTime = oDate.getTime();
       }
 
       var sGameData = JSON.stringify(oGameData);
@@ -263,6 +331,7 @@ function oGetDoubleBetGameData(oGameData)
 
 function vSetStatusPlaying(oData)
 {
+  console.log(oData);
     client.get(oData.sHashKey, (error, result) => {
       if (error) {
         console.log(error);
@@ -292,7 +361,8 @@ function vSetStatusPlaying(oData)
 
         oGameData = oGetNextTurnGameData(oGameData);
       }
-
+        var oDate = new Date();
+      oGameData.iPlayUpdateTime = oDate.getTime();
       if(oGameData.iStatus==4)
       {
         oGameData.iTurn = 0;
@@ -407,6 +477,11 @@ function oGetFinishedGameData(oGameData)
 
   oGameData = oGetWinLoseSettleGameData(oGameData);
 
+  var iHashKeyIndex = aAllGameList.indexOf(oGameData.sHashKey);
+  delete aAllGameList[iHashKeyIndex];
+  aAllGameList = aAllGameList.filter(function (el) {
+    return el != null;
+  });
 
   return oGameData;
 }
@@ -747,13 +822,22 @@ function oGetCardDeltGameData(oGameData)
   oGameData = oGetPointCaculatedGameData(oGameData);
   var aAceCodes = [1,14,27,40];
   var bBankerAce = (aAceCodes.indexOf(parseInt(oGameData.aBankerCards[0]))!=-1);
+  var bBankerAce = true;
 
+  var oDate = new Date();
   oGameData.iStatus = 2;
+  oGameData.iPlayUpdateTime = oDate.getTime();
+
 
 
   for (var i = 0; i < oGameData.aUserList.length; i++)
   {
     oGameData.aUserList[i].iInsurance = (bBankerAce == true)?1:0;
+  }
+
+  if(bBankerAce == true)
+  {
+    oGameData.iInsuranceStartTime = oDate.getTime();
   }
 
   return oGameData;
@@ -858,35 +942,35 @@ http.listen(3000, function() {
 
 //usage
 
-var stuff_i_want ;
-var qq;
- qq = get_info(1, function(result){
-    stuff_i_want = result;
-            console.log(stuff_i_want); // good
-            return stuff_i_want
-    //rest of your code goes in here
- });
- console.log(stuff_i_want);
+// var stuff_i_want ;
+// var qq;
+//  qq = get_info(1, function(result){
+//     stuff_i_want = result;
+//             console.log(stuff_i_want); // good
+//             return stuff_i_want
+//     //rest of your code goes in here
+//  });
+//  console.log(stuff_i_want);
 
- function get_info(data, callback){
+//  function get_info(data, callback){
 
-      var sql = "SELECT * FROM `users` where id = "+data;
- console.log(sql);
+//       var sql = "SELECT * FROM `users` where id = "+data;
+//  console.log(sql);
 
-      conn.query(sql, function(err, results){
-            if (err){ 
-              throw err;
-            }
-            // console.log(results[0]); // good
-            stuff_i_want = results[0];  // Scope is larger than function
-      return callback(stuff_i_want);
+//       conn.query(sql, function(err, results){
+//             if (err){ 
+//               throw err;
+//             }
+//             // console.log(results[0]); // good
+//             stuff_i_want = results[0];  // Scope is larger than function
+//       return callback(stuff_i_want);
 
-      });
+//       });
 
-}
+// }
 
-console.log("qq");
-console.log(qq);
+// console.log("qq");
+// console.log(qq);
 
 // console.log(oGetUserData(1));
 // oGetUserData(1);
