@@ -112,7 +112,6 @@ function oPlayingMonitor(oGameData)
 
   if(oGameData.iStatus == 2 && oGameData.iInsuranceStartTime!=undefined && oGameData.iInsuranceStartTime+iTimeLimit < iGetCurrentTimeStamp())
   {
-    console.log("insurance");
     for (var i = 0; i < oGameData.aUserInfoList.length; i++)
     {
       if(oGameData.aUserInfoList[i].iInsurance==1)
@@ -124,11 +123,8 @@ function oPlayingMonitor(oGameData)
   }
   else
   {
-    console.log("paly");
-
     var iUserPos = oGameData.aUserIds.indexOf(oGameData.iTurn);
     var bGetCard = bGetUserCardCheck(oGameData.aUserInfoList[iUserPos].aPoints);
-
     var oData = {"sHashKey":oGameData.sHashKey, "iStatus":3,"iUserId":oGameData.iTurn,"iValue":bGetCard}
     vSetStatusPlaying(oData);
   }
@@ -210,15 +206,55 @@ function bInsuranceCompleteCheck(aUserInfoList)
   return bInsuranceComplete;
 }
 
-function vSetStatusInsurance(oData)
+function vSetStatusBetting(oData)
 {
-  client.get(oData.sHashKey, (error, result) => {
+  client.get("blackjack_waitinggamelist", (error, result) => {
+    if (error)
+    {
+      console.log(error);
+      throw error;
+    }
+    var aGameList = JSON.parse(result);
+    var iIndex = aGameList.indexOf(oData.sHashKey);
+    delete aGameList[iIndex];
+    aGameList = aGetFiltered(aGameList);
+    var sGameList = JSON.stringify(aGameList);
+    client.set("blackjack_waitinggamelist", sGameList, redis.print);
+    aAllGameList.push(oData.sHashKey);
+  });
+
+  vHandle(oData.sHashKey, function(oGameData){
+    oGameData.iStatus = oData.iStatus;
+    oGameData.iBetStartTime = iGetCurrentTimeStamp();
+    var sGameData = JSON.stringify(oGameData);
+
+    client.set(oData.sHashKey, sGameData, redis.print);
+
+    if(oGameData!=null)
+    {
+      vEmitGameDataToClient(oGameData);
+    }
+  });
+
+}
+
+function vHandle(sHashKey, vSet)
+{
+    client.get(sHashKey, (error, result) => {
     if (error)
     {
       console.log(error);
       throw error;
     }
     var oGameData = JSON.parse(result);
+    vSet(oGameData);
+  });
+}
+
+function vSetStatusInsurance(oData)
+{
+  vHandle(oData.sHashKey, function(oGameData){
+
     var iUserPos = oGameData.aUserIds.indexOf(oData.iUserId);
 
     oGameData.aUserInfoList[iUserPos].iInsurance = oData.iInsurance;
@@ -257,13 +293,8 @@ function oGetDoubleBetGameData(oGameData)
 
 function vSetStatusPlaying(oData)
 {
-  client.get(oData.sHashKey, (error, result) => {
-    if (error)
-    {
-      console.log(error);
-      throw error;
-    }
-    var oGameData = JSON.parse(result);
+  vHandle(oData.sHashKey, function(oGameData){
+
     if(oGameData.iTurn != oData.iUserId)
     {
       return ;
@@ -388,13 +419,8 @@ function oGetNextTurnGameData(oGameData)
 
 function vSetStatusDealing(oData)
 {
-  client.get(oData.sHashKey, (error, result) => {
-    if (error)
-    {
-      console.log(error);
-      throw error;
-    }
-    var oGameData = JSON.parse(result);
+  vHandle(oData.sHashKey, function(oGameData){
+
     var iUserPos = oGameData.aUserIds.indexOf(oData.iUserId);
     oGameData.aUserInfoList[iUserPos].iBetAmount = oData.iBetAmount;
 
@@ -414,7 +440,7 @@ function vSetStatusDealing(oData)
         pointloop:
         if(oGameData.aUserInfoList[i].aPoints!=null)
         {
-          var aPoints = oGameData.aUserInfoList[i].aPoints;
+          var aPoints = oGameData.aUserInfoList[i].aPoints[0];
           if(aPoints.indexOf(21)!=-1)
           {
               continue userloop;
@@ -423,16 +449,6 @@ function vSetStatusDealing(oData)
           {
               break userloop;
           }
-          // for (var j = 0; j < oGameData.aUserInfoList[i].aPoints[0].length; j++) {
-          //   if(oGameData.aUserInfoList[i].aPoints[0][j]==21)
-          //   {
-          //     continue userloop;
-          //   }
-          //   if(oGameData.aUserInfoList[i].aPoints[0][j]!=21)
-          //   {
-          //     break userloop;
-          //   }
-          // }
         }
         else
         {
@@ -807,43 +823,7 @@ function iGetRandom(){
     return Math.floor(Math.random()*52)+1;
 };
 
-function vSetStatusBetting(oData)
-{
-  client.get("blackjack_waitinggamelist", (error, result) => {
-    if (error)
-    {
-      console.log(error);
-      throw error;
-    }
-    var aGameList = JSON.parse(result);
-    var iIndex = aGameList.indexOf(oData.sHashKey);
-    delete aGameList[iIndex];
-    aGameList = aGetFiltered(aGameList);
-    var sGameList = JSON.stringify(aGameList);
-    client.set("blackjack_waitinggamelist", sGameList, redis.print);
-    aAllGameList.push(oData.sHashKey);
-  });
 
-  client.get(oData.sHashKey, (error, result) => {
-    if (error)
-    {
-      console.log(error);
-      throw error;
-    }
-    var oGameData = JSON.parse(result);
-    oGameData.iStatus = oData.iStatus;
-    oGameData.iBetStartTime = iGetCurrentTimeStamp();
-    var sGameData = JSON.stringify(oGameData);
-
-    client.set(oData.sHashKey, sGameData, redis.print);
-
-    if(oGameData!=null)
-    {
-      vEmitGameDataToClient(oGameData);
-    }
-  });
-
-}
 
 function aGetFiltered(aData)
 {
