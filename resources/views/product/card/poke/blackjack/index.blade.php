@@ -27,7 +27,7 @@
 				<div class="table-wrapper">
 					<table class="alt">
 						<tbody>
-							<tr >
+							<tr>
 								<td id="banker" colspan="2" style="height:200px">
 									<div style="width:33%;height:200px;float:left">
 										<div class="namearea">莊家</div>
@@ -54,7 +54,6 @@
 										<div class="insurancearea"></div>
 										<div class="doublearea"></div>
 										<div class="winlosearea" style="font-size: 30px;"></div>
-
 									</div>
 									<div style="width:68%;height:200px;float:left">
 										<div class="cardarea" style="height:60%;width:100%;" >
@@ -77,7 +76,6 @@
 											<div class="card"></div>
 										</div>
 										<div class="pointarea"></div>
-
 									</div>
 									<div style="width:32%;height:200px;float:left">
 										<div class="namearea" style="float: right;clear:both">palyer2</div>
@@ -98,8 +96,6 @@
 										<div class="doublearea"></div>
 										<div class="insurancearea"></div>
 										<div class="winlosearea" style="font-size: 30px;"></div>
-
-
 									</div>
 									<div style="width:33%;height:200px;float:left">
 										<div class="cardarea" style="height:60%;width:100%;">
@@ -112,9 +108,7 @@
 										<div class="pointarea"></div>
 									</div>
 									<div style="width:33%;height:200px;float:left">
-										<dir class="controlarea">
-
-										</dir>
+										<dir class="controlarea"></dir>
 									</div>
 								</td>
 							</tr>
@@ -129,22 +123,21 @@
 @section('scripts')
 <script src="{{ asset('js/blackjack.js') }}" defer></script>
 <script type="text/javascript">
-
 var iUserId = parseInt("{{$iUserId}}");
-
-Notification.TOKEN = "{{$sHashKey}}";
 var sHashKey = "{{$sHashKey}}";
-
-
+var iAvailableMoney = "{{$iAvailableMoney}}";
+if(sHashKey!="")
+{
+	Notification.TOKEN = sHashKey;
+}
 
 $(document).ready(function(){
-	// alert("blade.php");
-	// console.log(oGameData);
-	// console.log(iUserId);
-
-	// console.log(JSON.parse(oGameData));
+	if(iAvailableMoney<500)
+	{
+		alert("可用餘額不足");
+		history.go(-1);
+	}
 });
-
 
 </script>
 @endsection

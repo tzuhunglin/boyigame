@@ -32,16 +32,26 @@ class BlackjackController extends Controller
      */
     public function index()
     {
-        $iUserId = Auth::user()->id;
-        $oBlajack = new Blackjack($iUserId);
-        $oGameData = $oBlajack->oUnfinishedGameData;
-        // Event(new PushGameDataBlackjack($oGameData));
-        return view('product.card.poke.blackjack.index',[
-            // 'sGameData' => json_encode($oGameData),
-            'sHashKey' => $oGameData->sHashKey,
+        $oUser = Auth::user();
+        $iUserId = $oUser->id;
+        $sHashKey = "";
+        if($oUser->availablemoney>=500)
+        {
+            $oBlajack = new Blackjack($iUserId);
+            $oGameData = $oBlajack->oUnfinishedGameData;
+            $sHashKey = $oGameData->sHashKey;
+        }
 
+        return view('product.card.poke.blackjack.index',[
+            'sHashKey' => $sHashKey,
+            'iAvailableMoney' => $oUser->availablemoney,
             'iUserId' => $iUserId
         ]);
+    }
+
+    public function sumup()
+    {
+
     }
 
 }

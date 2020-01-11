@@ -20,7 +20,6 @@ class BlackjackGameData
 
 	function __construct($mData)
 	{
-
 		(is_array($mData))?$this->vSetAttributeByArray($mData):$this->vSetAttributeByObject($mData);
 		$this->vSetUserList();
 	}

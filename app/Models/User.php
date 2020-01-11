@@ -159,7 +159,7 @@ class User extends Authenticatable
     }
 
     public function oGetParentUser()
-    {        
+    {
         if($this->parentid==0)
         {
             return;
@@ -174,5 +174,19 @@ class User extends Authenticatable
     public function bIsAvailableMoneyEnough($iMoney)
     {
         return ($this->availablemoney>=$iMoney);
+    }
+
+    public function vFundFrozen($iMoney)
+    {
+        $this->holdmoney += $iMoney;
+        $this->availablemoney -= $iMoney;
+        $this->save();
+    }
+
+    public function vFundDefrozen($iMoney)
+    {
+        $this->holdmoney -= $iMoney;
+        $this->availablemoney += $iMoney;
+        $this->save();
     }
 }

@@ -34,7 +34,7 @@ Route::group(['prefix' => 'Product/Lottery/Threed/jisupailie3'], function () {
 
 Route::group(['prefix' => 'Product/Card/Poke/blackjack'], function () {
 	Route::get('/',['as' => 'blackjack.index','uses'=>'Product\Card\Poke\BlackjackController@index']);
-	// Route::post('/bet',['as' => 'jisupailie3.bet','uses'=>'Product\Lottery\Threed\Jisupailie3Controller@bet']);
+	Route::get('/{id}/sumup',['as' => 'blackjack.sumup','uses'=>'Product\Card\Poke\BlackjackController@sumup']);
 });
 
 Route::group(['prefix' => 'Manage/Children'], function () {
@@ -73,5 +73,5 @@ Route::group(['prefix' => 'Manage/Children'], function () {
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/fetchjuisupailie3code', 'JobController@processQueue');
+Route::get('/fetchjuisupailie3code', 'CronJisupailie3@handle');
 

@@ -9039,15 +9039,9 @@ function vStatusPlaying(oGameData)
                   sDoubleBetButton+
                 '</table>';
     $(".controlarea").append(sHtml);
-
-    // $('body').on("click", '.choice', function () {
-    //   vSetChoice(this);
-    // });
     $(".choice").on('click',function() {
-    //Your function
       vSetChoice(this);
-    
-        $(this).off('click');   //or $(this).unbind()
+      $(this).off('click');
     });
   }
 }
@@ -9060,8 +9054,6 @@ function vSetPlayingUserColor(sTagId,bPlaying)
 
 function vSetChoice(oElement)
 {
-  // $(".controlarea").empty();
-  // alert("set choice");
   vEmitDataToServer({"sHashKey":sHashKey, "iStatus":3,"iUserId":iUserId,"iValue":parseInt($(oElement).attr("value"))});
 }
 
@@ -9127,7 +9119,6 @@ function vSetCards(sTagId,oUserData)
   {
     $(sTagId).find(".insurancearea").text("保險");
   }
-
   if(oUserData.iDouble==3)
   {
     $(sTagId).find(".doublearea").text("雙倍");
@@ -9214,10 +9205,6 @@ function vStatusWaiting(oGameData)
       vStartGame(oGameData);
     });
   }
-
-
-
-
   var sMessage = "等待其他玩家";
   vSetMessage(sMessage);
 }
@@ -9225,7 +9212,7 @@ function vStatusWaiting(oGameData)
 function vStartGame(oGameData)
 {
   $(".controlarea").empty();
-    vEmitDataToServer({"sHashKey":oGameData.sHashKey, "iStatus":1});
+  vEmitDataToServer({"sHashKey":oGameData.sHashKey, "iStatus":1});
 }
 
 function vStatusBetting(oGameData)
@@ -9240,7 +9227,7 @@ function vStatusBetting(oGameData)
     var sHtml = '<table>'+
                   '<tr>'+
                     '<td>'+
-                      '<input type="number" value="2" id="betamount">'+
+                      '<input type="number" value="2" max="100" id="betamount">'+
                     '</td>'+
                   '</tr>'+
                   '<tr>'+
@@ -9254,7 +9241,6 @@ function vStatusBetting(oGameData)
       vBet();
     });
   }
-
 }
 
 function vBet()
@@ -9285,7 +9271,6 @@ function vSetTable(oGameData)
       iPlayerPosition++;
     }
   }
-  vSetBankerPosition();
 }
 
 function vSetUserPosition(oUserData)
@@ -9300,22 +9285,15 @@ function vSetPlayerPosition(oUserData,iPosition)
   vSetPosition(sTagId,oUserData);
 }
 
-function vSetBankerPosition()
-{
-
-}
-
 function vSetPosition(sTagId,oUserData)
 {
   $(sTagId).find(".namearea").text(oUserData.sUserName);
   $(sTagId).find(".money").text(oUserData.iAvailableMoney);
   $(sTagId).find(".bet").text(oUserData.iBetAmount);
-
 }
 
 },{"socket.io-client":37}]},{},[55]);
 
-//# sourceMappingURL=app.js.map
 
 function sGetCard(iCode)
 {
@@ -9373,3 +9351,4 @@ function sGetSuit(iCode)
     return aSuits[3];
   }
 }
+//# sourceMappingURL=app.js.map

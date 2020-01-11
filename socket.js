@@ -14,14 +14,9 @@ password : 'root',
 database : 'boyigame'
 });
 conn.connect(function(err){
-if(err) throw err;
-console.log('connect success!');
+  if(err) throw err;
+  console.log('connect success!');
 });
-
-// const oUserData;
-// console.log(oGetUserData(1));
-
-
 
 redis.subscribe('issueInfoJisupailie3', function(err, count) {
   console.log('connect!');
@@ -32,16 +27,13 @@ redis.on('message', function(channel, notification) {
   {
     console.log(notification);
     notification = JSON.parse(notification);
-
     io.emit('issueInfoJisupailie3', notification.data.oIssueInfoPushData);
   }
-
 });
 
 
 const redisCache = require('redis');
-const client = redisCache.createClient(); // this creates a new client
-
+const client = redisCache.createClient();
 client.on('connect', () => {
   console.log('Redis client connected');
 });
@@ -66,10 +58,7 @@ io.on('connection', function(socket) {
 
       if(oGameData!=null)
       {
-        io.to('token:' + token).emit(
-          'gameDataBlackjack',
-          oGameData
-        );
+        vEmitGameDataToClient(oGameData);
       }
     });
   });
@@ -83,8 +72,8 @@ io.on('connection', function(socket) {
 setInterval(
 function ()
 {
-  console.log(aAllGameList);
-  for (var i = 0; i < aAllGameList.length; i++) {
+  for (var i = 0; i < aAllGameList.length; i++)
+  {
     var sHashKey = aAllGameList[i];
     client.get(sHashKey, (error, result) => {
       if (error)
@@ -93,24 +82,7 @@ function ()
         throw error;
       }
       var oGameData = JSON.parse(result);
-      console.log(oGameData)
-
-      oGameData = oMonitorController(oGameData);
-      if(oGameData==null)
-      {
-        return;
-      }
-
-      var sGameData = JSON.stringify(oGameData);
-      client.set(sHashKey, sGameData, redis.print);
-
-      if(oGameData!=null)
-      {
-        io.to('token:' + sHashKey).emit(
-          'gameDataBlackjack',
-          oGameData
-        );
-      }
+      oMonitorController(oGameData);
     });
   }
 }
@@ -118,7 +90,6 @@ function ()
 
 function oMonitorController(oGameData)
 {
-  console.log(oGameData);
   switch(oGameData.iStatus)
   {
     case 1:
@@ -187,8 +158,6 @@ function bGetUserCardCheck(aPoints)
       return 1;
     }
   }
-
-
 }
 
 function oBettingMonitor(oGameData)
@@ -266,10 +235,7 @@ function vSetStatusInsurance(oData)
 
     if(oGameData!=null)
     {
-      io.to('token:' + oData.sHashKey).emit(
-        'gameDataBlackjack',
-        oGameData
-      );
+      vEmitGameDataToClient(oGameData);
     }
   });
 }
@@ -291,66 +257,64 @@ function oGetDoubleBetGameData(oGameData)
 
 function vSetStatusPlaying(oData)
 {
-  console.log(oData);
-    client.get(oData.sHashKey, (error, result) => {
-      if (error)
-      {
-        console.log(error);
-        throw error;
-      }
-      var oGameData = JSON.parse(result);
-      if(oGameData.iTurn != oData.iUserId)
-      {
-        return ;
-      }
+  client.get(oData.sHashKey, (error, result) => {
+    if (error)
+    {
+      console.log(error);
+      throw error;
+    }
+    var oGameData = JSON.parse(result);
+    if(oGameData.iTurn != oData.iUserId)
+    {
+      return ;
+    }
 
-      if(oData.iValue==0)
-      {
-        oGameData = oGetNextTurnGameData(oGameData);
-      }
-      else if(oData.iValue==1)
-      {
-        oGameData = oGetNewCardGameData(oGameData);
-      }
-      else if(oData.iValue==2)
-      {
-        oGameData = oGetDoubleBetGameData(oGameData);
-      }
+    if(oData.iValue==0)
+    {
+      oGameData = oGetNextTurnGameData(oGameData);
+    }
+    else if(oData.iValue==1)
+    {
+      oGameData = oGetNewCardGameData(oGameData);
+    }
+    else if(oData.iValue==2)
+    {
+      oGameData = oGetDoubleBetGameData(oGameData);
+    }
 
-      if(bCheckIfUserGameOver(oGameData)==true)
+    if(bCheckIfUserGameOver(oGameData)==true)
+    {
+      oGameData = oGetNextTurnGameData(oGameData);
+    }
+
+    oGameData.iPlayUpdateTime = iGetCurrentTimeStamp();
+    if(oGameData.iStatus==4)
+    {
+      oGameData.iTurn = 0;
+      for (var i = 0; i < oGameData.aUserIds.length; i++)
       {
-
-        oGameData = oGetNextTurnGameData(oGameData);
+        vRemoveUserGameHashKey(oGameData.aUserIds[i]);
       }
+    }
 
-      oGameData.iPlayUpdateTime = iGetCurrentTimeStamp();
-      if(oGameData.iStatus==4)
-      {
-        oGameData.iTurn = 0;
-        for (var i = 0; i < oGameData.aUserIds.length; i++)
-        {
-          client.del("blackjack_"+oGameData.aUserIds[i], (error, result) => {
-            if (error)
-            {
-              console.log(error);
-              throw error;
-            }
-          });
-        }
-      }
+    var sGameData = JSON.stringify(oGameData);
+    client.set(oData.sHashKey, sGameData, redis.print);
 
-      var sGameData = JSON.stringify(oGameData);
-      client.set(oData.sHashKey, sGameData, redis.print);
-
-      if(oGameData!=null)
-      {
-        io.to('token:' + oData.sHashKey).emit(
-          'gameDataBlackjack',
-          oGameData
-        );
-      }
+    if(oGameData!=null)
+    {
+      vEmitGameDataToClient(oGameData);
+    }
   });
-
+}
+function vRemoveUserGameHashKey(iUserId)
+{
+  client.del("blackjack_"+iUserId, (error, result) => {
+    if (error)
+    {
+      console.log(error);
+      throw error;
+    }
+  });
 }
 
 function oGetNewCardGameData(oGameData)
@@ -374,14 +338,12 @@ function bCheckIfUserGameOver(oGameData)
   var bGameOver = true;
   var aPoints = oGameData.aUserInfoList[iUserPos].aPoints[0];
   var aCards = oGameData.aUserInfoList[iUserPos].aCards[0];
-
-
   if(aCards.length==5)
   {
     return true;
   }
 
-  for (var i = 0; i < aPoints.length; i++) 
+  for (var i = 0; i < aPoints.length; i++)
   {
     if(parseInt(aPoints[i])==21)
     {
@@ -452,16 +414,25 @@ function vSetStatusDealing(oData)
         pointloop:
         if(oGameData.aUserInfoList[i].aPoints!=null)
         {
-          for (var j = 0; j < oGameData.aUserInfoList[i].aPoints[0].length; j++) {
-            if(oGameData.aUserInfoList[i].aPoints[0][j]==21)
-            {
+          var aPoints = oGameData.aUserInfoList[i].aPoints;
+          if(aPoints.indexOf(21)!=-1)
+          {
               continue userloop;
-            }
-            if(oGameData.aUserInfoList[i].aPoints[0][j]!=21)
-            {
-              break userloop;
-            }
           }
+          else
+          {
+              break userloop;
+          }
+          // for (var j = 0; j < oGameData.aUserInfoList[i].aPoints[0].length; j++) {
+          //   if(oGameData.aUserInfoList[i].aPoints[0][j]==21)
+          //   {
+          //     continue userloop;
+          //   }
+          //   if(oGameData.aUserInfoList[i].aPoints[0][j]!=21)
+          //   {
+          //     break userloop;
+          //   }
+          // }
         }
         else
         {
@@ -485,10 +456,7 @@ function vSetStatusDealing(oData)
 
     if(oGameData!=null)
     {
-      io.to('token:' + oData.sHashKey).emit(
-        'gameDataBlackjack',
-        oGameData
-      );
+      vEmitGameDataToClient(oGameData);
     }
   });
 }
@@ -750,7 +718,13 @@ function aGetCardPoints(aCards)
   return aCardPoints;
 }
 
-
+function vEmitGameDataToClient(oGameData)
+{
+  io.to('token:' + oGameData.sHashKey).emit(
+    'gameDataBlackjack',
+    oGameData
+  );
+}
 
 function oGetCardDeltGameData(oGameData)
 {
@@ -782,23 +756,31 @@ function oGetCardDeltGameData(oGameData)
   }
 
   oGameData = oGetPointCaculatedGameData(oGameData);
-  var aAceCodes = [1,14,27,40];
-  var bBankerAce = (aAceCodes.indexOf(parseInt(oGameData.aBankerInfo.aCards[0]))!=-1);
-
+  oGameData = oGetBankerFirstAceGameData(oGameData);
   oGameData.iStatus = 2;
   oGameData.iPlayUpdateTime = iGetCurrentTimeStamp();
+  return oGameData;
+}
 
+function oGetBankerFirstAceGameData(oGameData)
+{
+  var bBankerAce = bBankerAceCheck(oGameData.aBankerInfo.aCards[0]);
   for (var i = 0; i < oGameData.aUserInfoList.length; i++)
   {
     oGameData.aUserInfoList[i].iInsurance = (bBankerAce == true)?1:0;
   }
-
   if(bBankerAce == true)
   {
     oGameData.iInsuranceStartTime = iGetCurrentTimeStamp();
   }
-
   return oGameData;
+
+}
+
+function bBankerAceCheck(iCardCode)
+{
+  var aAceCodes = [1,14,27,40];
+  return (aAceCodes.indexOf(iCardCode)!=-1);
 }
 
 function bGetDoubleBetChanceCheck(aCards)
@@ -857,10 +839,7 @@ function vSetStatusBetting(oData)
 
     if(oGameData!=null)
     {
-      io.to('token:' + oData.sHashKey).emit(
-        'gameDataBlackjack',
-        oGameData
-      );
+      vEmitGameDataToClient(oGameData);
     }
   });
 
