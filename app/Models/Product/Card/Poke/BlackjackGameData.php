@@ -11,7 +11,7 @@ class BlackjackGameData
 	public $iId;
 	public $sHashKey;
 	public $iStatus;
-	public $iStage;
+	public $iAward;
 	public $aUserIds;
 	public $aUserInfoList;
 	public $aCodes;
@@ -51,7 +51,7 @@ class BlackjackGameData
 		$this->iId = $aData['iId'];
 		$this->sHashKey = $aData['sHashKey'];
 		$this->iStatus = $aData['iStatus'];
-		$this->iStage = $aData['iStage'];
+		$this->iAward = $aData['iAward'];
 		$this->aUserIds = $aData['aUserIds'];
 		$this->aCodes = $aData['aCodes'];
 		$this->sCreatedAt = $aData['sCreatedAt'];
@@ -63,7 +63,7 @@ class BlackjackGameData
 		$this->iId = $oData->id;
 		$this->sHashKey = $oData->hashkey;
 		$this->iStatus = $oData->status;
-		$this->iStage = $oData->stage;
+		$this->iAward = $oData->award;
 		$this->aUserIds = json_decode($oData->userids,true);
 		$this->aCodes = json_decode($oData->codes,true);
 		$this->sCreatedAt = $oData->created_at;

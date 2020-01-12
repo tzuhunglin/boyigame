@@ -29,9 +29,40 @@ class BlackjackRecord extends Model
 		$oRecord = self::find($oGameData->iId);
 		$oRecord->hashkey = $oGameData->sHashKey;
 		$oRecord->status = $oGameData->iStatus;
-		$oRecord->stage = $oGameData->iStage;
 		$oRecord->userids = json_encode($oGameData->aUserIds);
-		$oRecord->codes = json_encode($oGameData->aCodes);
+		self::vRemoveUnnecessaryAttribute($oGameData);
+		$oRecord->detail = json_encode($oGameData);
 		$oRecord->save();
+	}
+
+	public static function vRemoveUnnecessaryAttribute($oGameData)
+	{
+		unset($oGameData->iPlayUpdateTime);
+		unset($oGameData->iTurn);
+		unset($oGameData->iBetStartTime);
+		unset($oGameData->sUpdatedAt);
+		unset($oGameData->sCreatedAt);
+		unset($oGameData->aCodes);
+		unset($oGameData->iStatus);
+	}
+
+	public static function aGetGameCardCodes($oGameData)
+	{
+		$aCardCodes = array();
+		$aCardCodes[0] = $oGameData->aBankerInfo->aCards;
+		$aUserCardCodes = self::aGetUserCardCodes($oGameData->aUserInfoList);
+		$aCardCodes = array_merge($aCardCodes,$aUserCardCodes);
+		return $aCardCodes;
+	}
+
+	public static function aGetUserCardCodes($aUserInfoList)
+	{
+		$iUserInfoListLength = count($aUserInfoList);
+		$aUserCardCodes = array();
+		for ($i=0; $i < $iUserInfoListLength; $i++)
+		{
+			array_push($aUserCardCodes, $aUserInfoList[$i]->aCards[0]);
+		}
+		return $aUserCardCodes;
 	}
 }

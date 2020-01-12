@@ -12,6 +12,7 @@ class Blackjack extends Poke
 {
 	public $iUserId;
 	public $oUnfinishedGameData;
+	public static $iGameMoneyLimit = 500;
 
 	function __construct($iUserId)
 	{
@@ -61,9 +62,9 @@ class Blackjack extends Poke
 		$oRecord = new BlackjackRecord;
 		$oRecord->hashkey = md5($this->iUserId.time());
 		$oRecord->status = 0;
-		$oRecord->stage = 0;
+		$oRecord->award = 0;
 		$oRecord->userids = json_encode(array($this->iUserId));
-		$oRecord->codes = json_encode(array());
+		$oRecord->detail = "";
 		$oRecord->save();
 		$oGameData = $oRecord->oGetGameData();
 		self::vAddWaitingGame($oGameData->sHashKey);
@@ -131,5 +132,12 @@ class Blackjack extends Poke
 		self::vSetUserGameHashKey($this->iUserId,$oWaitingGameData->sHashKey);
 		self::vSetGameData($oWaitingGameData);
 		return $oWaitingGameData;
+	}
+
+	public static function bIsPlayingInGame($iUserId)
+	{
+		$sUserGameHashKey = Redis::get("blackjack_".$iUserId);
+		$sUserGameHashKey = json_decode($sUserGameHashKey);
+		return (!empty($sUserGameHashKey));
 	}
 }

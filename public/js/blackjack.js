@@ -9134,9 +9134,6 @@ function sGetUserWinLose(iWinLose)
       sWinLose = "輸";
       break;
     case 1:
-      sWinLose = "平";
-      break;
-    case 2:
       sWinLose = "贏";
       break;
   }

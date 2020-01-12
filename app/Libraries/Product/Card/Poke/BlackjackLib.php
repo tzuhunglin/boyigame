@@ -5,6 +5,5 @@ use URL;
 class BlackjackLib
 {
     public static function sGetIndexLink(){ return URL::route('blackjack.index');}
-    public static function sGetSumUpLink(){ return URL::route('blackjack.sumup');}
-
+    public static function sGetSumUpLink($sHashKey){ return URL::route('blackjack.sumup',[$sHashKey]);}
 }

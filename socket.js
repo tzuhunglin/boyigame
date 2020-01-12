@@ -45,6 +45,10 @@ redis.subscribe('gameDataBlackjack', function(err, count) {
 
 io.on('connection', function(socket) {
   socket.on('set-token', function(token) {
+    if(token==null)
+    {
+      return;
+    }
     console.log(token);
     socket.join('token:' + token);
 
@@ -521,11 +525,11 @@ function iBankerUserCompare(iBankerPoint,iUserPoint)
   {
     if(iUserPoint>21)
     {
-      iWinLose = 1;
+      iWinLose = 0;
     }
     else
     {
-      iWinLose = 2;
+      iWinLose = 1;
     }
   }
   else
@@ -542,11 +546,11 @@ function iBankerUserCompare(iBankerPoint,iUserPoint)
       }
       else if(iBankerPoint < iUserPoint)
       {
-        iWinLose = 2;
+        iWinLose = 1;
       }
       else
       {
-        iWinLose = 1;
+        iWinLose = 0;
       }
     }
   }
