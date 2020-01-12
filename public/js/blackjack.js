@@ -8979,13 +8979,30 @@ function vBuyInsurance(oElement)
 function vStatusFinished(oGameData)
 {
   vSetGameCards(oGameData);
+  // vSetGameSumUp(oGameData.aAwardInfo);
   $(".controlarea").empty();
 }
+// function vSetGameSumUp(aAwardInfo)
+// {
+//   for (var i = 0; i < aAwardInfo.length; i++)
+//   {
+//     if()
+//   }
+// }
+
+function sGetSumUpTag(iUserId,iSumUpMoney)
+{
+  var iSumMoney = aAwardInfo[iUserId];
+  var sSumMoney = (iSumMoney>0)?"+"+iSumUpMoney:"-"+iSumUpMoney;
+  var sColor = (iSumMoney>0)?"green":"red";
+  var sSumMoneyTag = '<span style="coloe:'+sColor+';">'+sSumMoney+'</sppan>';
+  return sSumMoneyTag;
+}
+
 
 function vStatusDealing(oGameData)
 {
   vSetGameCards(oGameData);
-  // alert(oGameData.aUserInfoList[0].iInsurance);
   if(oGameData.aUserInfoList[0].iInsurance==0)
   {
     vStatusPlaying(oGameData);
@@ -9083,10 +9100,10 @@ function vSetBankerCards(oGameData)
 {
   var sTagId = "#banker";
   for (var j = 0; j < oGameData.aBankerInfo.aCards.length; j++) {
-      var oElement = $(sTagId).find(".cardarea").children()[j];
-      $(oElement).text(sGetCard(oGameData.aBankerInfo.aCards[j]));
-    }
-    $(sTagId).find(".pointarea").text(sGetShowPoints(oGameData.aBankerInfo.aPoints)+"點");
+    var oElement = $(sTagId).find(".cardarea").children()[j];
+    $(oElement).text(sGetCard(oGameData.aBankerInfo.aCards[j]));
+  }
+  $(sTagId).find(".pointarea").text(sGetShowPoints(oGameData.aBankerInfo.aPoints)+"點");
 }
 
 function vSetUserCards(oUserData)
@@ -9123,6 +9140,21 @@ function vSetCards(sTagId,oUserData)
   {
     $(sTagId).find(".doublearea").text("雙倍");
   }
+
+  if(oUserData.iSumUp!=undefined)
+  {
+    var iAvailableMoney = $(sTagId).find(".money").text();
+    var sSumUpTag = sGetSumUpTag(oUserData.iSumUp);
+    $(sTagId).find(".moneyarea").append(sSumUpTag);
+  }
+}
+
+function sGetSumUpTag(iSumUp)
+{
+  var sColor = (iSumUp>0)?"green":"red";
+  var sSumUp = (iSumUp>0)?"+"+iSumUp:"-"+(iSumUp * -1);
+  var sTag = '<span style="color:'+sColor+';">'+sSumUp+'</span>';
+  return sTag;
 }
 
 function sGetUserWinLose(iWinLose)

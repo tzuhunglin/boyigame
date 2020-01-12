@@ -24,6 +24,7 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('Product/Card/Poke/blackjack/{hashkey}/sumup',['as' => 'blackjack.sumup','uses'=>'Product\Card\Poke\BlackjackController@sumup']);
 
 Route::auth();
 
@@ -34,7 +35,6 @@ Route::group(['prefix' => 'Product/Lottery/Threed/jisupailie3'], function () {
 
 Route::group(['prefix' => 'Product/Card/Poke/blackjack'], function () {
 	Route::get('/',['as' => 'blackjack.index','uses'=>'Product\Card\Poke\BlackjackController@index']);
-	Route::get('/{hashkey}/sumup',['as' => 'blackjack.sumup','uses'=>'Product\Card\Poke\BlackjackController@sumup']);
 });
 
 Route::group(['prefix' => 'Manage/Children'], function () {

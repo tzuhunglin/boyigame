@@ -24,7 +24,9 @@ class BlackjackController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['except' => [
+            'sumup'
+        ]]);
     }
 
     /**
@@ -64,14 +66,14 @@ class BlackjackController extends Controller
     public function sumup($sHashKey)
     {
         $oGameData = Blackjack::oGetGameData($sHashKey);
+
         if(empty($oGameData))
         {
             return ['status'=> false];
         }
-        BlackjackRecord::vUpdateByGameData($oGameData);
         $oBlackjackAward = new BlackjackAward($sHashKey);
-        echo "<pre>"; print_r($oBlackjackAward);exit;
-
+        $oGameData = $oBlackjackAward->oGetAwardedGameData();
+        return json_encode($oGameData);
     }
 
 }

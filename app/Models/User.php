@@ -183,10 +183,15 @@ class User extends Authenticatable
         $this->save();
     }
 
-    public function vFundDefrozen($iMoney)
+    public function vFundDefrozens($iMoney)
     {
         $this->holdmoney -= $iMoney;
         $this->availablemoney += $iMoney;
         $this->save();
+    }
+
+    public function qq()
+    {
+        echo "qq";exit;
     }
 }

@@ -29,6 +29,8 @@ class BlackjackRecord extends Model
 		$oRecord = self::find($oGameData->iId);
 		$oRecord->hashkey = $oGameData->sHashKey;
 		$oRecord->status = $oGameData->iStatus;
+		$oRecord->award = $oGameData->iAward;
+
 		$oRecord->userids = json_encode($oGameData->aUserIds);
 		self::vRemoveUnnecessaryAttribute($oGameData);
 		$oRecord->detail = json_encode($oGameData);
@@ -43,7 +45,7 @@ class BlackjackRecord extends Model
 		unset($oGameData->sUpdatedAt);
 		unset($oGameData->sCreatedAt);
 		unset($oGameData->aCodes);
-		unset($oGameData->iStatus);
+		// unset($oGameData->iStatus);
 	}
 
 	public static function aGetGameCardCodes($oGameData)

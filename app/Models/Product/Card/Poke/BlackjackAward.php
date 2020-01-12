@@ -2,7 +2,7 @@
 
 namespace App\Models\Product\Card\Poke;
 
-use Illuminate\Foundation\Auth\User;
+use App\Models\User;
 use App\Models\Product\Card\Poke;
 use Illuminate\Support\Facades\Redis;
 use App\Models\Product\Card\Poke\BlackjackRecord;
@@ -12,12 +12,18 @@ class BlackjackAward
 {
 	public $oRecord;
 	public $oGameData;
+	public $aUserList = array();
 
 
 	function __construct($sHashKey)
 	{
 		$this->oRecord = self::oGetRecord($sHashKey);
-		$this->oGameData = json_decode($this->oRecord->detail);
+		$this->oGameData = (!empty($this->oRecord->detail))?json_decode($this->oRecord->detail):self::oGetGameData($sHashKey);
+	}
+
+	private static function oGetGameData($sHashKey)
+	{
+		return Blackjack::oGetGameData($sHashKey);
 	}
 
 	private static function oGetRecord($sHashKey)
@@ -27,7 +33,7 @@ class BlackjackAward
 
 	public function vHandle()
 	{
-		if(!empty($this->oGameData->aAwardInfo))
+		if($this->oRecord->award!=0)
 		{
 			return;
 		}
@@ -35,35 +41,16 @@ class BlackjackAward
 		$iUserInfoListLength = count($this->oGameData->aUserInfoList);
 		for ($i=0; $i < $iUserInfoListLength; $i++)
 		{
-			User::find($oUserInfo->iUserId)->vFundDefrozen(500);
-			$this->oGameData->aAwardInfo[$this->oGameData->aUserInfoList[$i]->iUserId] = 0;
+			$iUserId = $this->oGameData->aUserInfoList[$i]->iUserId;
+			$this->aUserList[$iUserId] = User::find($iUserId);
+			$oUser = $this->aUserList[$iUserId];
+			$oUser->vFundDefrozens(500);
+			$this->oGameData->aUserInfoList[$i]->iSumUp = 0;
 			$this->vSetBetAward($this->oGameData->aUserInfoList[$i]);
 			$this->vSetInsuranceAward($this->oGameData->aUserInfoList[$i]);
 		}
+		$this->oGameData->iAward = 1;
 		BlackjackRecord::vUpdateByGameData($this->oGameData);
-	}
-
-	public function vSetBetAward($oUserInfo)
-	{
-		$iBetMoney = (isset($oUserInfo->iDouble) && $oUserInfo->iDouble==3)? $oUserInfo->iBetAmount * 2 : $oUserInfo->iBetAmount;
-		$oUser = User::find($oUserInfo->iUserId);
-		$oUser->vReturnPointToParent($this->oGameData->sHashKey,$iBetMoney);
-		$this->oGameData->aAwardInfo[$oUserInfo->iUserId] = array();
-
-		if($oUserInfo->iWinLose==1)
-		{
-			$iWinMoney = $iBetAmount * ((90 + $oUser->keeppoint)/100);
-			$oUser->availablemoney+=$iWinMoney;
-			$oUser->totalmoney+=$iWinMoney;
-			$this->oGameData->aAwardInfo[$oUserInfo->iUserId] += $iWinMoney;
-		}
-		else
-		{
-			$oUser->availablemoney-=$iBetMoney;
-			$oUser->totalmoney-=$iBetMoney;
-			$this->oGameData->aAwardInfo[$oUserInfo->iUserId] -= $iWinMoney;
-		}
-		$oUser->save();
 	}
 
 	public function vSetInsuranceAward($oUserInfo)
@@ -72,34 +59,56 @@ class BlackjackAward
 		{
 			return;
 		}
+		$oUser = $this->aUserList[$oUserInfo->iUserId];
 		$iInsuranceMoney = $oUserInfo->iBetAmount/2;
 		$oUser->vReturnPointToParent($this->oGameData->sHashKey,$iInsuranceMoney);
-		if(in_array(21,$oUserInfo->aBankerInfo->aPoints) && count($oUserInfo->aBankerInfo->aCards)==2)
+		if(in_array(21,$this->oGameData->aBankerInfo->aPoints) && count($this->oGameData->aBankerInfo->aCards)==2)
 		{
 			$iWinMoney = $iInsuranceMoney * ((90 + $oUser->keeppoint)/100);
-			$oUser->availablemoney+=$iWinMoney;
-			$oUser->totalmoney+=$iWinMoney;
-			$this->oGameData->aAwardInfo[$oUserInfo->iUserId] += $iWinMoney;
+			$oUser->availablemoney += $iWinMoney;
+			$oUser->totalmoney += $iWinMoney;
+			$oUserInfo->iSumUp += $iWinMoney;
 		}
 		else
 		{
 			$oUser->availablemoney-=$iInsuranceMoney;
-			$oUser->totalmoney-=$iInsuranceMoney;
-			$this->oGameData->aAwardInfo[$oUserInfo->iUserId] -= $iInsuranceMoney;
+			$oUser->totalmoney -= $iInsuranceMoney;
+			$oUserInfo->iSumUp -= $iInsuranceMoney;
 
+		}
+		$oUser->save();
+	}
+
+	public function vSetBetAward($oUserInfo)
+	{
+		$iBetMoney = (isset($oUserInfo->iDouble) && $oUserInfo->iDouble==3)? $oUserInfo->iBetAmount * 2 : $oUserInfo->iBetAmount;
+		$oUser = $this->aUserList[$oUserInfo->iUserId];
+		$oUser->vReturnPointToParent($this->oGameData->sHashKey,$iBetMoney);
+
+		if($oUserInfo->iWinLose==1)
+		{
+			$iWinMoney = $iBetMoney * ((90 + $oUser->keeppoint)/100);
+			$oUser->availablemoney+=$iWinMoney;
+			$oUser->totalmoney += $iWinMoney;
+			$oUserInfo->iSumUp += $iWinMoney;
+		}
+		else
+		{
+			$oUser->availablemoney-=$iBetMoney;
+			$oUser->totalmoney -= $iBetMoney;
+			$oUserInfo->iSumUp -= $iBetMoney;
 		}
 		$oUser->save();
 	}
 
 
 
-	public function oGetAwardInfo()
+	public function oGetAwardedGameData()
 	{
-		if(empty($this->oGameData->aAwardInfo))
+		if($this->oRecord->award==0)
 		{
 			$this->vHandle();
 		}
-
-		return $this->oGameData->aAwardInfo;
+		return $this->oGameData;
 	}
 }
