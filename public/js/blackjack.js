@@ -9143,6 +9143,10 @@ function vSetCards(sTagId,oUserData)
 
   if(oUserData.iSumUp!=undefined)
   {
+    if($(sTagId).find(".sumup").length != 0)
+    {
+      return;
+    }
     var iAvailableMoney = $(sTagId).find(".money").text();
     var sSumUpTag = sGetSumUpTag(oUserData.iSumUp);
     $(sTagId).find(".moneyarea").append(sSumUpTag);
@@ -9153,7 +9157,7 @@ function sGetSumUpTag(iSumUp)
 {
   var sColor = (iSumUp>0)?"green":"red";
   var sSumUp = (iSumUp>0)?"+"+iSumUp:"-"+(iSumUp * -1);
-  var sTag = '<span style="color:'+sColor+';">'+sSumUp+'</span>';
+  var sTag = '<span class="sumup" style="color:'+sColor+';">'+sSumUp+'</span>';
   return sTag;
 }
 

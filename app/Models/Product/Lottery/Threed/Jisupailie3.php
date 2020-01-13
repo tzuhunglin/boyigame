@@ -161,9 +161,9 @@ class Jisupailie3 extends Product
             $oBetOrder->vSave();
             if($this->iReturn==true)
             {
-                $this->oUser->vReturnPointToSelf($oBetOrder->id,$oBetOrder->iBetMoney);
+                $this->oUser->vReturnPointToSelf($oBetOrder->id,$oBetOrder->iBetMoney,self::$sLottery);
             }
-            $this->oUser->vReturnPointToParent($oBetOrder->id,$oBetOrder->iBetMoney);
+            $this->oUser->vReturnPointToParent($oBetOrder->id,$oBetOrder->iBetMoney,self::$sLottery,$this->oUser->id);
         }
         $this->oUser->vSetMoneyDeduct();
     }

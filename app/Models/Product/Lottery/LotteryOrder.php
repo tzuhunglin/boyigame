@@ -14,4 +14,14 @@ class LotteryOrder extends Model
     	$this->award = 1;
     	$this->save();
     }
+
+    public static function aGetBetRecordList($iUserId)
+    {
+    	return self::where('userid',$iUserId)->get();
+    }
+
+    public static function oGetBetRecordData($iId)
+    {
+    	return self::find($iId);
+    }
 }

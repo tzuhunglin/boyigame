@@ -27,4 +27,9 @@ class IssueInfo extends Model
     	return $sCurrentIssue;
     }
 
+    public static function oGetIssueInfoData($sLottery,$sIssue)
+    {
+        return self::where('lottery',$sLottery)->where('issue',$sIssue)->first();
+    }
+
 }

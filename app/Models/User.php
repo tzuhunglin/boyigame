@@ -12,6 +12,7 @@ class User extends Authenticatable
     private $iDeductAmount = false;
     private $iAddAmount = false;
     private $oParentUser = false;
+    private static $aUserNameList = false;
 
     /**
      * The attributes that are mass assignable.
@@ -117,15 +118,15 @@ class User extends Authenticatable
         $this->iDeductAmount = false;
     }
 
-    public function vReturnPointToSelf($iBetOrderId,$iBetMoney)
+    public function vReturnPointToSelf($iBetOrderId,$iBetMoney,$sName)
     {
         $iReturnMoney = $this->iGetMoneyReturnToSelf($iBetMoney);
-        BetReturn::vSetBetReturn($iBetOrderId, $this->id, $iReturnMoney);
+        BetReturn::vSetBetReturn($iBetOrderId, $this->id, $iReturnMoney,$sName,$this->id);
         $this->vSetAddMoneyAmount($iReturnMoney);
         $this->vSetMoneyAdd();
     }
 
-    public function vReturnPointToParent($iBetOrderId,$iBetMoney)
+    public function vReturnPointToParent($iBetOrderId,$iBetMoney,$sName,$iPlayerId)
     {
         if($this->parentid==0)
         {
@@ -133,10 +134,10 @@ class User extends Authenticatable
         }
         $oParentUser = $this->oGetParentUser();
         $iReturnMoney = $this->iGetMoneyReturnToParent($iBetMoney);
-        BetReturn::vSetBetReturn($iBetOrderId, $this->parentid, $iReturnMoney);
+        BetReturn::vSetBetReturn($iBetOrderId, $this->parentid, $iReturnMoney,$sName,$iPlayerId);
         $oParentUser->vSetAddMoneyAmount($iReturnMoney);
         $oParentUser->vSetMoneyAdd();
-        $oParentUser->vReturnPointToParent($iBetOrderId,$iBetMoney);
+        $oParentUser->vReturnPointToParent($iBetOrderId,$iBetMoney,$sName,$iPlayerId);
     }
 
     private function iGetMoneyReturnToSelf($iBetMoney)
@@ -190,8 +191,26 @@ class User extends Authenticatable
         $this->save();
     }
 
-    public function qq()
+    public static function sGetUserName($iUserId)
     {
-        echo "qq";exit;
+        if(empty($iUserId))
+        {
+            return;
+        }
+        if(self::$aUserNameList==false)
+        {
+            self::$aUserNameList = array();
+        }
+
+        if(isset(self::$aUserNameList[$iUserId]))
+        {
+            return self::$aUserNameList[$iUserId];
+        }
+        else
+        {
+            $sUserName = self::find($iUserId)->name;
+            self::$aUserNameList[$iUserId] = $sUserName;
+            return $sUserName;
+        }
     }
 }

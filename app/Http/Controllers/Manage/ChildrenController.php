@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Manage\Children;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Product\Lottery\LotteryOrder;
+use App\Models\Product\BetReturn;
+use App\Models\Product\Lottery\IssueInfo;
+use App\Models\Product\Lottery\Threed\Jisupailie3;
+use App\Models\Product\Card\Poke\BlackjackRecord;
+
 
 class ChildrenController extends Controller
 {
@@ -45,6 +51,70 @@ class ChildrenController extends Controller
                     ]
                 );
     }
+
+    public function betRecord($iId)
+    {
+        if(!$this->bPageAuthCheck($iId))
+        {
+            return $this->vRedirector(Auth::user()->id);
+        }
+        $aLotteryOrderList = LotteryOrder::aGetBetRecordList($iId);
+        return view('manage.children.betrecord',
+                    [
+                        'aLotteryOrderList' => $aLotteryOrderList
+                    ]
+        );
+    }
+
+
+    public function returnRecord($iId)
+    {
+        if(!$this->bPageAuthCheck($iId))
+        {
+            return $this->vRedirector(Auth::user()->id);
+        }
+
+        $aReturnRecordList = BetReturn::aGetReturnRecordList($iId);
+        return view('manage.children.returnrecord',
+                    [
+                        'aReturnRecordList' => $aReturnRecordList
+                    ]
+        );
+    }
+
+    public function gameRecord($iId)
+    {
+        if(!$this->bPageAuthCheck($iId))
+        {
+            return $this->vRedirector(Auth::user()->id);
+        }
+        $aGameRecordList = BlackjackRecord::aGetRecordList($iId);
+        return view('manage.children.gamerecord',
+                    [
+                        'aGameRecordList' => $aGameRecordList
+                    ]
+        );
+    }
+
+    public function gameRecordDetail($iId)
+    {
+        $oGameRecord = BlackjackRecord::oGetGameRecord($iId);
+        $oGameRecord->aUserIds = json_decode($oGameRecord->userids,true);
+
+        if(!$this->bPageAuthCheckByIdList($oGameRecord->aUserIds))
+        {
+            return $this->vRedirector(Auth::user()->id);
+        }
+        $oGameRecord->aDetail = json_decode($oGameRecord->detail,true);
+        return view('manage.children.gamerecorddetail',
+                    [
+                        'oGameRecord' => $oGameRecord
+                    ]
+        );
+    }
+
+
+
 
     public function create(Request $oRequest)
     {
@@ -111,10 +181,18 @@ class ChildrenController extends Controller
 
     }
 
-    public function betRecord($iId)
+    private function bPageAuthCheckByIdList($aUserIdList)
     {
-        echo "<pre>"; print_r($iId);exit;
-        return view('manage.children.berrecord');
+        $bAuth = false;
+        foreach ($aUserIdList as $iUserId)
+        {
+            $bAuth = $this->bPageAuthCheck($iUserId);
+            if($bAuth==true)
+            {
+                break;
+            }
+        }
+        return $bAuth;
     }
 
     private function bPageAuthCheck($iId)

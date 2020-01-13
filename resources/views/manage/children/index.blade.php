@@ -38,7 +38,10 @@
 								<td>{{$oChildrenData->email}}</td>
 								<td>{{$oChildrenData->keeppoint}}%</td>
 								<td>
-									<a href="{{App\Libraries\Manage\ChildrenLib::sGetBetRecordLink($oChildrenData->id)}}">投注紀錄</a> / <a href="{{App\Libraries\Manage\ChildrenLib::sGetIndexLink($oChildrenData->id)}}">下級</a>
+									<a href="{{App\Libraries\Manage\ChildrenLib::sGetBetRecordLink($oChildrenData->id)}}">投注紀錄</a> / 
+									<a href="{{App\Libraries\Manage\ChildrenLib::sGetGameRecordLink($oChildrenData->id)}}">遊戲紀錄</a> / 
+									<a href="{{App\Libraries\Manage\ChildrenLib::sGetReturnRecordLink($oChildrenData->id)}}">返點紀錄</a> / 
+									<a href="{{App\Libraries\Manage\ChildrenLib::sGetIndexLink($oChildrenData->id)}}">下級</a>
 								</td>
 							</tr>
 							@empty

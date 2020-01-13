@@ -12,7 +12,7 @@ class BlackjackRecord extends Model
 	protected $table = 'blackjackrecord';
 	const STATUS_WAITING = 0;
 	const STATUS_GOING = 1;
-	const STATUS_FINISHED = 2;
+	const STATUS_FINISHED = 4;
 
 	public static function oGetUnfinishedRecord($iUserId)
 	{
@@ -31,10 +31,21 @@ class BlackjackRecord extends Model
 		$oRecord->status = $oGameData->iStatus;
 		$oRecord->award = $oGameData->iAward;
 
-		$oRecord->userids = json_encode($oGameData->aUserIds);
+		$oRecord->userids = json_encode(self::aGetStrIdList($oGameData->aUserIds));
 		self::vRemoveUnnecessaryAttribute($oGameData);
 		$oRecord->detail = json_encode($oGameData);
 		$oRecord->save();
+	}
+
+	public static function aGetStrIdList($aIdList)
+	{
+		$iIdListLength = count($aIdList);
+		for ($i=0; $i < $iIdListLength; $i++)
+		{
+			$aIdList[$i] = (String)$aIdList[$i];
+		}
+
+		return $aIdList;
 	}
 
 	public static function vRemoveUnnecessaryAttribute($oGameData)
@@ -45,7 +56,6 @@ class BlackjackRecord extends Model
 		unset($oGameData->sUpdatedAt);
 		unset($oGameData->sCreatedAt);
 		unset($oGameData->aCodes);
-		// unset($oGameData->iStatus);
 	}
 
 	public static function aGetGameCardCodes($oGameData)
@@ -66,5 +76,15 @@ class BlackjackRecord extends Model
 			array_push($aUserCardCodes, $aUserInfoList[$i]->aCards[0]);
 		}
 		return $aUserCardCodes;
+	}
+
+	public static function aGetRecordList($iUserId)
+	{
+		return  self::where('userids','like', '%"' . $iUserId. '"%')->where('status',self::STATUS_FINISHED)->get();
+	}
+
+	public static function oGetGameRecord($iId)
+	{
+		return self::find($iId);
 	}
 }

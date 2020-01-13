@@ -13,6 +13,8 @@ class Blackjack extends Poke
 	public $iUserId;
 	public $oUnfinishedGameData;
 	public static $iGameMoneyLimit = 500;
+	public static $sName = 'blackjack';
+
 
 	function __construct($iUserId)
 	{

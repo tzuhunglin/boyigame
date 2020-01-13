@@ -50,7 +50,10 @@ Route::group(['prefix' => 'Manage/Children'], function () {
 
 	Route::get('/{id}/show',['as' => 'children.show','uses'=>'Manage\ChildrenController@show']);
 	Route::get('/{id}/betRecord',['as' => 'children.betRecord','uses'=>'Manage\ChildrenController@betRecord']);
-
+	Route::get('/{id}/gameRecord',['as' => 'children.gameRecord','uses'=>'Manage\ChildrenController@gameRecord']);
+	Route::get('/{id}/betRecordDetail',['as' => 'children.betRecordDetail','uses'=>'Manage\ChildrenController@betRecordDetail']);
+	Route::get('/{id}/gameRecordDetail',['as' => 'children.gameRecordDetail','uses'=>'Manage\ChildrenController@gameRecordDetail']);
+	Route::get('/{id}/returnRecord',['as' => 'children.returnRecord','uses'=>'Manage\ChildrenController@returnRecord']);
 });
 
 

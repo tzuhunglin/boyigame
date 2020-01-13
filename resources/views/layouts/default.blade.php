@@ -35,14 +35,15 @@
             <nav id="menu">
                 <ul class="links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="generic.html">Generic</a></li>
-                    <li><a href="elements.html">Elements</a></li>
+                    <li><a href="{{App\Libraries\Manage\ChildrenLib::sGetIndexLink(Auth::user()->id)}}">下級設定</a></li>
+                    <li><a href="{{App\Libraries\Manage\ChildrenLib::sGetBetRecordLink(Auth::user()->id)}}">投注紀錄</a></li>
+                    <li><a href="{{App\Libraries\Manage\ChildrenLib::sGetGameRecordLink(Auth::user()->id)}}">遊戲紀錄</a></li>
+                    <li><a href="{{App\Libraries\Manage\ChildrenLib::sGetReturnRecordLink(Auth::user()->id)}}">返點紀錄</a></li>
                     <li>
                         <a class="dropdown-item" href="{{ url('/logout') }}">
                             Logout
                         </a>
                     </li>
-                    <li><a href="{{App\Libraries\Manage\ChildrenLib::sGetIndexLink(Auth::user()->id)}}">下級設定</a></li>
                 </ul>
             </nav>
                 @endif

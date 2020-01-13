@@ -133,11 +133,6 @@ if(sHashKey!="")
 }
 
 $(document).ready(function(){
-	// 	alert( sHashKey);
-	// alert( iGameMoneyLimit);
-	// alert( iAvailableMoney);
-	// alert( iGameMoneyLimit);
-
 	if(sHashKey==false && iAvailableMoney<iGameMoneyLimit)
 	{
 		alert("可用餘額不足");

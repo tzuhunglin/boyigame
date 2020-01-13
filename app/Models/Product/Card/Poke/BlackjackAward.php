@@ -6,14 +6,13 @@ use App\Models\User;
 use App\Models\Product\Card\Poke;
 use Illuminate\Support\Facades\Redis;
 use App\Models\Product\Card\Poke\BlackjackRecord;
-
+use App\Models\Product\Card\Poke\Blackjack;
 
 class BlackjackAward
 {
 	public $oRecord;
 	public $oGameData;
 	public $aUserList = array();
-
 
 	function __construct($sHashKey)
 	{
@@ -61,7 +60,7 @@ class BlackjackAward
 		}
 		$oUser = $this->aUserList[$oUserInfo->iUserId];
 		$iInsuranceMoney = $oUserInfo->iBetAmount/2;
-		$oUser->vReturnPointToParent($this->oGameData->sHashKey,$iInsuranceMoney);
+		$oUser->vReturnPointToParent($this->oGameData->sHashKey,$iInsuranceMoney,Blackjack::$sName,$oUserInfo->iUserId);
 		if(in_array(21,$this->oGameData->aBankerInfo->aPoints) && count($this->oGameData->aBankerInfo->aCards)==2)
 		{
 			$iWinMoney = $iInsuranceMoney * ((90 + $oUser->keeppoint)/100);
@@ -83,7 +82,7 @@ class BlackjackAward
 	{
 		$iBetMoney = (isset($oUserInfo->iDouble) && $oUserInfo->iDouble==3)? $oUserInfo->iBetAmount * 2 : $oUserInfo->iBetAmount;
 		$oUser = $this->aUserList[$oUserInfo->iUserId];
-		$oUser->vReturnPointToParent($this->oGameData->sHashKey,$iBetMoney);
+		$oUser->vReturnPointToParent($this->oGameData->sHashKey,$iBetMoney,Blackjack::$sName,$oUserInfo->iUserId);
 
 		if($oUserInfo->iWinLose==1)
 		{
@@ -100,8 +99,6 @@ class BlackjackAward
 		}
 		$oUser->save();
 	}
-
-
 
 	public function oGetAwardedGameData()
 	{

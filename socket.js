@@ -31,13 +31,11 @@ redis.on('message', function(channel, notification) {
   }
 });
 
-
 const redisCache = require('redis');
 const client = redisCache.createClient();
 client.on('connect', () => {
   console.log('Redis client connected');
 });
-
 
 redis.subscribe('gameDataBlackjack', function(err, count) {
   console.log('blackjack connect!');
@@ -72,25 +70,25 @@ io.on('connection', function(socket) {
   });
 });
 
-
 setInterval(
-function ()
-{
-  for (var i = 0; i < aAllGameList.length; i++)
+  function ()
   {
-    var sHashKey = aAllGameList[i];
-    client.get(sHashKey, (error, result) => {
-      if (error)
-      {
-        console.log(error);
-        throw error;
-      }
-      var oGameData = JSON.parse(result);
-      oMonitorController(oGameData);
-    });
+    for (var i = 0; i < aAllGameList.length; i++)
+    {
+      var sHashKey = aAllGameList[i];
+      client.get(sHashKey, (error, result) => {
+        if (error)
+        {
+          console.log(error);
+          throw error;
+        }
+        var oGameData = JSON.parse(result);
+        oMonitorController(oGameData);
+      });
+    }
   }
-}
-,1000);
+  ,1000
+);
 
 function oMonitorController(oGameData)
 {
@@ -239,17 +237,10 @@ function vSetStatusBetting(oData)
       vEmitGameDataToClient(oGameData);
     }
   });
-
 }
-
-
-// function sleep(ms) {
-//     return new Promise(resolve => setTimeout(resolve, ms));
-// }
 
 function vHandle(sHashKey, vSet)
 {
-  // sleep(1000).then(() => {
     client.get(sHashKey, (error, result) => {
       if (error)
       {
@@ -259,7 +250,6 @@ function vHandle(sHashKey, vSet)
       var oGameData = JSON.parse(result);
       vSet(oGameData);
     });
-  // });
 }
 
 function vSetStatusInsurance(oData)
@@ -351,7 +341,6 @@ function bCheckIfUserGameOver(oGameData)
       bGameOver = false;
     }
   }
-
   return bGameOver;
 }
 
@@ -361,6 +350,11 @@ function oGetNextTurnGameData(oGameData)
   userloop:
   for (var i = iTurnPosition+1; i < oGameData.aUserInfoList.length; i++)
   {
+    if(oGameData.aUserInfoList[i].aPoints[0].indexOf(21)!=-1)
+    {
+      continue userloop;
+    }
+
     pointloop:
     for (var j = 0; j < oGameData.aUserInfoList[i].aPoints[0].length; j++)
     {
@@ -389,18 +383,12 @@ function vSetStatusDealing(oData)
   {
     return;
   }
-  console.log(oData);
-  vHandle(oData.sHashKey, function(oGameData){
 
+  vHandle(oData.sHashKey, function(oGameData){
     var iUserPos = oGameData.aUserIds.indexOf(oData.iUserId);
-    // if(    oGameData.aUserInfoList[iUserPos].iBetAmount == 0)
-    // {
-      oGameData.aUserInfoList[iUserPos].iBetAmount = oData.iBetAmount;
-    // }
+    oGameData.aUserInfoList[iUserPos].iBetAmount = oData.iBetAmount;
 
     var bBetComplete = bBetCompleteCheck(oGameData);
-
-
     var bDealComplete = bDealCompleteCheck(oGameData.aUserInfoList);
 
     if(bBetComplete==true && bDealComplete==false)
@@ -445,11 +433,6 @@ function vSetStatusDealing(oData)
 
     var sGameData = JSON.stringify(oGameData);
     client.set(oData.sHashKey, sGameData, redis.print);
-    // if(bBetComplete==true)
-    // {
-    //   console.log(oGameData.sHashKey);
-    //   console.log(oGameData.aUserInfoList);
-    // }
     if(oGameData!=null)
     {
       vEmitGameDataToClient(oGameData);
@@ -460,9 +443,6 @@ function vSetStatusDealing(oData)
 function vSetStatusPlaying(oData)
 {
   vHandle(oData.sHashKey, function(oGameData){
-      // console.log(oGameData.sHashKey);
-      // console.log(oGameData.aUserInfoList);
-
     if(oGameData.iTurn != oData.iUserId)
     {
       return ;
@@ -487,14 +467,6 @@ function vSetStatusPlaying(oData)
     }
 
     oGameData.iPlayUpdateTime = iGetCurrentTimeStamp();
-    // if(oGameData.iStatus==4)
-    // {
-    //   oGameData.iTurn = 0;
-    //   for (var i = 0; i < oGameData.aUserIds.length; i++)
-    //   {
-    //     vRemoveUserGameHashKey(oGameData.aUserIds[i]);
-    //   }
-    // }
 
     var sGameData = JSON.stringify(oGameData);
     client.set(oData.sHashKey, sGameData, redis.print);
@@ -505,6 +477,7 @@ function vSetStatusPlaying(oData)
     }
   });
 }
+
 function oGetFinishedGameData(oGameData)
 {
   var iWinnerPoint = iGetWinnerPoint(oGameData.aUserInfoList)
@@ -573,7 +546,6 @@ function iBankerUserCompare(iBankerPoint,iUserPoint)
       }
     }
   }
-
   return iWinLose;
 }
 
@@ -770,8 +742,6 @@ function vEmitGameDataToClient(oGameData)
       oGameData
     );
   }
-
-
 }
 
 function vCloseGame(oGameData)
@@ -782,21 +752,17 @@ function vCloseGame(oGameData)
   {
     vRemoveUserGameHashKey(oGameData.aUserIds[i]);
   }
-
   var iHashKeyIndex = aAllGameList.indexOf(oGameData.sHashKey);
   delete aAllGameList[iHashKeyIndex];
   aAllGameList = aGetFiltered(aAllGameList);
 
   var sGameData = JSON.stringify(oGameData);
   client.set(oGameData.sHashKey, sGameData, redis.print);
-
-
-
   var request = require('request');
   request('http://dwww.boyigame.local/Product/Card/Poke/blackjack/'+oGameData.sHashKey+'/sumup', function (error, response, sGameData) {
     if (!error && response.statusCode == 200) 
     {
-        console.log(sGameData) // Print the google web page.
+        console.log(sGameData)
         var oGameData = JSON.parse(sGameData);
         console.log(oGameData);
         client.set(oGameData.sHashKey, sGameData, redis.print);
@@ -864,7 +830,6 @@ function oGetBankerFirstAceGameData(oGameData)
     oGameData.iInsuranceStartTime = iGetCurrentTimeStamp();
   }
   return oGameData;
-
 }
 
 function bBankerAceCheck(iCardCode)
@@ -897,8 +862,6 @@ function iGetRandom(){
     return Math.floor(Math.random()*52)+1;
 };
 
-
-
 function aGetFiltered(aData)
 {
   aData = aData.filter(function (el) {
@@ -907,7 +870,6 @@ function aGetFiltered(aData)
   return aData;
 }
 
-// 監聽 3000 port
 http.listen(3000, function() {
   console.log('Listening on Port 3000');
 });
