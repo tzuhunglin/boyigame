@@ -37,7 +37,6 @@
 								<td>@foreach(json_decode($oGameRecordData->userids,true) as $iUserId) <div>{{App\Models\User::sGetUserName($iUserId)}}</div> @endforeach</td>
 								<td>{{$oGameRecordData->created_at}}</td>
 								<td>{{$oGameRecordData->updated_at}}</td>
-
 							</tr>
 							@empty
 							<tr>

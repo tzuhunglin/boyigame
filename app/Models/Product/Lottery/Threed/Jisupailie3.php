@@ -206,10 +206,6 @@ class Jisupailie3 extends Product
     private function vSanmatzushiuanCodeSetBuild()
     {
         sort($this->aCode[0]);
-        // if(count($this->aCode[0])==3)
-        // {
-        //     array_push($this->aCodeSetList,$this->aCode[0]); 
-        // }
         $iCodeCount = count($this->aCode[0]);
         $i = 0;
         while($i<$iCodeCount-2)
@@ -258,7 +254,7 @@ class Jisupailie3 extends Product
     }
 
     public static function sGetLastDrawnIssue()
-    {   
+    {
         $sCurrentTime = date("H:i");
         if($sCurrentTime>self::$sIssueEndTime)
         {
@@ -307,14 +303,4 @@ class Jisupailie3 extends Product
 
         return sprintf("%s-%s",$sDate,$sIssue);
     }
-
-
-
-
-
-
-
-
-
-
 }

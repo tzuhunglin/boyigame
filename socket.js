@@ -6,17 +6,17 @@ var Redis = require('ioredis');
 var redis = new Redis();
 var aAllGameList = [];
 var iTimeLimit = 10000;
-var mysql = require('mysql');
-var conn = mysql.createConnection({
-host : '127.0.0.1',
-user : 'root',
-password : 'root',
-database : 'boyigame'
-});
-conn.connect(function(err){
-  if(err) throw err;
-  console.log('connect success!');
-});
+// var mysql = require('mysql');
+// var conn = mysql.createConnection({
+// host : '127.0.0.1',
+// user : 'root',
+// password : 'root',
+// database : 'boyigame'
+// });
+// conn.connect(function(err){
+//   if(err) throw err;
+//   console.log('connect success!');
+// });
 
 redis.subscribe('issueInfoJisupailie3', function(err, count) {
   console.log('connect!');
@@ -759,7 +759,8 @@ function vCloseGame(oGameData)
   var sGameData = JSON.stringify(oGameData);
   client.set(oGameData.sHashKey, sGameData, redis.print);
   var request = require('request');
-  request('http://dwww.boyigame.local/Product/Card/Poke/blackjack/'+oGameData.sHashKey+'/sumup', function (error, response, sGameData) {
+  var sSumUpLink = 'http://dwww.alfredweb.tw/Product/Card/Poke/blackjack/'+oGameData.sHashKey+'/sumup';
+  request(sSumUpLink, function (error, response, sGameData) {
     if (!error && response.statusCode == 200) 
     {
         console.log(sGameData)
@@ -777,7 +778,10 @@ function vCloseGame(oGameData)
     }
     else
     {
-      console.log(sGameData);
+      console.log(sSumUpLink);
+      console.log(response);
+      console.log(error);
+
     }
   });
 }

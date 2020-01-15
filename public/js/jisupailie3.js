@@ -8900,17 +8900,7 @@ module.exports = yeast;
 'use strict';
 
 var io = require('socket.io-client');
-
-// // 建立 socket.io 的連線
-// var notification = io.connect('http://localhost:3000');
-
-// // 當從 socket.io server 收到 notification 時將訊息印在 console 上
-// notification.on('notification', function (message) {
-//   console.log(message);
-// });
-
-// var issueInfoJisupailie3 = io.connect('http://localhost:3000');
-var issueInfoJisupailie3 = io.connect('dwww.boyigame.local:3000');
+var issueInfoJisupailie3 = io.connect('dwww.alfredweb.tw:3000');
 
 
 issueInfoJisupailie3.on('issueInfoJisupailie3', function (oIssueInfo) {

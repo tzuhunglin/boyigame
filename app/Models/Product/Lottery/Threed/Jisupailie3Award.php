@@ -17,7 +17,7 @@ class Jisupailie3Award
     private $oIssueInfo;
     private $aUserList;
     private $aUserAwardMoneyList;
-    
+
     function __construct($oIssueInfo)
     {
         $this->oIssueInfo = $oIssueInfo;
@@ -69,8 +69,8 @@ class Jisupailie3Award
     private function vGetAwardYimabudingdanBetOrder($sType)
     {
         $aCode = json_decode($this->oIssueInfo->code);
-        for ($i=0; $i < count($aCode); $i++) 
-        { 
+        for ($i=0; $i < count($aCode); $i++)
+        {
             $aCode[$i] = json_encode(array($aCode[$i]));
         }
         return LotteryOrder::where("lottery",self::$sLottery)
@@ -112,7 +112,7 @@ class Jisupailie3Award
     private function vCalculateUserAwardMoney($aAwardBetOrderList,$iOdds)
     {
         $this->aUserAwardMoneyList = array();
-        foreach ($aAwardBetOrderList as $oAwardBetOrder) 
+        foreach ($aAwardBetOrderList as $oAwardBetOrder)
         {
             if(!isset($this->aUserAwardMoneyList[$oAwardBetOrder->userid]))
             {
@@ -128,16 +128,12 @@ class Jisupailie3Award
 
     private function vSetUserAwardMoney()
     {
-        foreach ($this->aUserAwardMoneyList as $iUserId => $iAwardMoney) 
+        foreach ($this->aUserAwardMoneyList as $iUserId => $iAwardMoney)
         {
             $oUser = User::find($iUserId);
             $oUser->totalmoney += $iAwardMoney;
             $oUser->availablemoney += $iAwardMoney;
             $oUser->save();
-        }   
+        }
     }
-
-
-
-
 }

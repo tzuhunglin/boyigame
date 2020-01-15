@@ -14,28 +14,14 @@ use App\Models\Product\Lottery\LotteryBet;
 
 class Jisupailie3Controller extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        // Redis::set('name', 'Taylor');
-        // $user = Redis::get('name');
-        // echo "<pre>"; print_r($user );exit;
         $oJisupailie3 = IssueInfoPushData::oGetLatestIssueInfoPushData('jisupailie3');
-        // echo "<pre>"; print_r($oJisupailie3);exit;
         $oUser = Auth::user();
         return view('product.lottery.threed.jisupailie3.index',[
                     'oUser' => $oUser,

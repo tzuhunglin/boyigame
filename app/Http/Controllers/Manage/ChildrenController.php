@@ -16,24 +16,12 @@ use App\Models\Product\Card\Poke\BlackjackRecord;
 
 class ChildrenController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     private $oUser = null;
     public function __construct()
     {
         $this->middleware('auth');
-
-        // $this->oUser = Auth::user();
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index($iId)
     {
         $oUser = Auth::user();

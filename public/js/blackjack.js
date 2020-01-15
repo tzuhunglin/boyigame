@@ -8899,7 +8899,7 @@ module.exports = yeast;
 },{}],55:[function(require,module,exports){
 'use strict';
 var oSocketIoClient = require('socket.io-client');
-var oIoConnection = oSocketIoClient.connect('dwww.boyigame.local:3000');
+var oIoConnection = oSocketIoClient.connect('dwww.alfredweb.tw:3000');
 var sChannel = "gameDataBlackjack";
 
 oIoConnection.on('connect', function() {
@@ -8979,16 +8979,19 @@ function vBuyInsurance(oElement)
 function vStatusFinished(oGameData)
 {
   vSetGameCards(oGameData);
-  // vSetGameSumUp(oGameData.aAwardInfo);
   $(".controlarea").empty();
+      var sHtml = '<table>'+
+                  '<tr>'+
+                    '<td>'+
+                      '<button class="playagain">再來一局</button>'+
+                    '</td>'+
+                  '</tr>'+
+                '</table>';
+    $(".controlarea").append(sHtml);
+    $('body').on("click", '.playagain', function () {
+      location.reload();
+    });
 }
-// function vSetGameSumUp(aAwardInfo)
-// {
-//   for (var i = 0; i < aAwardInfo.length; i++)
-//   {
-//     if()
-//   }
-// }
 
 function sGetSumUpTag(iUserId,iSumUpMoney)
 {
@@ -9027,7 +9030,6 @@ function vStatusPlaying(oGameData)
 
   var iUserPos = oGameData.aUserIds.indexOf(oGameData.iTurn);
   var sDoubleBetButton = "";
-  // alert(oGameData.aUserInfoList[iUserPos].iDouble);
   if(oGameData.aUserInfoList[iUserPos].iDouble === 1)
   {
     sDoubleBetButton = '<tr id="fordouble">'+

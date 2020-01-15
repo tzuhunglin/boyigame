@@ -57,10 +57,7 @@
 								<td>@if($aUserInfoData['iDouble']==3) Y @else N @endif</td>
 								<td>{{App\Libraries\Product\Card\Poke\BlackjackLib::iGetUserBetSumUp($aUserInfoData['iUserId'],$aUserInfoData['iBetAmount'],$aUserInfoData['iDouble'],$aUserInfoData['iWinLose'])}}</td>
 								<td>@if($aUserInfoData['iInsurance']==3) Y @else N @endif</td>
-
 								<td>{{App\Libraries\Product\Card\Poke\BlackjackLib::iGetUserInsuranceSumUp($aUserInfoData['iUserId'],$aUserInfoData['iBetAmount'],$aUserInfoData['iInsurance'],$oGameRecord->aDetail['aBankerInfo']['aCards'],$oGameRecord->aDetail['aBankerInfo']['aPoints'])}}</td>
-
-
 								<td>{{App\Libraries\Product\Card\Poke\BlackjackLib::iGetUserTotalSumUp($aUserInfoData,$oGameRecord->aDetail['aBankerInfo']['aCards'],$oGameRecord->aDetail['aBankerInfo']['aPoints'])}}</td>
 								<td>@if($aUserInfoData['iWinLose']==1) 贏 @else 輸 @endif</td>
 							</tr>

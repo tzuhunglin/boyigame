@@ -8,7 +8,7 @@ use App\Models\Product;
 use App\Models\User;
 
 
-class AwardProcessor 
+class AwardProcessor
 {
 
     function __construct($oLotteryAward)
@@ -18,7 +18,7 @@ class AwardProcessor
 
     public function handle()
     {
-        foreach ($this->oLotteryAward->aGameType as $sType) 
+        foreach ($this->oLotteryAward->aGameType as $sType)
         {
             $this->oLotteryAward->vSendAward($sType);
         }

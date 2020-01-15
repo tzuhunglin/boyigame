@@ -35,9 +35,7 @@
 								<td>莊家</td>
 								<td>@foreach($oLotteryOrderData->aBankerInfo->aCards as $iCardCode) {{$iCardCode}} @endforeach</td>
 								<td>implode("/",$oLotteryOrderData->aBankerInfo->aPoints)</td>
-
 							</tr>
-	
 						</tbody>
 					</table>
 				</div>

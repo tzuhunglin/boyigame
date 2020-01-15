@@ -34,7 +34,6 @@ class CronJisupailie3 extends Job implements ShouldQueue
      */
     public function handle()
     {
-        echo "Fdsfsa";exit;
         $oIssueInfoPushData = IssueInfoPushData::oGetLatestIssueInfoPushData($this->sGameType,false);
         Cache::put('issueInfoJisupailie3',json_encode($oIssueInfoPushData),1000);
         event(new PushIssueInfoJisupailie3($oIssueInfoPushData));

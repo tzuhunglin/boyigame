@@ -18,7 +18,7 @@ class IssueInfo extends Model
     public static function sGetLastDrawnIssue($sLottery)
     {
     	$sCurrentIssue = "";
-    	switch ($sLottery) 
+    	switch ($sLottery)
     	{
     		case 'jisupailie3':
     			$sCurrentIssue = Jisupailie3::sGetLastDrawnIssue();

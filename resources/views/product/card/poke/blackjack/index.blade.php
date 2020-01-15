@@ -125,18 +125,20 @@
 <script type="text/javascript">
 var iUserId = parseInt("{{$iUserId}}");
 var sHashKey = "{{$sHashKey}}";
-var iAvailableMoney = parseInt("{{$iAvailableMoney}}");
-var iGameMoneyLimit = parseInt("{{$iGameMoneyLimit}}");
+var bStatus = "{{$bStatus}}";
+var sMessage = "{{$sMessage}}";
+
+
 if(sHashKey!="")
 {
 	Notification.TOKEN = sHashKey;
 }
 
 $(document).ready(function(){
-	if(sHashKey==false && iAvailableMoney<iGameMoneyLimit)
+	if(bStatus==false)
 	{
-		alert("可用餘額不足");
-		history.go(-1);
+		alert(sMessage);
+		window.location.href ="/";
 	}
 });
 

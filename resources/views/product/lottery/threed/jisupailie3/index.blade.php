@@ -346,17 +346,12 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="betinfoarea">
-
 							<div class="betinfobox">
 								<input id="multiple" type="number" value="1" >
 								<span>倍</span>
 							</div>
-
-
-
-							<div class="betinfobox">
+							<div cl="betinfobox">
 								<span >奖金 : </span>
 								<div class="select-wrapper" >
 									<select name="bonus" id="bonus">
@@ -365,16 +360,13 @@
 									</select>
 								</div>
 							</div>
-
 							<div class="betinfobox">
 									<span>已選</span>
 									<span id="betamount">0</span>
 									<span>注 共</span>
 									<span id="sumamount">0</span>
 									<span>元</span>
-
 							</div>
-
 							<div class="betinfobox">
 								<div id="bet" class="button special">投注</div>
 							</div>

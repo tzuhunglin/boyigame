@@ -17,11 +17,6 @@ use App\Models\Product\Card\Poke\BlackjackAward;
 
 class BlackjackController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth',['except' => [
@@ -29,21 +24,31 @@ class BlackjackController extends Controller
         ]]);
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         $oUser = Auth::user();
         $iUserId = $oUser->id;
         $sHashKey = "";
-        if(Blackjack::bIsPlayingInGame($oUser->id)==true)
+        if($oUser->bIsTopUser())
+        {
+            $aData = array(
+                'sHashKey' => $sHashKey,
+                'iUserId' => $oUser->id,
+                'bStatus'=> false,
+                'sMessage'=> '總代不能投注，請使用下級帳號．'
+            );
+        }
+        else if(Blackjack::bIsPlayingInGame($oUser->id)==true)
         {
             $oBlajack = new Blackjack($oUser->id);
             $oGameData = $oBlajack->oUnfinishedGameData;
             $sHashKey = $oGameData->sHashKey;
+            $aData = array(
+                'sHashKey' => $sHashKey,
+                'iUserId' => $oUser->id,
+                'bStatus'=> true,
+                'sMessage'=> ''
+            );
         }
         else
         {
@@ -53,14 +58,24 @@ class BlackjackController extends Controller
                 $oGameData = $oBlajack->oUnfinishedGameData;
                 $sHashKey = $oGameData->sHashKey;
                 $oUser->vFundFrozen(Blackjack::$iGameMoneyLimit);
+                $aData = array(
+                    'sHashKey' => $sHashKey,
+                    'iUserId' => $oUser->id,
+                    'bStatus'=> true,
+                    'sMessage'=> ''
+                );
+            }
+            else
+            {
+                $aData = array(
+                    'sHashKey' => $sHashKey,
+                    'iUserId' => $oUser->id,
+                    'bStatus'=> false,
+                    'sMessage'=> '可用餘額不足'
+                );
             }
         }
-        return view('product.card.poke.blackjack.index',[
-            'sHashKey' => $sHashKey,
-            'iAvailableMoney' => $oUser->availablemoney,
-            'iUserId' => $oUser->id,
-            'iGameMoneyLimit' => Blackjack::$iGameMoneyLimit
-        ]);
+        return view('product.card.poke.blackjack.index',$aData);
     }
 
     public function sumup($sHashKey)
