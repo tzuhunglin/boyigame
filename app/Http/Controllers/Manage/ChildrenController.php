@@ -103,17 +103,20 @@ class ChildrenController extends Controller
 
     public function betRecordDetail($iId)
     {
-        $oGameRecord = BlackjackRecord::oGetGameRecord($iId);
-        $oGameRecord->aUserIds = json_decode($oGameRecord->userids,true);
-
-        if(!$this->bPageAuthCheckByIdList($oGameRecord->aUserIds))
+        $oLotteryOrderData = LotteryOrder::oGetBetRecordData($iId);
+        if(!$this->bPageAuthCheck($oLotteryOrderData->userid))
         {
             return $this->vRedirector(Auth::user()->id);
         }
-        $oGameRecord->aDetail = json_decode($oGameRecord->detail,true);
-        return view('manage.children.gamerecorddetail',
+        $aAllGameTypeOdds = Jisupailie3::aGetAllGameTypeOdds();
+        $fOdds = $aAllGameTypeOdds[$oLotteryOrderData->type];
+        $oIssueInfo = IssueInfo::oGetIssueInfoData($oLotteryOrderData->lottery,$oLotteryOrderData->issue);
+
+        return view('manage.children.betrecorddetail',
                     [
-                        'oGameRecord' => $oGameRecord
+                        'oLotteryOrderData' => $oLotteryOrderData,
+                        'fOdds' => $fOdds,
+                        'oIssueInfo' => $oIssueInfo,
                     ]
         );
     }
