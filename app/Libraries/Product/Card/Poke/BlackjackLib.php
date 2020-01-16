@@ -92,6 +92,7 @@ class BlackjackLib
 		}
 		else
 		{
+			$oUser = User::find($iUserId);
 			return ($iBetAmount/2) * (90 + $oUser->keeppoint )/ 100;
 		}
 	}

@@ -101,7 +101,22 @@ class ChildrenController extends Controller
         );
     }
 
+    public function betRecordDetail($iId)
+    {
+        $oGameRecord = BlackjackRecord::oGetGameRecord($iId);
+        $oGameRecord->aUserIds = json_decode($oGameRecord->userids,true);
 
+        if(!$this->bPageAuthCheckByIdList($oGameRecord->aUserIds))
+        {
+            return $this->vRedirector(Auth::user()->id);
+        }
+        $oGameRecord->aDetail = json_decode($oGameRecord->detail,true);
+        return view('manage.children.gamerecorddetail',
+                    [
+                        'oGameRecord' => $oGameRecord
+                    ]
+        );
+    }
 
 
     public function create(Request $oRequest)

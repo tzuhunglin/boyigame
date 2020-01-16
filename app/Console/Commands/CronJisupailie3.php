@@ -51,9 +51,6 @@ class CronJisupailie3 extends Command
         }
         $oDrawingIssueInfoPushData = IssueInfoPushData::oGetDrawingIssueInfoPushData(self::$sLottery);
         Redis::set('jisupailie3', json_encode($oDrawingIssueInfoPushData));
-
-        // Cache::put('jisupailie3',json_encode($oDrawingIssueInfoPushData),1000);
-        // echo "<pre>"; print_r($oDrawingIssueInfoPushData);exit;
         event(new PushIssueInfoJisupailie3($oDrawingIssueInfoPushData));
 
         sleep(300);
@@ -61,17 +58,11 @@ class CronJisupailie3 extends Command
         // sleep(20);
 
         $oIssueInfoPushData = IssueInfoPushData::oGetLatestIssueInfoPushData(self::$sLottery,false);
-
-        // Cache::put('jisupailie3',json_encode($oIssueInfoPushData),1000);
         Redis::set('jisupailie3', json_encode($oIssueInfoPushData));
-        
         event(new PushIssueInfoJisupailie3($oIssueInfoPushData));
-
         $oIssueInfo = IssueInfo::oGetCurrentIssueForAward(self::$sLottery);
         $oJisupailie3Award = new Jisupailie3Award($oIssueInfo);
-
         $oAwardProcessor = new AwardProcessor($oJisupailie3Award);
         $oAwardProcessor->handle();
-        
     }
 }

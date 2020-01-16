@@ -464,7 +464,8 @@ function iGetRestMinute()
 	}
 	else if(iCurrentDateTime>iEndDateTime)
 	{
-		iRestMinute  = iSecondToMinute(iCurrentDateTime - iEndDateTime) - 1;
+
+		iRestMinute  = 630 + 150 - iSecondToMinute(iCurrentDateTime - iEndDateTime);
 	}
 	else
 	{
