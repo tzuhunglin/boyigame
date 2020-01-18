@@ -9263,7 +9263,7 @@ function vStatusBetting(oGameData)
     var sHtml = '<table>'+
                   '<tr>'+
                     '<td>'+
-                      '<input type="number" value="2" max="100" id="betamount">'+
+                      '<input type="number" value="2" min="1" max="5" id="betamount">'+
                     '</td>'+
                   '</tr>'+
                   '<tr>'+
@@ -9282,6 +9282,12 @@ function vStatusBetting(oGameData)
 function vBet()
 {
   var iBetAmount = $("#betamount").val();
+  if(iBetAmount<1 || iBetAmount > 100)
+  {
+    alert("投注金額為1-100");
+    return;
+  }
+
   vEmitDataToServer({"sHashKey":sHashKey, "iBetAmount":iBetAmount,"iUserId":iUserId,"iStatus":2});
   $(".controlarea").empty();
 }
