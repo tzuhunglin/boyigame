@@ -280,7 +280,6 @@ class Jisupailie3 extends Product
 
     public static function sGetComingIssue()
     {
-        return "20191221-23";
         $sCurrentTime = date("H:i");
         if($sCurrentTime>self::$sIssueEndTime)
         {

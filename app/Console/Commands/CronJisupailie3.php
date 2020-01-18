@@ -25,7 +25,7 @@ class CronJisupailie3 extends Command
     protected $signature = 'cronjisupailie3';
     private $sGameType = "jisupailie3";
     private $sStartTime = "10：30";
-    private $sEndTime = "21：33";
+    private $sEndTime = "21：30";
     private static $sLottery = "jisupailie3";
 
     /**
@@ -52,11 +52,7 @@ class CronJisupailie3 extends Command
         $oDrawingIssueInfoPushData = IssueInfoPushData::oGetDrawingIssueInfoPushData(self::$sLottery);
         Redis::set('jisupailie3', json_encode($oDrawingIssueInfoPushData));
         event(new PushIssueInfoJisupailie3($oDrawingIssueInfoPushData));
-
         sleep(300);
-        // exec('python /var/www/html/boyigame/py/se.py');
-        // sleep(20);
-
         $oIssueInfoPushData = IssueInfoPushData::oGetLatestIssueInfoPushData(self::$sLottery,false);
         Redis::set('jisupailie3', json_encode($oIssueInfoPushData));
         event(new PushIssueInfoJisupailie3($oIssueInfoPushData));

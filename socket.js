@@ -6,17 +6,6 @@ var Redis = require('ioredis');
 var redis = new Redis();
 var aAllGameList = [];
 var iTimeLimit = 10000;
-// var mysql = require('mysql');
-// var conn = mysql.createConnection({
-// host : '127.0.0.1',
-// user : 'root',
-// password : 'root',
-// database : 'boyigame'
-// });
-// conn.connect(function(err){
-//   if(err) throw err;
-//   console.log('connect success!');
-// });
 
 redis.subscribe('issueInfoJisupailie3', function(err, count) {
   console.log('connect!');
