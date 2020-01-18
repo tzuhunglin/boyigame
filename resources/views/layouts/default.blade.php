@@ -25,7 +25,7 @@
                     <a class="nav-link" href="{{ url('/login') }}">{{ trans('messages.main.login') }}</a>
                     <a class="nav-link" href="{{ url('/register') }}">{{ trans('messages.main.register') }}</a>
                 @else
-                    <span>{{ Auth::user()->name }}</span>
+                    <span>{{ Auth::user()->name }} 餘額:{{ Auth::user()->totalmoney }}</span>
                     <a href="#menu" class="toggle"></a>
             </header>
 
