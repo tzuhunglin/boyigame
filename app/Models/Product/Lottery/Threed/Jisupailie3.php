@@ -59,8 +59,9 @@ class Jisupailie3 extends Product
         return self::aGetAllGameTypeOdds()[$sGameType];
     }
 
-    public static function aBetCheck($aInput)
+    public static function aBetCheck($aInput,$iAvailableMoney)
     {
+
 
         if( (date("H:i:s") > "10:29:55" && date("H:i:s") < "21:31:00")  && (((date("i:s") > "29:55" && date("i:s") < "30:55"))||((date("i:s") > "59:55" && date("i:s") < "00:55"))))
         {
@@ -85,6 +86,11 @@ class Jisupailie3 extends Product
         if(empty($aInput['codes'])||!self::bCodesCheck($aInput['gametype'],$aInput['codes']))
         {
             return ['status'=>false,'message'=>'號碼錯誤'];
+        }
+
+        if(($aInput['multiple']*self::BASIC_AMOUNT)>$iAvailableMoney)
+        {
+            return ['status'=>false,'message'=>'投注金額超過可用餘額'];
         }
 
         return ['status'=>true];

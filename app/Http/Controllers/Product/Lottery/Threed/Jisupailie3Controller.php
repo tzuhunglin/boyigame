@@ -27,7 +27,8 @@ class Jisupailie3Controller extends Controller
                     'oUser' => $oUser,
                     'iBasicOdds' => Jisupailie3::BASIC_ODDS,
                     'aAllGameTypeOdds' => Jisupailie3::aGetAllGameTypeOdds(),
-                    'oJisupailie3'=> $oJisupailie3
+                    'oJisupailie3'=> $oJisupailie3,
+                    'sAppUrl' => env('APP_URL')
         ]);
     }
 
@@ -41,7 +42,7 @@ class Jisupailie3Controller extends Controller
         }
 
 
-        $aBetCheck = Jisupailie3::aBetCheck($aInput);
+        $aBetCheck = Jisupailie3::aBetCheck($aInput,$oUser->availablemoney);
         if($aBetCheck['status']!=true)
         {
             return $aBetCheck;
