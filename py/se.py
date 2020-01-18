@@ -12,20 +12,20 @@ from datetime import datetime
 from pprint import pprint
 from dotenv import find_dotenv,load_dotenv
 import os
+from pyvirtualdisplay import Display
+display = Display(visible=0, size=(800, 800))
+display.start()
 load_dotenv(find_dotenv())
-
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument("window-size=1024,768")
+chrome_options.add_argument("--no-sandbox")
 now = datetime.now()
-
 sFetchCodeUrl = "https://www.1395p.com/shssl/?utp=topbar"
-
-# sExcutablePath = "/home/austin/Desktop/python/geckodriver"
-# oDriver = webdriver.Firefox(executable_path=sExcutablePath)
-
-
-oDriver = webdriver.Chrome()
+oDriver = webdriver.Chrome(chrome_options=chrome_options)
 
 oDriver.get(sFetchCodeUrl)
-# time.sleep(10)
 oSoup = BeautifulSoup(oDriver.page_source, "html.parser")
 oCodes = oSoup.find("div", {"class": "awarding_tips number_redAndBlue"})
 aCodeList = []
@@ -36,11 +36,6 @@ for oCode in oCodes:
 sCodeList = json.dumps(aCodeList)
 sIssue = oSoup.find("i", {"class": "font_gray666"}).text
 
-# aCodeList = [1,5,5]
-# sIssue = "20191214-2"
-
-
-
 sCodeList = json.dumps(aCodeList)
 sToday = now.strftime("%Y-%m-%d %H:%M")
 sDateTime = sToday
@@ -48,45 +43,12 @@ sUpdateTime = now.strftime("%Y-%m-%d %H:%M:%S")
 sLottery = "jisupailie3"
 sSql = "INSERT INTO issueinfo (`datetime`,`issue`,`code`,`lottery`,`updatetime`) VALUES ('"+sDateTime+"','"+sIssue+"','"+sCodeList.replace(" ", "")+"','"+sLottery+"','"+sUpdateTime+"') ;"
 
-
-
-
-
-
-
-
-# host = '127.0.0.1'
-# username = 'root'
-# password = 'root'
-# database = "boyigame"
-# port = "3306"
 host = os.environ.get('DB_HOST')
 username = os.environ.get('DB_USERNAME')
 password = os.environ.get('DB_PASSWORD')
 database = os.environ.get('DB_DATABASE')
 port = os.environ.get('DB_PORT')
 
-
-
-
-
-
-
-
-
-# print "Using MySQLdb…"
-# import MySQLdb
-# myConnection = MySQLdb.connect( host=host, user=username, passwd=password, db=database )
-# doQuery( myConnection )
-# myConnection.close()
-
-# print "Using pymysql…"
-# import pymysql
-# myConnection = pymysql.connect( host=host, user=username, passwd=password, db=database )
-# doQuery( myConnection )
-# myConnection.close()
-
-# print "Using mysql.connector…"
 import mysql.connector
 from mysql.connector import Error
 from mysql.connector import errorcode
@@ -101,10 +63,4 @@ cur.close()
 myConnection.close()
 
 oDriver.quit()
-
-
-# font_gray666 issue
-# font_gray999 time
-# awardResult code
-
 

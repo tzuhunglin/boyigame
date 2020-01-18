@@ -7,12 +7,9 @@ do
 {
 	if(date("H:i")>="10:30" && date("H:i")<="21:35")
 	{
-		// echo "<pre>"; print_r(date("H:i"));exit;
-
 		if(date("i")=="34"||date("i")=="04")
 		{
 			echo "<pre>"; print_r(date("H:i"));
-	        // exec('php /Users/tzlin/Desktop/boyigame/artisan schedule:run');
 	        exec('python /var/www/html/boyigame/py/se.py');
 
 			sleep(60);
@@ -27,6 +24,10 @@ do
 
 }
 while($bLoop);
-	        // exec('php /Users/tzlin/Desktop/boyigame/artisan schedule:run');
-
 ?>
+
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=boyigame
+DB_USERNAME=root
+DB_PASSWORD=@a0922482626A@
