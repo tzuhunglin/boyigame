@@ -10,6 +10,10 @@ import json
 from datetime import date
 from datetime import datetime
 from pprint import pprint
+from dotenv import find_dotenv,load_dotenv
+import os
+load_dotenv(find_dotenv())
+
 now = datetime.now()
 
 sFetchCodeUrl = "https://www.1395p.com/shssl/?utp=topbar"
@@ -51,11 +55,16 @@ sSql = "INSERT INTO issueinfo (`datetime`,`issue`,`code`,`lottery`,`updatetime`)
 
 
 
-hostname = '127.0.0.1'
-username = 'root'
-password = 'root'
-database = "boyigame"
-port = "3306"
+# host = '127.0.0.1'
+# username = 'root'
+# password = 'root'
+# database = "boyigame"
+# port = "3306"
+host = os.environ.get('DB_HOST')
+username = os.environ.get('DB_USERNAME')
+password = os.environ.get('DB_PASSWORD')
+database = os.environ.get('DB_DATABASE')
+port = os.environ.get('DB_PORT')
 
 
 
@@ -67,13 +76,13 @@ port = "3306"
 
 # print "Using MySQLdb…"
 # import MySQLdb
-# myConnection = MySQLdb.connect( host=hostname, user=username, passwd=password, db=database )
+# myConnection = MySQLdb.connect( host=host, user=username, passwd=password, db=database )
 # doQuery( myConnection )
 # myConnection.close()
 
 # print "Using pymysql…"
 # import pymysql
-# myConnection = pymysql.connect( host=hostname, user=username, passwd=password, db=database )
+# myConnection = pymysql.connect( host=host, user=username, passwd=password, db=database )
 # doQuery( myConnection )
 # myConnection.close()
 
@@ -81,7 +90,7 @@ port = "3306"
 import mysql.connector
 from mysql.connector import Error
 from mysql.connector import errorcode
-myConnection = mysql.connector.connect( host=hostname, user=username, passwd=password, db=database, port=port)
+myConnection = mysql.connector.connect( host=host, user=username, passwd=password, db=database, port=port)
 
 cur = myConnection.cursor()
 cur.execute(sSql)

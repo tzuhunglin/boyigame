@@ -748,7 +748,9 @@ function vCloseGame(oGameData)
   var sGameData = JSON.stringify(oGameData);
   client.set(oGameData.sHashKey, sGameData, redis.print);
   var request = require('request');
-  var sSumUpLink = 'http://dwww.alfredweb.tw/Product/Card/Poke/blackjack/'+oGameData.sHashKey+'/sumup';
+  require('dotenv').config();
+  var sSumUpLink = process.env["APP_URL"]+'/Product/Card/Poke/blackjack/'+oGameData.sHashKey+'/sumup';
+  console.log(sSumUpLink);
   request(sSumUpLink, function (error, response, sGameData) {
     if (!error && response.statusCode == 200) 
     {

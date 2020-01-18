@@ -8900,7 +8900,7 @@ module.exports = yeast;
 'use strict';
 
 var io = require('socket.io-client');
-var issueInfoJisupailie3 = io.connect('dwww.alfredweb.tw:3000');
+var issueInfoJisupailie3 = io.connect(sAppUrl+':3000');
 
 
 issueInfoJisupailie3.on('issueInfoJisupailie3', function (oIssueInfo) {

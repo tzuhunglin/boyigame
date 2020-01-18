@@ -127,6 +127,7 @@ var iUserId = parseInt("{{$iUserId}}");
 var sHashKey = "{{$sHashKey}}";
 var bStatus = "{{$bStatus}}";
 var sMessage = "{{$sMessage}}";
+var sAppUrl = "{{$sAppUrl}}";
 
 
 if(sHashKey!="")

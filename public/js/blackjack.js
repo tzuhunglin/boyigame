@@ -8899,7 +8899,8 @@ module.exports = yeast;
 },{}],55:[function(require,module,exports){
 'use strict';
 var oSocketIoClient = require('socket.io-client');
-var oIoConnection = oSocketIoClient.connect('dwww.alfredweb.tw:3000');
+
+var oIoConnection = oSocketIoClient.connect(sAppUrl+':3000');
 var sChannel = "gameDataBlackjack";
 
 oIoConnection.on('connect', function() {

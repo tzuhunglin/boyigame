@@ -35,7 +35,8 @@ class BlackjackController extends Controller
                 'sHashKey' => $sHashKey,
                 'iUserId' => $oUser->id,
                 'bStatus'=> false,
-                'sMessage'=> '總代不能投注，請使用下級帳號．'
+                'sMessage'=> '總代不能投注，請使用下級帳號．',
+                'sAppUrl' => env('APP_URL')
             );
         }
         else if(Blackjack::bIsPlayingInGame($oUser->id)==true)
@@ -47,7 +48,8 @@ class BlackjackController extends Controller
                 'sHashKey' => $sHashKey,
                 'iUserId' => $oUser->id,
                 'bStatus'=> true,
-                'sMessage'=> ''
+                'sMessage'=> '',
+                'sAppUrl' => env('APP_URL')
             );
         }
         else
@@ -62,7 +64,8 @@ class BlackjackController extends Controller
                     'sHashKey' => $sHashKey,
                     'iUserId' => $oUser->id,
                     'bStatus'=> true,
-                    'sMessage'=> ''
+                    'sMessage'=> '',
+                    'sAppUrl' => env('APP_URL')
                 );
             }
             else
@@ -71,7 +74,8 @@ class BlackjackController extends Controller
                     'sHashKey' => $sHashKey,
                     'iUserId' => $oUser->id,
                     'bStatus'=> false,
-                    'sMessage'=> '可用餘額不足'
+                    'sMessage'=> '可用餘額不足',
+                    'sAppUrl' => env('APP_URL')
                 );
             }
         }

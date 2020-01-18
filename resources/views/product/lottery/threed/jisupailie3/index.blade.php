@@ -390,6 +390,8 @@ var iBasicRate = parseInt("{{$iBasicOdds}}");
 var iKeepPoint = parseInt("{{$oUser->keeppoint}}");
 var iOdds = 0;
 var sPostUrl = "{{App\Libraries\Product\Lottery\Threed\Jisupailie3Lib::sGetbetLink()}}";
+var sAppUrl = "{{$sAppUrl}}";
+
 
 
 $(document).ready(function(){
