@@ -25,9 +25,3 @@ do
 }
 while($bLoop);
 ?>
-
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=boyigame
-DB_USERNAME=root
-DB_PASSWORD=@a0922482626A@
