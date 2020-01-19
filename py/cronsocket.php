@@ -7,5 +7,6 @@ $connection = @fsockopen('localhost', '3000');
 if (!is_resource($connection))
 {
     exec('sudo node /var/www/html/boyigame/socket.js');
+    echo "sudo node /var/www/html/boyigame/socket.js";
 }
 ?>
