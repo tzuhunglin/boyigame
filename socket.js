@@ -4,7 +4,6 @@ var io = require('socket.io')(http);
 io.origins('*:*');
 var Redis = require('ioredis');
 var redis = new Redis();
-var aAllGameList = [];
 var iTimeLimit = 10000;
 
 redis.subscribe('issueInfoJisupailie3', function(err, count) {
@@ -62,19 +61,35 @@ io.on('connection', function(socket) {
 setInterval(
   function ()
   {
-    for (var i = 0; i < aAllGameList.length; i++)
-    {
-      var sHashKey = aAllGameList[i];
-      client.get(sHashKey, (error, result) => {
-        if (error)
-        {
-          console.log(error);
-          throw error;
-        }
-        var oGameData = JSON.parse(result);
-        oMonitorController(oGameData);
-      });
-    }
+    client.get("blackjack_goinggamelist", (error, result) => {
+      if (error)
+      {
+        console.log(error);
+        throw error;
+      }
+      if(result==null)
+      {
+        var aGoingGameList = [];
+      }
+      else
+      {
+        var aGoingGameList = JSON.parse(result);
+      }
+
+      for (var i = 0; i < aGoingGameList.length; i++)
+      {
+        var sHashKey = aGoingGameList[i];
+        client.get(sHashKey, (error, result) => {
+          if (error)
+          {
+            console.log(error);
+            throw error;
+          }
+          var oGameData = JSON.parse(result);
+          oMonitorController(oGameData);
+        });
+      }
+    });
   }
   ,1000
 );
@@ -211,7 +226,26 @@ function vSetStatusBetting(oData)
     aGameList = aGetFiltered(aGameList);
     var sGameList = JSON.stringify(aGameList);
     client.set("blackjack_waitinggamelist", sGameList, redis.print);
-    aAllGameList.push(oData.sHashKey);
+
+    client.get("blackjack_goinggamelist", (error, result) => {
+      if (error)
+      {
+        console.log(error);
+        throw error;
+      }
+      if(result==null)
+      {
+        var aGoingGameList = [];
+      }
+      else
+      {
+        var aGoingGameList = JSON.parse(result);
+      }
+
+      aGoingGameList.push(oData.sHashKey);
+      var sGoingGameList = JSON.stringify(aGoingGameList);
+      client.set("blackjack_goinggamelist", sGoingGameList, redis.print);
+    });
   });
 
   vHandle(oData.sHashKey, function(oGameData){
@@ -741,9 +775,37 @@ function vCloseGame(oGameData)
   {
     vRemoveUserGameHashKey(oGameData.aUserIds[i]);
   }
-  var iHashKeyIndex = aAllGameList.indexOf(oGameData.sHashKey);
-  delete aAllGameList[iHashKeyIndex];
-  aAllGameList = aGetFiltered(aAllGameList);
+
+  client.get("blackjack_goinggamelist", (error, result) => {
+    if (error)
+    {
+      console.log(error);
+      throw error;
+    }
+    if(result==null)
+    {
+      var aGoingGameList = [];
+    }
+    else
+    {
+      var aGoingGameList = JSON.parse(result);
+    }
+
+    var iHashKeyIndex = aGoingGameList.indexOf(oGameData.sHashKey);
+    delete aGoingGameList[iHashKeyIndex];
+    aGoingGameList = aGetFiltered(aGoingGameList);
+
+    var sGoingGameList = JSON.stringify(aGoingGameList);
+    client.set("blackjack_goinggamelist", sGoingGameList, redis.print);
+  });
+
+
+
+
+
+
+
+
 
   var sGameData = JSON.stringify(oGameData);
   client.set(oGameData.sHashKey, sGameData, redis.print);
