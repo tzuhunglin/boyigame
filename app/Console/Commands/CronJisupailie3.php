@@ -57,6 +57,7 @@ class CronJisupailie3 extends Command
         Redis::set('jisupailie3', json_encode($oIssueInfoPushData));
         event(new PushIssueInfoJisupailie3($oIssueInfoPushData));
         $oIssueInfo = IssueInfo::oGetCurrentIssueForAward(self::$sLottery);
+        $oIssueInfo->vSetIssueInfoAwarded();
         $oJisupailie3Award = new Jisupailie3Award($oIssueInfo);
         $oAwardProcessor = new AwardProcessor($oJisupailie3Award);
         $oAwardProcessor->handle();

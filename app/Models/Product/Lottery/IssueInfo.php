@@ -32,4 +32,10 @@ class IssueInfo extends Model
         return self::where('lottery',$sLottery)->where('issue',$sIssue)->first();
     }
 
+    public function vSetIssueInfoAwarded()
+    {
+        $this->award = 1;
+        $this->save();
+    }
+
 }

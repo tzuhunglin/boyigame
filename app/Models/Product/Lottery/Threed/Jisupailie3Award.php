@@ -33,9 +33,9 @@ class Jisupailie3Award
     {
         $iOdds = Jisupailie3::fGetGameTypeOdds($sType);
         $aAwardBetOrderList = $this->aGetAwardBetOrderList($sType);
-
         $this->vCalculateUserAwardMoney($aAwardBetOrderList,$iOdds);
         $this->vSetUserAwardMoney();
+        $this->vSetBetOrderAwarded($sType);
         $this->aUserAwardMoneyList = array();
     }
 
@@ -54,6 +54,15 @@ class Jisupailie3Award
                 break;
         }
         return $aAwardBetOrder;
+    }
+
+    private function vSetBetOrderAwarded($sType)
+    {
+        LotteryOrder::where("lottery",self::$sLottery)
+                    ->where("type",$sType)
+                    ->where("issue",$this->oIssueInfo->issue)
+                    ->where("award",0)
+                    ->update(['award' => 1]);
     }
 
     private function vGetAwardSanmajrshiuanBetOrder($sType)
