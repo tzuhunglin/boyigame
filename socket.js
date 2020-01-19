@@ -5,7 +5,7 @@ io.origins('*:*');
 var Redis = require('ioredis');
 var redis = new Redis();
 var iTimeLimit = 10000;
-var sAppUrl = (process.env["APP_URL"]==undefined)?"http://www.alfredweb.tw"?process.env["APP_URL"];
+var sAppUrl = (process.env["APP_URL"]==undefined)?"http://www.alfredweb.tw":process.env["APP_URL"];
 redis.subscribe('issueInfoJisupailie3', function(err, count) {
   console.log('connect!');
 });
