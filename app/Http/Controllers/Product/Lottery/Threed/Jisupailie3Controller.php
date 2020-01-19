@@ -11,6 +11,9 @@ use Cache;
 use Illuminate\Support\Facades\Redis;
 use App\Models\Product\Lottery\IssueInfoPushData;
 use App\Models\Product\Lottery\LotteryBet;
+use App\Models\Product\Lottery\IssueInfo;
+use App\Models\Product\Lottery\AwardProcessor;
+use App\Models\Product\Lottery\Threed\Jisupailie3Award;
 
 class Jisupailie3Controller extends Controller
 {
@@ -62,5 +65,14 @@ class Jisupailie3Controller extends Controller
         $oJisupailie3->vBet();
 
         return array("status"=>true,"message"=>"投注成功");
+    }
+
+    public function awardTest()
+    {
+        $oIssueInfo = IssueInfo::oGetCurrentIssueForAward("jisupailie3");
+        $oIssueInfo->vSetIssueInfoAwarded();
+        $oJisupailie3Award = new Jisupailie3Award($oIssueInfo);
+        $oAwardProcessor = new AwardProcessor($oJisupailie3Award);
+        $oAwardProcessor->handle();
     }
 }

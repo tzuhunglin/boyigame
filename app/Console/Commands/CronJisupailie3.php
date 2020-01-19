@@ -9,7 +9,6 @@ use Cache;
 use Illuminate\Support\Facades\Redis;
 use App\Events\PushIssueInfoJisupailie3;
 use App\Events\Event;
-
 use App\Models\Product\Lottery\IssueInfo;
 use App\Models\Product\Lottery\AwardProcessor;
 use App\Models\Product\Lottery\Threed\Jisupailie3Award;

@@ -10,6 +10,8 @@ Route::auth();
 Route::group(['prefix' => 'Product/Lottery/Threed/jisupailie3'], function () {
 	Route::get('/',['as' => 'jisupailie3.index','uses'=>'Product\Lottery\Threed\Jisupailie3Controller@index']);
 	Route::post('/bet',['as' => 'jisupailie3.bet','uses'=>'Product\Lottery\Threed\Jisupailie3Controller@bet']);
+	Route::get('/awardtest',['as' => 'jisupailie3.awardtest','uses'=>'Product\Lottery\Threed\Jisupailie3Controller@awardtest']);
+
 });
 
 Route::group(['prefix' => 'Product/Card/Poke/blackjack'], function () {
