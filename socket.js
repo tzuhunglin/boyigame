@@ -5,7 +5,7 @@ io.origins('*:*');
 var Redis = require('ioredis');
 var redis = new Redis();
 var iTimeLimit = 10000;
-
+var sAppUrl = (process.env["APP_URL"]==undefined)?"http://www.alfredweb.tw"?process.env["APP_URL"];
 redis.subscribe('issueInfoJisupailie3', function(err, count) {
   console.log('connect!');
 });
@@ -811,7 +811,7 @@ function vCloseGame(oGameData)
   client.set(oGameData.sHashKey, sGameData, redis.print);
   var request = require('request');
   require('dotenv').config();
-  var sSumUpLink = process.env["APP_URL"]+'/Product/Card/Poke/blackjack/'+oGameData.sHashKey+'/sumup';
+  var sSumUpLink = sAppUrl+'/Product/Card/Poke/blackjack/'+oGameData.sHashKey+'/sumup';
   console.log(sSumUpLink);
   request(sSumUpLink, function (error, response, sGameData) {
     if (!error && response.statusCode == 200) 
