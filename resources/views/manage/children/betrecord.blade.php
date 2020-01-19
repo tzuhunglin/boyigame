@@ -45,7 +45,7 @@
 								<td>@if($oLotteryOrderData->return==1) Y @else N @endif</td>
 								<td><span>{{implode(",",json_decode($oLotteryOrderData->code,true))}}</span></td>
 								<td>@if($oLotteryOrderData->win==1) Y @else N @endif</td>
-								<th>@if($oLotteryOrderData->award==1) 已開 @else 未開 @endif</th>
+								<td>@if($oLotteryOrderData->award==1) 已開 @else 未開 @endif</td>
 								<td>{{$oLotteryOrderData->created_at}}</td>
 							</tr>
 							@empty
