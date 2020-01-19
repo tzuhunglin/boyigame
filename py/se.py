@@ -58,7 +58,7 @@ cur = myConnection.cursor()
 cur.execute(sSql)
 print(sSql)
 myConnection.commit()
-print(cur.rowcount, "Record inserted successfully into Laptop table")
+print(cur.rowcount, "Record inserted successfully into issueinfo table")
 cur.close()
 myConnection.close()
 
