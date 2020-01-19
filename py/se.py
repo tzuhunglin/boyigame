@@ -41,7 +41,7 @@ sToday = now.strftime("%Y-%m-%d %H:%M")
 sDateTime = sToday
 sUpdateTime = now.strftime("%Y-%m-%d %H:%M:%S")
 sLottery = "jisupailie3"
-sSql = "INSERT INTO issueinfo (`datetime`,`issue`,`code`,`lottery`,`updatetime`) VALUES ('"+sDateTime+"','"+sIssue+"','"+sCodeList.replace(" ", "")+"','"+sLottery+"','"+sUpdateTime+"') ;"
+sSql = "INSERT INTO issueinfo (`datetime`,`issue`,`code`,`lottery`,`updated_at`,`created_at`) VALUES ('"+sDateTime+"','"+sIssue+"','"+sCodeList.replace(" ", "")+"','"+sLottery+"','"+sUpdateTime+"','"+sUpdateTime+"') ;"
 
 host = os.environ.get('DB_HOST')
 username = os.environ.get('DB_USERNAME')

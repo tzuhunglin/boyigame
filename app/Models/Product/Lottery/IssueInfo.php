@@ -37,5 +37,4 @@ class IssueInfo extends Model
         $this->award = 1;
         $this->save();
     }
-
 }
