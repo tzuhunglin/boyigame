@@ -44,11 +44,11 @@ sUpdateTime = now.strftime("%Y-%m-%d %H:%M:%S")
 sLottery = "jisupailie3"
 sSql = "INSERT INTO issueinfo (`datetime`,`issue`,`code`,`lottery`,`updated_at`,`created_at`) VALUES ('"+sDateTime+"','"+sIssue+"','"+sCodeList.replace(" ", "")+"','"+sLottery+"','"+sUpdateTime+"','"+sUpdateTime+"') ;"
 
-host = os.environ.get('DB_HOST')
-username = os.environ.get('DB_USERNAME')
-password = os.environ.get('DB_PASSWORD')
-database = os.environ.get('DB_DATABASE')
-port = os.environ.get('DB_PORT')
+host = os.environ.get('SERVERDB_HOST')
+username = os.environ.get('SERVERDB_USERNAME')
+password = os.environ.get('SERVERDB_PASSWORD')
+database = os.environ.get('SERVERDB_DATABASE')
+port = os.environ.get('SERVERDB_PORT')
 
 import mysql.connector
 from mysql.connector import Error
