@@ -30,7 +30,8 @@
 								<th>返點</th>
 								<th>號碼</th>
 								<th>中獎</th>
-								<th>中獎</th>
+								<th>開獎</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -44,6 +45,7 @@
 								<td>@if($oLotteryOrderData->return==1) Y @else N @endif</td>
 								<td><span>{{implode(",",json_decode($oLotteryOrderData->code,true))}}</span></td>
 								<td>@if($oLotteryOrderData->win==1) Y @else N @endif</td>
+								<th>@if($oLotteryOrderData->award==1) 已開 @else 未開 @endif</th>
 								<td>{{$oLotteryOrderData->created_at}}</td>
 							</tr>
 							@empty
