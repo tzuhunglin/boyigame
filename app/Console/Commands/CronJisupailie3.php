@@ -51,7 +51,7 @@ class CronJisupailie3 extends Command
         $oDrawingIssueInfoPushData = IssueInfoPushData::oGetDrawingIssueInfoPushData(self::$sLottery);
         Redis::set('jisupailie3', json_encode($oDrawingIssueInfoPushData));
         event(new PushIssueInfoJisupailie3($oDrawingIssueInfoPushData));
-        sleep(300);
+        sleep(360);
         $oIssueInfoPushData = IssueInfoPushData::oGetLatestIssueInfoPushData(self::$sLottery,false);
         Redis::set('jisupailie3', json_encode($oIssueInfoPushData));
         event(new PushIssueInfoJisupailie3($oIssueInfoPushData));

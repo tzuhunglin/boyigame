@@ -3,7 +3,7 @@
 #!/usr/bin/env python
 #!/usr/bin/python
 from selenium import webdriver
-import urllib2
+import urllib
 import time
 from bs4 import BeautifulSoup
 import json

@@ -31,7 +31,7 @@
 							</tr>
 							<tr>
 								<td>開獎號碼</td>
-								<td><span>{{implode(",",json_decode($oIssueInfo->code,true))}}</span></td>
+								<td><span>@if(!empty($oIssueInfo)){{implode(",",json_decode($oIssueInfo->code,true))}}@endif</span></td>
 							</tr>
 							<tr>
 								<td>投注號碼</td>

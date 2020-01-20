@@ -1,0 +1,6 @@
+
+                                                          
+  [Symfony\Component\Console\Exception\RuntimeException]  
+  The "--daemon" option does not exist.                   
+                                                          
+
