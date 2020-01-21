@@ -50,7 +50,7 @@
 							</tr>
 							@empty
 							<tr>
-								<td colspan="8">無投注紀錄</td>
+								<td colspan="9">無投注紀錄</td>
 							</tr>
 							@endforelse
 						</tbody>

@@ -25,7 +25,7 @@ chrome_options.add_argument("--no-sandbox")
 now = datetime.now()
 sFetchCodeUrl = "https://www.1395p.com/shssl/?utp=topbar"
 oDriver = webdriver.Chrome(chrome_options=chrome_options)
-
+#oDriver = webdriver.Firefox('/var/www/html/boyigame/py')
 oDriver.get(sFetchCodeUrl)
 oSoup = BeautifulSoup(oDriver.page_source, "html.parser")
 oCodes = oSoup.find("div", {"class": "awarding_tips number_redAndBlue"})

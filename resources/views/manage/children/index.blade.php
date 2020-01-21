@@ -28,7 +28,8 @@
 								<th>姓名</th>
 								<th>電郵</th>
 								<th>保留返點</th>
-								<th>保留返點</th>
+								<th>餘額</th>
+								<th><th>
 							</tr>
 						</thead>
 						<tbody>
@@ -37,6 +38,7 @@
 								<td>{{$oChildrenData->name}}</td>
 								<td>{{$oChildrenData->email}}</td>
 								<td>{{$oChildrenData->keeppoint}}%</td>
+								<td>{{$oChildrenData->totalmoney}}</td>
 								<td>
 									<a href="{{App\Libraries\Manage\ChildrenLib::sGetBetRecordLink($oChildrenData->id)}}">投注紀錄</a> / 
 									<a href="{{App\Libraries\Manage\ChildrenLib::sGetGameRecordLink($oChildrenData->id)}}">遊戲紀錄</a> / 
@@ -46,7 +48,7 @@
 							</tr>
 							@empty
 							<tr>
-								<td colspan="4">無下級資料</td>
+								<td colspan="5">無下級資料</td>
 							</tr>
 							@endforelse
 						</tbody>
