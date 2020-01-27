@@ -395,6 +395,7 @@ var sAppUrl = "{{$sAppUrl}}";
 
 
 $(document).ready(function(){
+	alert("休市期間開獎號碼百位為0，十位個位為獎期期數．");
 	vSetCountDownClockerIni();
 	setInterval("vSetCountDownClocker()",1000);
 	vSetBetCodesInit();

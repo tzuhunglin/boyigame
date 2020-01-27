@@ -12,7 +12,7 @@ use App\Events\Event;
 use App\Models\Product\Lottery\IssueInfo;
 use App\Models\Product\Lottery\AwardProcessor;
 use App\Models\Product\Lottery\Threed\Jisupailie3Award;
-
+use App\Models\Product\Lottery\Threed\Jisupailie3FetchCode;
 
 class CronJisupailie3 extends Command
 {
@@ -51,7 +51,9 @@ class CronJisupailie3 extends Command
         $oDrawingIssueInfoPushData = IssueInfoPushData::oGetDrawingIssueInfoPushData(self::$sLottery);
         Redis::set('jisupailie3', json_encode($oDrawingIssueInfoPushData));
         event(new PushIssueInfoJisupailie3($oDrawingIssueInfoPushData));
-        sleep(360);
+        sleep(300);
+        $oJisupailie3FetchCode = new Jisupailie3FetchCode();
+        $oJisupailie3FetchCode->vExecute();
         $oIssueInfoPushData = IssueInfoPushData::oGetLatestIssueInfoPushData(self::$sLottery,false);
         Redis::set('jisupailie3', json_encode($oIssueInfoPushData));
         event(new PushIssueInfoJisupailie3($oIssueInfoPushData));
