@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Product\Lottery\LotteryOrder;
 use App\Models\Product\BetReturn;
 use App\Models\Product\Lottery\IssueInfo;
-use App\Models\Product\Lottery\Threed\Jisupailie3;
+use App\Models\Product\Lottery\Threed\Shanghaishrshrle;
 use App\Models\Product\Card\Poke\BlackjackRecord;
 
 
@@ -108,7 +108,7 @@ class ChildrenController extends Controller
         {
             return $this->vRedirector(Auth::user()->id);
         }
-        $aAllGameTypeOdds = Jisupailie3::aGetAllGameTypeOdds();
+        $aAllGameTypeOdds = Shanghaishrshrle::aGetAllGameTypeOdds();
         $fOdds = $aAllGameTypeOdds[$oLotteryOrderData->type];
         $oIssueInfo = IssueInfo::oGetIssueInfoData($oLotteryOrderData->lottery,$oLotteryOrderData->issue);
 

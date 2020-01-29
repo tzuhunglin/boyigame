@@ -7,10 +7,10 @@ Route::get('Product/Card/Poke/blackjack/{hashkey}/sumup',['as' => 'blackjack.sum
 
 Route::auth();
 
-Route::group(['prefix' => 'Product/Lottery/Threed/jisupailie3'], function () {
-	Route::get('/',['as' => 'jisupailie3.index','uses'=>'Product\Lottery\Threed\Jisupailie3Controller@index']);
-	Route::post('/bet',['as' => 'jisupailie3.bet','uses'=>'Product\Lottery\Threed\Jisupailie3Controller@bet']);
-	Route::get('/awardtest',['as' => 'jisupailie3.awardtest','uses'=>'Product\Lottery\Threed\Jisupailie3Controller@awardtest']);
+Route::group(['prefix' => 'Product/Lottery/Threed/shanghaishrshrle'], function () {
+	Route::get('/',['as' => 'shanghaishrshrle.index','uses'=>'Product\Lottery\Threed\ShanghaishrshrleController@index']);
+	Route::post('/bet',['as' => 'shanghaishrshrle.bet','uses'=>'Product\Lottery\Threed\ShanghaishrshrleController@bet']);
+	Route::get('/awardtest',['as' => 'shanghaishrshrle.awardtest','uses'=>'Product\Lottery\Threed\ShanghaishrshrleController@awardtest']);
 
 });
 
@@ -30,5 +30,5 @@ Route::group(['prefix' => 'Manage/Children'], function () {
 	Route::get('/{id}/returnRecord',['as' => 'children.returnRecord','uses'=>'Manage\ChildrenController@returnRecord']);
 });
 
-Route::get('/fetchjuisupailie3code', 'CronJisupailie3@handle');
+Route::get('/fetchjuisupailie3code', 'CronShanghaishrshrle@handle');
 

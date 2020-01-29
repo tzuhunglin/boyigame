@@ -8,13 +8,13 @@
 
 			<div>
 				<div class="box">
-					<a href="{{App\Libraries\Product\Lottery\Threed\Jisupailie3Lib::sGetIndexLink()}}">
+					<a href="{{App\Libraries\Product\Lottery\Threed\ShanghaishrshrleLib::sGetIndexLink()}}">
 						<div class="image fit">
-							<img src="{{ asset('images/jisupailie3.jpg') }}" alt="" />
+							<img src="{{ asset('images/shanghaishrshrle.jpg') }}" alt="" />
 						</div>
 						<div class="content">
 							<header class="align-center">
-								<h2>{{ trans('messages.product.lottery.3d.jisupailie3.name') }}</h2>
+								<h2>{{ trans('messages.product.lottery.3d.shanghaishrshrle.name') }}</h2>
 							</header>
 						</div>
 					</a>

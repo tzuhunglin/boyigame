@@ -41,7 +41,7 @@ sCodeList = json.dumps(aCodeList)
 sToday = now.strftime("%Y-%m-%d %H:%M")
 sDateTime = sToday
 sUpdateTime = now.strftime("%Y-%m-%d %H:%M:%S")
-sLottery = "jisupailie3"
+sLottery = "shanghaishrshrle"
 sSql = "INSERT INTO issueinfo (`datetime`,`issue`,`code`,`lottery`,`updated_at`,`created_at`) VALUES ('"+sDateTime+"','"+sIssue+"','"+sCodeList.replace(" ", "")+"','"+sLottery+"','"+sUpdateTime+"','"+sUpdateTime+"') ;"
 
 host = os.environ.get('SERVERDB_HOST')

@@ -1,0 +1,1638 @@
+
+                                                                    
+  [Predis\Connection\ConnectionException]                           
+  Error while reading line from the server. [tcp://127.0.0.1:6379]  
+                                                                    
+
+
+                                                                    
+  [Predis\Connection\ConnectionException]                           
+  Error while reading line from the server. [tcp://127.0.0.1:6379]  
+                                                                    
+
+
+                                                                    
+  [Predis\Connection\ConnectionException]                           
+  Error while reading line from the server. [tcp://127.0.0.1:6379]  
+                                                                    
+
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+Failed loading /usr/lib/php/20160303/opcache.so:  /usr/lib/php/20160303/opcache.so: failed to map segment from shared object
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqlnd.so' - /usr/lib/php/20160303/mysqlnd.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo.so' - /usr/lib/php/20160303/pdo.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xml.so' - /usr/lib/php/20160303/xml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/calendar.so' - /usr/lib/php/20160303/calendar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/ctype.so' - /usr/lib/php/20160303/ctype.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/curl.so' - /usr/lib/php/20160303/curl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/dom.so' - /usr/lib/php/20160303/dom.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/exif.so' - /usr/lib/php/20160303/exif.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/fileinfo.so' - /usr/lib/php/20160303/fileinfo.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/ftp.so' - /usr/lib/php/20160303/ftp.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gd.so' - /usr/lib/php/20160303/gd.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gettext.so' - /usr/lib/php/20160303/gettext.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/iconv.so' - /usr/lib/php/20160303/iconv.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/igbinary.so' - /usr/lib/php/20160303/igbinary.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/json.so' - /usr/lib/php/20160303/json.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mbstring.so' - /usr/lib/php/20160303/mbstring.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcache.so' - /usr/lib/php/20160303/memcache.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/msgpack.so' - /usr/lib/php/20160303/msgpack.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqli.so' - /usr/lib/php/20160303/mysqli.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 29360128) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 18874368) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(ErrorException), Object(Symfo in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(ErrorException), Object(Symfo in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(ErrorException), Object(Symfo in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(ErrorException), Object(Symfo in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(ErrorException), Object(Symfo in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(ErrorException), Object(Symfo in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(ErrorException), Object(Symfo in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 4194304) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/symfony/http-foundation/Request.php on line 1918
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 4194304) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 23068672) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 18874368) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 14680064) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 12582912) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(ErrorException), Object(Symfo in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 31457280) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 20971520) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 12582912) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 12582912) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(ErrorException), Object(Symfo in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/exif.so' - /usr/lib/php/20160303/exif.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/dom.so' - /usr/lib/php/20160303/dom.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/exif.so' - /usr/lib/php/20160303/exif.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/fileinfo.so' - /usr/lib/php/20160303/fileinfo.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/ftp.so' - /usr/lib/php/20160303/ftp.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gd.so' - /usr/lib/php/20160303/gd.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gettext.so' - /usr/lib/php/20160303/gettext.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/iconv.so' - /usr/lib/php/20160303/iconv.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/igbinary.so' - /usr/lib/php/20160303/igbinary.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/json.so' - /usr/lib/php/20160303/json.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mbstring.so' - /usr/lib/php/20160303/mbstring.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcache.so' - /usr/lib/php/20160303/memcache.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/msgpack.so' - /usr/lib/php/20160303/msgpack.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqli.so' - /usr/lib/php/20160303/mysqli.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+PHP Fatal error:  Uncaught ReflectionException: Class log does not exist in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Container/Container.php:734
+Stack trace:
+#0 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Container/Container.php(734): ReflectionClass->__construct('log')
+#1 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Container/Container.php(629): Illuminate\Container\Container->build('log', Array)
+#2 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(697): Illuminate\Container\Container->make('log', Array)
+#3 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Container/Container.php(849): Illuminate\Foundation\Application->make('log')
+#4 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Container/Container.php(804): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Container/Container.php(774): Illuminate\Container\Co in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 734
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 29360128) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 18874368) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 18874368) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 14680064) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 12582912) (tried to allocate 65536 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php on line 76
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 12582912) (tried to allocate 65536 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php on line 118
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 12582912) (tried to allocate 65536 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php on line 76
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 12582912) (tried to allocate 65536 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php on line 118
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 12582912) (tried to allocate 65536 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php on line 76
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 12582912) (tried to allocate 65536 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php on line 118
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Console/Command.php on line 510
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 32768 bytes) in /var/www/html/boyigame/vendor/symfony/debug/Exception/FatalErrorException.php on line 1
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gd.so' - libxcb.so.1: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - libtinfo.so.5: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gd.so' - libvpx.so.3: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - libgcrypt.so.20: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gd.so' - libexpat.so.1: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/json.so' - /usr/lib/php/20160303/json.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mbstring.so' - /usr/lib/php/20160303/mbstring.so: cannot map zero-fill pages in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcache.so' - /usr/lib/php/20160303/memcache.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/msgpack.so' - /usr/lib/php/20160303/msgpack.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqli.so' - /usr/lib/php/20160303/mysqli.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - libbsd.so.0: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: undefined symbol: php_json_decode_ex in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mbstring.so' - /usr/lib/php/20160303/mbstring.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqli.so' - /usr/lib/php/20160303/mysqli.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/igbinary.so' - /usr/lib/php/20160303/igbinary.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mbstring.so' - /usr/lib/php/20160303/mbstring.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: undefined symbol: igbinary_serialize in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mbstring.so' - /usr/lib/php/20160303/mbstring.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcache.so' - /usr/lib/php/20160303/memcache.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/msgpack.so' - /usr/lib/php/20160303/msgpack.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqli.so' - /usr/lib/php/20160303/mysqli.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/iconv.so' - /usr/lib/php/20160303/iconv.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/json.so' - /usr/lib/php/20160303/json.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mbstring.so' - /usr/lib/php/20160303/mbstring.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcache.so' - /usr/lib/php/20160303/memcache.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/msgpack.so' - /usr/lib/php/20160303/msgpack.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqli.so' - /usr/lib/php/20160303/mysqli.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gd.so' - libXdmcp.so.6: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/msgpack.so' - /usr/lib/php/20160303/msgpack.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - libxslt.so.1: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - libmemcached.so.11: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gd.so' - libxcb.so.1: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/msgpack.so' - /usr/lib/php/20160303/msgpack.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqli.so' - /usr/lib/php/20160303/mysqli.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/curl.so' - librtmp.so.1: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/dom.so' - /usr/lib/php/20160303/dom.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/exif.so' - /usr/lib/php/20160303/exif.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/fileinfo.so' - /usr/lib/php/20160303/fileinfo.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/ftp.so' - /usr/lib/php/20160303/ftp.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gd.so' - /usr/lib/php/20160303/gd.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gettext.so' - /usr/lib/php/20160303/gettext.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/iconv.so' - /usr/lib/php/20160303/iconv.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/igbinary.so' - /usr/lib/php/20160303/igbinary.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/json.so' - /usr/lib/php/20160303/json.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mbstring.so' - /usr/lib/php/20160303/mbstring.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcache.so' - /usr/lib/php/20160303/memcache.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/msgpack.so' - /usr/lib/php/20160303/msgpack.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqli.so' - /usr/lib/php/20160303/mysqli.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: undefined symbol: dom_node_class_entry in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: undefined symbol: php_dom_create_object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: undefined symbol: php_json_decode_ex in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mbstring.so' - /usr/lib/php/20160303/mbstring.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqli.so' - /usr/lib/php/20160303/mysqli.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - libmemcached.so.11: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gd.so' - libX11.so.6: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/json.so' - /usr/lib/php/20160303/json.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/msgpack.so' - /usr/lib/php/20160303/msgpack.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/mysqli.so' - /usr/lib/php/20160303/mysqli.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - libgcrypt.so.20: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/gd.so' - libXpm.so.4: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/msgpack.so' - /usr/lib/php/20160303/msgpack.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/pdo_mysql.so' - /usr/lib/php/20160303/pdo_mysql.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/phar.so' - /usr/lib/php/20160303/phar.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: undefined symbol: php_msgpack_serialize in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+Can't initialize heap: [12] Cannot allocate memory
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/iconv.so' - /usr/lib/php/20160303/iconv.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/posix.so' - /usr/lib/php/20160303/posix.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/readline.so' - /usr/lib/php/20160303/readline.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/redis.so' - /usr/lib/php/20160303/redis.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/shmop.so' - /usr/lib/php/20160303/shmop.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/simplexml.so' - /usr/lib/php/20160303/simplexml.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sockets.so' - /usr/lib/php/20160303/sockets.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvmsg.so' - /usr/lib/php/20160303/sysvmsg.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvsem.so' - /usr/lib/php/20160303/sysvsem.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/sysvshm.so' - /usr/lib/php/20160303/sysvshm.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/tokenizer.so' - /usr/lib/php/20160303/tokenizer.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/wddx.so' - /usr/lib/php/20160303/wddx.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlreader.so' - /usr/lib/php/20160303/xmlreader.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xmlwriter.so' - /usr/lib/php/20160303/xmlwriter.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/xsl.so' - /usr/lib/php/20160303/xsl.so: failed to map segment from shared object in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 2097152) (tried to allocate 4096 bytes) in /var/www/html/boyigame/vendor/composer/autoload_static.php on line 4113
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 14680064) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /var/www/html/boyigame/vendor/symfony/console/Application.php:901
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'proc_open(): fo...', '/var/www/html/b...', 901, Array)
+#1 /var/www/html/boyigame/vendor/symfony/console/Application.php(901): proc_open('stty -a | grep ...', Array, NULL, NULL, NULL, Array)
+#2 /var/www/html/boyigame/vendor/symfony/console/Application.php(704): Symfony\Component\Console\Application->getSttyColumns()
+#3 /var/www/html/boyigame/vendor/symfony/console/Application.php(665): Symfony\Component\Console\Application->getTerminalDimensions()
+#4 /var/www/html/boyigame/vendor/symfony/console/Application.php(598): Symfony\Component\Console\Application->getTerminalWidth()
+#5 /var/www/html/boyigame/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(142): Symfony\Component\Console\Application->renderException(Object(Symfony\Component\Debug\Excep in /var/www/html/boyigame/vendor/symfony/console/Application.php on line 901
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 14680064) (tried to allocate 1052672 bytes) in /var/www/html/boyigame/vendor/guzzlehttp/psr7/src/Stream.php on line 225
+
+                                                                        
+  [Symfony\Component\Debug\Exception\FatalErrorException]               
+  Out of memory (allocated 14680064) (tried to allocate 1052672 bytes)  
+                                                                        
+
+PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/20160303/memcached.so' - /usr/lib/php/20160303/memcached.so: failed to map segment from shared object in Unknown on line 0

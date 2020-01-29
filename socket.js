@@ -6,16 +6,16 @@ var Redis = require('ioredis');
 var redis = new Redis();
 var iTimeLimit = 10000;
 var sAppUrl = (process.env["APP_URL"]==undefined)?"http://www.alfredweb.tw":process.env["APP_URL"];
-redis.subscribe('issueInfoJisupailie3', function(err, count) {
+redis.subscribe('issueInfoShanghaishrshrle', function(err, count) {
   console.log('connect!');
 });
 
 redis.on('message', function(channel, notification) {
-  if(channel=='issueInfoJisupailie3')
+  if(channel=='issueInfoShanghaishrshrle')
   {
     console.log(notification);
     notification = JSON.parse(notification);
-    io.emit('issueInfoJisupailie3', notification.data.oIssueInfoPushData);
+    io.emit('issueInfoShanghaishrshrle', notification.data.oIssueInfoPushData);
   }
 });
 

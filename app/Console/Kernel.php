@@ -4,7 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use App\Console\Commands\CronJisupailie3;
+use App\Console\Commands\CronShanghaishrshrle;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         // Commands\Inspire::class,
-        Commands\CronJisupailie3::class
+        Commands\CronShanghaishrshrle::class
     ];
 
     /**
@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('cronjisupailie3')->cron("30 10-22 * * *");
-        $schedule->command('cronjisupailie3')->cron("0 10-22 * * *");
+        $schedule->command('cronshanghaishrshrle')->cron("30 10-22 * * *");
+        $schedule->command('cronshanghaishrshrle')->cron("0 10-22 * * *");
     }
 }

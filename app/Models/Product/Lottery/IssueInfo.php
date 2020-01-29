@@ -2,7 +2,7 @@
 namespace App\Models\Product\Lottery;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Product\Lottery\Threed\Jisupailie3;
+use App\Models\Product\Lottery\Threed\Shanghaishrshrle;
 
 
 class IssueInfo extends Model
@@ -20,8 +20,8 @@ class IssueInfo extends Model
     	$sCurrentIssue = "";
     	switch ($sLottery)
     	{
-    		case 'jisupailie3':
-    			$sCurrentIssue = Jisupailie3::sGetLastDrawnIssue();
+    		case 'shanghaishrshrle':
+    			$sCurrentIssue = Shanghaishrshrle::sGetLastDrawnIssue();
     			break;
     	}
     	return $sCurrentIssue;

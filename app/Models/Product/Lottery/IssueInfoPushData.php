@@ -4,7 +4,7 @@ namespace App\Models\Product\Lottery;
 use App\Models\Product\Lottery\IssueInfo;
 use Cache;
 use Illuminate\Support\Facades\Redis;
-use App\Models\Product\Lottery\Threed\Jisupailie3;
+use App\Models\Product\Lottery\Threed\Shanghaishrshrle;
 
 
 class IssueInfoPushData
@@ -46,7 +46,7 @@ class IssueInfoPushData
 	{
 		$oIssueInfo = IssueInfo::where('lottery',$sLottery)->orderBy('datetime', 'desc')->first();
         $oIssueInfoPushData = new self($oIssueInfo);
-        Redis::set('jisupailie3', json_encode($oIssueInfoPushData));
+        Redis::set('shanghaishrshrle', json_encode($oIssueInfoPushData));
 		return $oIssueInfoPushData;
 	}
 
@@ -65,7 +65,7 @@ class IssueInfoPushData
 		$oDrawingIssueInfoPushData = self::oGetLatestIssueInfoPushData($sLottery, $bCache = true);
 		$oDrawingIssueInfoPushData->aCode = array("開","獎","中");
 		$oDrawingIssueInfoPushData->sCode = json_encode($oDrawingIssueInfoPushData->aCode);
-		$oDrawingIssueInfoPushData->sIssue = Jisupailie3::sGetLastDrawnIssue();
+		$oDrawingIssueInfoPushData->sIssue = Shanghaishrshrle::sGetLastDrawnIssue();
 		return $oDrawingIssueInfoPushData;
 
 	}

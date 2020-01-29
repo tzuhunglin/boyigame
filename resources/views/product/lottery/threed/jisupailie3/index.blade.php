@@ -110,8 +110,8 @@
 	<div class="inner">
 		<div class="box">
 			<div class="content">
-				<h2 class="align-center">{{ trans('messages.product.lottery.3d.jisupailie3.name') }}</h2>
-				<h3 class="align-center"><span id="issue">{{$oJisupailie3->sIssue}}</span><span> 期</span><span>&emsp; &emsp;</span><span id="minute">12</span><span> : </span><span id="second">34</span></h3>
+				<h2 class="align-center">{{ trans('messages.product.lottery.3d.shanghaishrshrle.name') }}</h2>
+				<h3 class="align-center"><span id="issue">{{$oShanghaishrshrle->sIssue}}</span><span> 期</span><span>&emsp; &emsp;</span><span id="minute">12</span><span> : </span><span id="second">34</span></h3>
 				<hr />
 				<form action="" method="post">
 					{{ csrf_field()}}
@@ -119,13 +119,13 @@
 						<div class="field" >
 							<div class="issuecodearea">
 								<div class="issuecodebox">
-									<div class="issuecode" id="code0">{{$oJisupailie3->aCode[0]}}</div>
+									<div class="issuecode" id="code0">{{$oShanghaishrshrle->aCode[0]}}</div>
 								</div>
 								<div class="issuecodebox">
-									<div class="issuecode" id="code1">{{$oJisupailie3->aCode[1]}}</div>
+									<div class="issuecode" id="code1">{{$oShanghaishrshrle->aCode[1]}}</div>
 								</div>
 								<div class="issuecodebox">
-									<div class="issuecode" id="code2">{{$oJisupailie3->aCode[2]}}</div>
+									<div class="issuecode" id="code2">{{$oShanghaishrshrle->aCode[2]}}</div>
 								</div>
 								<div class="clearboth"></div>
 							</div>
@@ -380,7 +380,7 @@
 </section>
 @endsection
 @section('scripts')
-<script src="{{ asset('js/jisupailie3.js') }}" defer></script>
+<script src="{{ asset('js/shanghaishrshrle.js') }}" defer></script>
 <script type="text/javascript">
 
 
@@ -389,7 +389,7 @@ var sGameTypeName;
 var iBasicRate = parseInt("{{$iBasicOdds}}");
 var iKeepPoint = parseInt("{{$oUser->keeppoint}}");
 var iOdds = 0;
-var sPostUrl = "{{App\Libraries\Product\Lottery\Threed\Jisupailie3Lib::sGetbetLink()}}";
+var sPostUrl = "{{App\Libraries\Product\Lottery\Threed\ShanghaishrshrleLib::sGetbetLink()}}";
 var sAppUrl = "{{$sAppUrl}}";
 
 

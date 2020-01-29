@@ -11,8 +11,8 @@ return [
     'product' => [
         'lottery' => [
             '3d' => [
-                'jisupailie3' => [
-                    'name' => '极速排列3',
+                'shanghaishrshrle' => [
+                    'name' => '上海时时乐',
                 ],
             ],
             'pk10' =>[
