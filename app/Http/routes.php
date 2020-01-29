@@ -3,6 +3,10 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
 Route::get('Product/Card/Poke/blackjack/{hashkey}/sumup',['as' => 'blackjack.sumup','uses'=>'Product\Card\Poke\BlackjackController@sumup']);
 
 Route::auth();
