@@ -48,7 +48,7 @@
 							</tr>
 							@empty
 							<tr>
-								<td colspan="5">無下級資料</td>
+								<td colspan="6">無下級資料</td>
 							</tr>
 							@endforelse
 						</tbody>
