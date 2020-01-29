@@ -24,7 +24,10 @@
 							<tr>
 								<td>彩種</td>
 								<td>{{$oLotteryOrderData->lottery}}</td>
-							</tr>
+								<tr>
+								<td>玩法</td>
+								<td>{{$oLotteryOrderData->type}}</td>						</tr>
+
 							<tr>
 								<td>獎期</td>
 								<td>{{$oLotteryOrderData->issue}}</td>
