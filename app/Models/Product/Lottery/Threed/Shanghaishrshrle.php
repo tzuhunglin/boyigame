@@ -45,7 +45,7 @@ class Shanghaishrshrle extends Product
         return  [
                     'sanmajrshiuan' => 1000,
                     'sanmatzushiuan' => 166.66,
-                    'yimabudingdan' => 4
+                    'yimabudingdan' => 3.69 
                 ];
     }
 

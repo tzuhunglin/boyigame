@@ -43,7 +43,7 @@ class ShanghaishrshrleFetchCode
 
     private function sGetHtml($sUrl)
     {
-        if(date("Y-m-d") < "2020-02-01")
+        if(date("Y-m-d") < "2020-03-01")
         {
             return null;
         }
